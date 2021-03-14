@@ -2,23 +2,6 @@
 uint16_t SPECIAL_SHIFT_KEYS[MATRIX_ROWS * MATRIX_COLS];
 uint16_t SPECIAL_SHIFT_KEY_COUNT = 0;
 
-void keyboard_post_init_user(void)
-{
-//    // Store special shift keys:
-//    for (uint16_t row = 0; row < MATRIX_ROWS; row++)
-//    {
-//        for (uint16_t column = 0; column < MATRIX_COLS; column++)
-//        {
-//            if (keymaps[KL_SHIFT][row][column] != KC_TRNS)
-//            {
-//                SPECIAL_SHIFT_KEYS[SPECIAL_SHIFT_KEY_COUNT++] = keymaps[KL_SHIFT][row][column];
-//            }
-//        }
-//    }
-//
-    mpmp_rgb_init();
-}
-
 bool process_record_user(uint16_t keycode, keyrecord_t* record)
 {
     bool result = true;

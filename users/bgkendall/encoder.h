@@ -11,21 +11,30 @@
 #ifdef ENCODERS_PAD_A
 
 #include "quantum.h"
+#include "config.h"
 #include "mousekey.h"
 
-static pin_t bgkencoders_pad_a[] = ENCODERS_PAD_A;
-const uint16_t encodermaps[][sizeof(bgkencoders_pad_a)/sizeof(pin_t)][2];
+//static pin_t bgkencoders_pad_a[] = ENCODERS_PAD_A;
+//const uint16_t encodermaps[][sizeof(bgkencoders_pad_a)/sizeof(pin_t)][2];
+const uint16_t encodermaps[][1][2];
+bool (*bgkencoder_custom_keycode_handler)(uint16_t,bool) = NULL;
 
-void bgkencoder_update(uint8_t encoder_index, bool clockwise, bool (*custom_keycode_handler)(uint16_t,bool))
+
+void bgkencoder_init(bool (*custom_keycode_handler)(uint16_t,bool))
+{
+    bgkencoder_custom_keycode_handler = custom_keycode_handler;
+}
+
+void bgkencoder_update(uint8_t encoder_index, bool clockwise)
 {
     const uint16_t keycode =
         pgm_read_word(&encodermaps[get_highest_layer(layer_state)][encoder_index][(clockwise ? 1 : 0)]);
 
     bool handle_update = true;
 
-    if (custom_keycode_handler != NULL)
+    if (bgkencoder_custom_keycode_handler != NULL)
     {
-        handle_update = (*custom_keycode_handler)(keycode, /* pressed = */true);
+        handle_update = (*bgkencoder_custom_keycode_handler)(keycode, /* pressed = */true);
     }
 
     if (handle_update)
@@ -67,7 +76,7 @@ void bgkencoder_update(uint8_t encoder_index, bool clockwise, bool (*custom_keyc
 
 void encoder_update_user(uint8_t encoder_index, bool clockwise)
 {
-    bgkencoder_update(encoder_index, clockwise, &process_custom_keycode);
+    bgkencoder_update(encoder_index, clockwise);
 }
 
 # endif /* encoders_pad_a */
