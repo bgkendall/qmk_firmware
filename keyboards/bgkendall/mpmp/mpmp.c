@@ -1,6 +1,6 @@
 #include "mpmp.h"
 
-#include "bgkendall/include/rgb.h"
+#include "users/bgkendall/rgb.h"
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
@@ -60,7 +60,7 @@ const rgblight_segment_t* const PROGMEM mpmp_rgb_layers[] = RGBLIGHT_LAYERS_LIST
     [RGBL_CMDTAB]  = bgkrgb_red_indicator_layer
 );
 
-void mpmp_rgb_init(void)
+void keyboard_post_init_user(void)
 {
     // Enable the LED layers:
     rgblight_layers = mpmp_rgb_layers;

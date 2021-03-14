@@ -1,5 +1,5 @@
-#include "bgkendall/include/cmd-tab.h"
-#include "bgkendall/include/encoder.h"
+#include "users/bgkendall/cmd-tab.h"
+#include "users/bgkendall/encoder.h"
 
 
 const uint16_t PROGMEM encodermaps[][1][2] =
@@ -10,11 +10,6 @@ const uint16_t PROGMEM encodermaps[][1][2] =
     [KL_FN]   = { { keymaps[KL_FN]  [2][0], keymaps[KL_FN]  [1][0] } },
     [KL_LED]  = { { keymaps[KL_LED] [2][0], keymaps[KL_LED] [1][0] } }
 };
-
-void keyboard_post_init_user(void)
-{
-    mpmp_rgb_init();
-}
 
 void matrix_scan_user(void)
 {
@@ -30,8 +25,7 @@ bool handle_custom_keys(uint16_t keycode, bool pressed)
         switch (keycode)
         {
             case CK_CMDTAB_FORWARD:
-                bgkey_register_command_for_tab();
-                tap_code16(KC_TAB);
+                bgkey_register_forward_command_tab();
                 result = false;
                 break;
             case CK_CMDTAB_BACKWARD:
@@ -45,4 +39,9 @@ bool handle_custom_keys(uint16_t keycode, bool pressed)
     }
 
     return result;
+}
+
+void keyboard_pre_init_user(void)
+{
+    bgkencoder_init(&handle_custom_keys);
 }

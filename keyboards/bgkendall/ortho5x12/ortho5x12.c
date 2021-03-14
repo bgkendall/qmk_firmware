@@ -1,8 +1,8 @@
 #include "ortho5x12.h"
 
-#include "bgkendall/include/cmd-tab.h"
-#include "bgkendall/include/rgb.h"
-#include "bgkendall/private/texts.h"
+#include "users/bgkendall/cmd-tab.h"
+#include "users/bgkendall/rgb.h"
+#include "users/bgkendall/private/texts.h"
 
 #ifdef CONSOLE_ENABLE
 #include <print.h>
