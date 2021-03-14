@@ -29,6 +29,18 @@ void bgkey_register_command_for_tab(void)
     bgkey_command_tab_timer = timer_read();
 }
 
+void bgkey_register_forward_command_tab(void)
+{
+    bgkey_register_command_for_tab();
+    tap_code16(KC_TAB);
+}
+
+void bgkey_register_backward_command_tab(void)
+{
+    bgkey_register_command_for_tab();
+    tap_code16(S(KC_TAB));
+}
+
 void bgkey_unregister_command_for_tab(void)
 {
     if (bgkey_is_command_tab_active)
@@ -58,13 +70,11 @@ void bgkey_unregister_command_for_tab(void)
 //        switch (keycode)
 //        {
 //            case KC_CMDTAB_FORWARD:
-//                bgkey_register_command_for_tab();
-//                tap_code16(KC_TAB);
+//                bgkey_register_forward_command_tab();
 //                result = false;
 //                break;
 //            case KC_CMDTAB_BACKWARD:
-//                bgkey_register_command_for_tab();
-//                tap_code16(S(KC_TAB));
+//                bgkey_register_backward_command_tab();
 //                result = false;
 //                break;
 //            default:

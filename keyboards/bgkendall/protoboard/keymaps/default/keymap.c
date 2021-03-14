@@ -1,7 +1,7 @@
-#include "prototype.h"
+#include QMK_KEYBOARD_H
 
-#include "bgkendall/include/rgb.h"
-#include "bgkendall/include/encoder.h"
+#include "users/bgkendall/rgb.h"
+#include "users/bgkendall/encoder.h"
 
 enum LAYERS
 {
@@ -100,9 +100,4 @@ layer_state_t layer_state_set_user(layer_state_t state)
     }
 
     return state;
-}
-
-void encoder_update_user(uint8_t encoder_index, bool clockwise)
-{
-    bgkencoder_update(encoder_index, clockwise, NULL);
 }

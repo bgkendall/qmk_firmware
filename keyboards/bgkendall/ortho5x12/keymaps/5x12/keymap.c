@@ -1,6 +1,6 @@
 #include "ortho5x12.h"
 
-#include "bgkendall/include/encoder.h"
+#include "users/bgkendall/encoder.h"
 
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
@@ -54,3 +54,9 @@ const uint16_t PROGMEM encodermaps[][1][2] =
     [KL_FN]   = { { KC_BRID, KC_BRIU } },
     [KL_META] = { { RGB_VAD, RGB_VAI } }
 };
+
+void keymap_pre_init_user(void)
+{
+    // Set custom key handler for encoders
+    bgkencoder_init(&process_custom_keycode);
+}
