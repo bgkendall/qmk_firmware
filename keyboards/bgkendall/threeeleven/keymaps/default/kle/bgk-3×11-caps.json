@@ -1,0 +1,148 @@
+[
+  {
+    "name": "bgk 3×11 caps",
+    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 500;\n}\n\n.keylabels i {\n    font-style: normal;\n}\n\n.keylabel1 {\n    color: rgba(0,0,0,0) !important;\n}\n\n.keylabels .normal {\n    color: black !important;\n}\n\n.keylabel0, .numshift {\n    color: DarkBlue !important;\n}\n\n.keylabel2, .nav {\n    color: DarkOrange !important;\n}\n\n.keylabel6, .num {\n    color: DarkGreen !important;\n}\n\n.keylabel10, .meta {\n    color: DarkMagenta !important;\n    margin-top: 1px;\n}\n\n.keylabel8, .hold {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 800;\n    color: DimGray !important;\n}\n\n.keylabel9, .keylabel10, .keylabel11 {\n    font-size: 6px !important;\n    overflow: visible;\n}\n\n.smaller {\n    font-size: 0.5em !important;\n    line-height: 100%;\n}\n\n.larger {\n    font-size: 1.5em !important;\n    line-height: 100%;\n}\n\n.keylabels p, .keylabels ol, .keylabels ul {\n    font-weight: 400;\n    line-height: 1.1;\n}\n\nol, ul {\n    padding-left: 20px;\n}\n\np + ol, p + ul {\n    margin-top: -8px;\n}\n\nli {\n    margin-bottom: 3px;\n}"
+  },
+  [
+    {
+      "f": 4,
+      "fa": [
+        3,
+        3,
+        1,
+        0
+      ]
+    },
+    "|\n\\\n􀅆\n\n\n\n\n\n\n􀅆",
+    "!\n1\n\n\nf1\n\n\n\n\nQ",
+    "@\n2\n􀄤\n\nf2\n\n\n\n\nW",
+    "#\n3\n\n\nf3\n\n\n\n\nF",
+    "$\n4\n􀋽\n\nf4\n\n\n\n\nP",
+    "%\n5\n􀄿\n\nf5\n\n\n\n\nB",
+    "^\n6\n􀈻\n\nf6\n\n\n\n\nJ",
+    "&\n7\n\n\nf7\n\n\n\n\nL",
+    "*\n8\n\n\nf8\n\n\n\n\nU",
+    "(\n9\n\n\nf9\n\n\n\n\nY",
+    ")\n0\n􀆗\n\nf10\n\n\n\n\n􀆛"
+  ],
+  [
+    {
+      "fa": [
+        3,
+        3,
+        3,
+        0
+      ]
+    },
+    "~\n`\n`\n\n\n\n\n\n\n' \"",
+    {
+      "fa": [
+        3,
+        3,
+        1,
+        0
+      ]
+    },
+    "\n“\n􀄦\n\nf11\n\n\n\n\nA",
+    "\n”\n􀄥\n\nf12\n\n\n\n\nS",
+    "\n‘\n􀄧\n\n\n\n\n\n\nR",
+    "|\n’\n􀆗\n\n\n\n\n\n\nT",
+    ">\n<\n􀅀\n\n\n\n\n\n\nG",
+    "?\n/\n􀈽\n\n\n\n\n\n\nM",
+    "_\n-\n\n\n\n\n\n\n\nN",
+    "+\n=\n\n\n\n\n\n\n\nE",
+    "{\n[\n\n\n􀆫\n\n\n\n\nI",
+    "}\n]\n\n\n􀆭\n\n\n\n\nO"
+  ],
+  [
+    {
+      "fa": [
+        3,
+        3,
+        1,
+        2
+      ]
+    },
+    "\n\n\n􀆝\n\n\n\n\n\nZ",
+    "\n\n\n􀆍\n\n\n\n\n\nX",
+    "\n\n\n􀆕\n\n\n\n\n\nC",
+    {
+      "fa": [
+        2,
+        3,
+        1,
+        2
+      ]
+    },
+    "<i class=\"meta\">􀗢</i>\n\n􀎡\n<i class=\"num\">􀃫</i>\n\n\n\n\n\nV",
+    "\n\n\n􀆔\n\n\n\n\n\nD",
+    {
+      "fa": [
+        1,
+        3,
+        1,
+        2
+      ]
+    },
+    "􀏃\n\n\n<i class=\"nav\">􀧐</i>",
+    "􀅇\n\n􀄜\n􀆔\n\n\n\n\n\n􀅇",
+    {
+      "fa": [
+        1,
+        2,
+        1,
+        1
+      ]
+    },
+    "\n<i class=\"meta\">􀗢</i>\n\n<i class=\"numshift\">􀆞􀃫</i>\n\n\n\n\n\nH",
+    {
+      "fa": [
+        1,
+        2,
+        1,
+        2
+      ]
+    },
+    "\n\n\n􀆕\n\n\n\n\n\nK",
+    {
+      "fa": [
+        3,
+        3,
+        1,
+        2
+      ]
+    },
+    ":\n;\n\n􀆝\n􀆍\n\n\n\n\n, .",
+    {
+      "fa": [
+        2,
+        2,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "􀊣\n􀆡\n􀄿\n\n􀛭\n\n\n\n\n􀆧"
+  ],
+  [
+    {
+      "y": -0.8999999999999999,
+      "x": 11.2,
+      "f": 1,
+      "w": 0.8,
+      "h": 0.8
+    },
+    "􀊥\n􀆫\n􀈽\n\n􀇭\n\n\n\n\n􀄦",
+    {
+      "sm": "alps",
+      "sb": "alps",
+      "st": "SKCL/SKCM",
+      "w": 0.8,
+      "h": 0.8
+    },
+    "􀊩\n􀆭\n􀈻\n\n􀇮\n\n\n\n\n􀄧"
+  ]
+]
