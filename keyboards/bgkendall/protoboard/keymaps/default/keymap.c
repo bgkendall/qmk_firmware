@@ -17,7 +17,7 @@ enum LAYERS
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
-    [KL_DEFAULT ... KL_DEFAULT_COPY] = KEYMAP
+    [KL_DEFAULT ... KL_DEFAULT_COPY] = LAYOUT
     (
         KC_5,               KC_6,
         KC_3,               KC_4,
@@ -25,7 +25,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         MO(KL_FUNC)
     ),
 
-    [KL_FUNC ... KL_FUNC_LOCK] = KEYMAP
+    [KL_FUNC ... KL_FUNC_LOCK] = LAYOUT
     (
         KC_E,               KC_F,
         KC_C,               KC_D,
@@ -33,7 +33,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         TO(KL_DEFAULT)
     ),
 
-    [KL_RGB] = KEYMAP
+    [KL_RGB] = LAYOUT
     (
         RGB_RMOD,           RGB_MOD,
         RGB_HUI,            RGB_SAI,
@@ -41,7 +41,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         RGB_TOG
     ),
 
-    [KL_BACKLIGHT] = KEYMAP
+    [KL_BACKLIGHT] = LAYOUT
     (
         XXXXXXX,            XXXXXXX,
         XXXXXXX,            XXXXXXX,
@@ -49,7 +49,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         BL_TOGG
     ),
 
-    [KL_RESET] = KEYMAP(
+    [KL_RESET] = LAYOUT
+    (
         XXXXXXX,            XXXXXXX,
         XXXXXXX,            XXXXXXX,
         TO(KL_DEFAULT),     XXXXXXX,
