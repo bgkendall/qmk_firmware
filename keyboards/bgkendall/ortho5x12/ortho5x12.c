@@ -84,15 +84,6 @@ layer_state_t layer_state_set_user(layer_state_t state)
 {
     bgkrgb_set_from_highest_layer(state, KL_DEF4+1, KL_META);
 
-    if (get_highest_layer(state) >= KL_DEF && get_highest_layer(state) <= KL_DEF4)
-    {
-        rgblight_blink_layer(get_highest_layer(state), 250);
-    }
-    else if (get_highest_layer(state) == KL_META)
-    {
-        rgblight_blink_layer(RGBL_APPS, 500);
-    }
-
     return state;
 }
 
