@@ -2,7 +2,7 @@
 
 #include "quantum.h"
 
-#include "users/bgkendall/keycodes.h"
+#include "bgk_keycodes.h"
 
 
 #define LAYOUT_ortho_5x12( \

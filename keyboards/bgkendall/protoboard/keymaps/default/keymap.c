@@ -1,7 +1,7 @@
 #include QMK_KEYBOARD_H
 
-#include "users/bgkendall/rgb.h"
-#include "users/bgkendall/encoder.h"
+#include "bgk_rgb.h"
+#include "bgk_encoder.h"
 
 enum LAYERS
 {

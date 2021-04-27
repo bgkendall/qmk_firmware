@@ -1,5 +1,5 @@
 //
-//  cmd-tab.h
+//  bgk_cmd-tab.h
 //  qmk-keyboard
 //
 //  Created by Barnaby on 2021-02-19.

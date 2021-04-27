@@ -1,6 +1,6 @@
 #include "mpmp.h"
 
-#include "users/bgkendall/rgb.h"
+#include "bgk_rgb.h"
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {

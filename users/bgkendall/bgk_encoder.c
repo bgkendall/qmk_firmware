@@ -1,22 +1,16 @@
 //
-//  encoder.h
+//  bgk_encoder.c
 //  qmk-keyboard
 //
-//  Created by Barnaby on 2020-10-10.
+//  Created by Barnaby on 2021-04-19.
 //  © 2020 Barnaby Kendall. All rights reserved.
 //
 
-#pragma once
-
-#ifdef ENCODERS_PAD_A
-
-#include "quantum.h"
+#include "bgk_encoder.h"
 #include "config.h"
 #include "mousekey.h"
 
-//static pin_t bgkencoders_pad_a[] = ENCODERS_PAD_A;
-//const uint16_t encodermaps[][sizeof(bgkencoders_pad_a)/sizeof(pin_t)][2];
-const uint16_t encodermaps[][1][2];
+
 bool (*bgkencoder_custom_keycode_handler)(uint16_t,bool) = NULL;
 
 
@@ -78,5 +72,3 @@ void encoder_update_user(uint8_t encoder_index, bool clockwise)
 {
     bgkencoder_update(encoder_index, clockwise);
 }
-
-# endif /* encoders_pad_a */

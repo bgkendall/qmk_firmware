@@ -2,7 +2,7 @@
 
 #include "quantum.h"
 
-#include "users/bgkendall/keycodes.h"
+#include "bgk_keycodes.h"
 
 #define LAYOUT( \
     K00, K01, K02, K03, \

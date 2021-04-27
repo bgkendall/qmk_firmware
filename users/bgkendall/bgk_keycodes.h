@@ -1,5 +1,5 @@
 //
-//  keycodes.h
+//  bgk_keycodes.h
 //  qmk-keyboard
 //
 //  Created by Barnaby on 2020-11-11.
