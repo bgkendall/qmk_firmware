@@ -1,0 +1,259 @@
+[
+  {
+    "backcolor": "#0C3A0C",
+    "name": "Gherkin",
+    "author": "u/bgkendall",
+    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 600;\n}\n\n.keylabel10 {\n    font-size: .5em !important;\n    margin-top: .025em;\n    font-weight: 200;\n}\n"
+  },
+  [
+    {
+      "t": "#ffffff",
+      "a": 6,
+      "w": 2,
+      "h": 0.5,
+      "d": true
+    },
+    "QWERTY",
+    {
+      "x": 8.25,
+      "a": 4,
+      "f": 2,
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "\nKey:"
+  ],
+  [
+    {
+      "y": -0.5,
+      "c": "#eeeeee",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
+      "fa": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "􀅂 􀆍\n`\n\"\nF1\n\n\n\n\n\nQ 􀆍",
+    "@\n􀆍􀅁\n\\\nF2\n\n\n\n\n\nW",
+    "#\n􀄤\n=\nF3\n\n\n\n\n\nE",
+    "$\n􀆍􀅂\n]\nF4\n\n\n\n\n\nR",
+    "%\n􀄿\n`\nF5\n\n\n\n\n\nT",
+    "^\n􀈻\n?\nF6\n\n\n\n\n\nY",
+    "&\n􀀻\n_\nF7\n\n\n\n\n\nU",
+    "*\n􀁶\n|\nF8\n\n\n\n\n\nI",
+    "(\n􀀽\n;\nF9\n\n\n\n\n\nO",
+    ")\n􀆗\n􀆗\nF10\nRESET\n\n\n\n\n􀆛",
+    {
+      "x": 0.25,
+      "c": "#888888",
+      "fa": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1
+      ],
+      "w": 1.25
+    },
+    "􀃌\n􀃒\n􀃎􀃐\n􀃔\n􀃖\n\n\n\n\nAlpha/Hold"
+  ],
+  [
+    {
+      "c": "#eeeeee",
+      "fa": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "1\n`\n'\n“\n\n\n\n\n\nA",
+    "2\n􀄦\n/\n”\n\n\n\n\n\nS",
+    "3\n􀄥\n.\n‘\n\n\n\n\n\nD",
+    "4\n􀄧\n[\n’\n\n\n\n\n\nF",
+    "5\n􀅀\n>\n\n\n\n\n\n\nG",
+    "6\n􀈽\n-\n—\n\n\n\n\n\nH",
+    "7\n􀁺\n,\n–\n\n\n\n\n\nJ",
+    "8\n􀁸\n:\n…\n\n\n\n\n\nK",
+    "9\n􀁼\n<\n􀆍\n\n\n\n\n\nL",
+    "0\n􀄰\n+\n􀆍\n\n\n\n\n\nP 􀆝",
+    {
+      "x": 0.25,
+      "c": "#cccccc",
+      "t": "#ffffff",
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "􀀀 = Mouse"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 10.25,
+      "fa": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "\nEncoder:"
+  ],
+  [
+    {
+      "y": -0.5,
+      "c": "#eeeeee",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
+      "fa": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "􀆝\n􀆝\n􀆝\n􀆝\n\n\n\n\n\nZ 􀆝",
+    "􀆕\n􀆔X\n􀆕\n􀆕\n\n\n\n\n\nX 􀆕",
+    "􀆔\n􀆔C\n􀆔\n􀆔\nCOLEMAK\n\n\n\n\nC 􀆔",
+    "􀓃\n􀆔V\n􀃔\n􀓃\n􀓃\n\n\n\n\nV 􀃌",
+    "!\n􀓃\n{\n􀃖\n􀓃\n\n\n\n\n􀏃 􀃒",
+    "?\n􀓃\n}\n􀃖\n􀓃\n\n\n\n\n􀅇 􀃒",
+    "􀃔\n􀀿\n􀓃\n􀓃\n􀓃\n\n\n\n\nB 􀃐",
+    ",\n􀆔\n~\n􀆔\n\n\n\n\n\nN 􀆔",
+    ".\n􀆕\n􀆍\n􀆕\nBREATHE\n\n\n\n\nM 􀆕",
+    "􀥦\n􀄿\n􀊢\n􀆡\n􀇮 TOG.\n\n\n\n\n􀆧",
+    {
+      "x": 0.25,
+      "fa": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "w": 1.25
+    },
+    "􀆭\n􀱷\n􀊦\n􀊫\n􀇮 BRT.\n\n\n\n\n􀄦􀄧"
+  ],
+  [
+    {
+      "y": 0.5,
+      "t": "#ffffff",
+      "a": 6,
+      "f": 2,
+      "w": 2,
+      "h": 0.5,
+      "d": true
+    },
+    "Colemak"
+  ],
+  [
+    {
+      "y": -0.5,
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
+      "a": 4,
+      "fa": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "􀅂 􀆍\n􀅂\n\"\nF1\nQWERTY\n\n\n\n\nQ 􀆍",
+    "@\n􀆍􀅁\n\\\nF2\n\n\n\n\n\nW",
+    "#\n􀄤\n[\nF3\n\n\n\n\n\nF",
+    "$\n􀆍􀅂\n+\nF4\n\n\n\n\n\nP",
+    "%\n􀄿\n>\nF5\n\n\n\n\n\nG",
+    "^\n􀈻\n,\nF6\n\n\n\n\n\nJ",
+    "&\n􀀻\n<\nF7\n\n\n\n\n\nL",
+    "*\n􀁶\n_\nF8\n\n\n\n\n\nU",
+    "(\n􀀽\n?\nF9\n\n\n\n\n\nY",
+    ")\n􀆗\n􀆗\nF10\nRESET\n\n\n\n\n􀆛"
+  ],
+  [
+    "1\n`\n'\n“\n\n\n\n\n\nA",
+    "2\n􀄦\n]\n”\n\n\n\n\n\nR",
+    "3\n􀄥\n/\n‘\n\n\n\n\n\nS",
+    "4\n􀄧\n`\n’\n\n\n\n\n\nT",
+    "5\n􀅀\n.\n\n\n\n\n\n\nD",
+    "6\n􀈽\n-\n—\n\n\n\n\n\nM",
+    "7\n􀁺\n~\n–\n\n\n\n\n\nN",
+    "8\n􀁸\n=\n…\n\n\n\n\n\nE",
+    "9\n􀁼\n|\n􀆍\n\n\n\n\n\nI",
+    "0\n􀄰\n;\n􀆍\n\n\n\n\n\nO 􀆝"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 10.25,
+      "c": "#cccccc",
+      "t": "#ffffff",
+      "fa": [
+        1,
+        0,
+        1,
+        1
+      ],
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "\nEncoder:"
+  ],
+  [
+    {
+      "y": -0.5,
+      "c": "#eeeeee",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
+      "fa": [
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    "􀆝\n􀆝\n􀆝\n􀆝\n\n\n\n\n\nZ 􀆝",
+    "􀆕\n􀆔X\n􀆕\n􀆕\n\n\n\n\n\nX 􀆕",
+    "􀆔\n􀆔C\n􀆔\n􀆔\n\n\n\n\n\nC 􀆔",
+    "􀓃\n􀆔V\n􀃔\n􀓃\n􀓃\n\n\n\n\nV 􀃌",
+    "!\n􀓃\n{\n􀃖\n􀓃\n\n\n\n\n􀏃 􀃒",
+    "?\n􀓃\n}\n􀃖\n􀓃\n\n\n\n\n􀅇 􀃒",
+    "􀃔\n􀀿\n􀓃\n􀓃\n􀓃\n\n\n\n\nH 􀃎",
+    ",\n􀆔\n􀆍\n􀆔\n\n\n\n\n\nB 􀆔",
+    ".\n􀆕\n:\n􀆕\nBREATHE\n\n\n\n\nK 􀆕",
+    "􀥦\n􀄿\n􀊢\n􀆡\n􀇮 TOG.\n\n\n\n\n􀆧",
+    {
+      "x": 0.25,
+      "fa": [
+        1,
+        1,
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        3
+      ],
+      "w": 1.25
+    },
+    "􀆭\n􀱷\n􀊦\n􀊫\n􀇮 BRT.\n\n\n\n\n􀄦􀄧"
+  ]
+]
