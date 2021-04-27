@@ -40,22 +40,44 @@
     "\n\n.\n\nDot\n\n\n\n\nD",
     "\n\n[\n\nF ≈ ⊏ ≈ [\n\n\n\n\nF",
     "\n\n>\n\nGtr. than\n\n\n\n\nG",
-    "\n\n&nbsp;\n\n\n\n\n\n\nH",
+    "\n\n-\n\nHyphen\n\n\n\n\nH",
     "\n\n,\n\nJ ≈ big ⸴\n\n\n\n\nJ",
     "\n\n:\n\n<i>K</i>olon\n\n\n\n\nK",
     "\n\n<\n\nLess than\n\n\n\n\nL",
     "\n\n+\n\nPlus\n\n\n\n\nP"
   ],
   [
-    "\n\n&nbsp;\n\n\n\n\n\n\nZ",
-    "\n\n&nbsp;\n\n\n\n\n\n\nX",
-    "\n\n&nbsp;\n\n\n\n\n\n\nC",
-    "\n\n&nbsp;\n\n\n\n\n\n\nV",
+    {
+      "fa": [
+        0,
+        0,
+        2
+      ]
+    },
+    "\n\n􀆝\n\n\n\n\n\n\nZ",
+    "\n\n􀆕\n\n\n\n\n\n\nX",
+    "\n\n􀆔\n\n\n\n\n\n\nC",
+    "\n\n􀗡\n\n\n\n\n\n\nV",
+    {
+      "f": 4
+    },
     "\n\n{\n\n&nbsp;Next to }&nbsp;",
+    {
+      "f": 4
+    },
     "\n\n}\n\n<b>􀅇</b> ≈ }\n\n\n\n\n􀅇",
-    "\n\n&nbsp;\n\n\n\n\n\n\nB",
+    {
+      "f": 4
+    },
+    "\n\n􀓃\n\n\n\n\n\n\nB",
+    {
+      "f": 4
+    },
     "\n\n~\n\n&nbsp;<i>e<b>Ñ</b>e</i>&nbsp;\n\n\n\n\nN",
-    "\n\n-\n\nMinus\n\n\n\n\nM",
+    "\n\n􀆍\n\nMinus\n\n\n\n\nM",
+    {
+      "f": 4
+    },
     "\n\n&nbsp;\n\n\n\n\n\n\n􀆧"
   ],
   [
@@ -90,8 +112,8 @@
   ],
   [
     "\n\n'\n\nApostrph.\n\n\n\n\nA",
-    "\n\n/\n\nSlash\n\n\n\n\nS",
     "\n\n]\n\nRt. Brk.\n\n\n\n\nR",
+    "\n\n/\n\nSlash\n\n\n\n\nS",
     "\n\n`\n\nTick\n\n\n\n\nT",
     "\n\n.\n\nDot\n\n\n\n\nD",
     "\n\n-\n\nMinus\n\n\n\n\nM",
@@ -101,15 +123,37 @@
     "\n\n;\n\no ≈ ⦁ = ½:\n\n\n\n\nO"
   ],
   [
-    "\n\n&nbsp;\n\n\n\n\n\n\nZ",
-    "\n\n&nbsp;\n\n\n\n\n\n\nX",
-    "\n\n&nbsp;\n\n\n\n\n\n\nC",
-    "\n\n&nbsp;\n\n\n\n\n\n\nV",
+    {
+      "fa": [
+        0,
+        0,
+        2
+      ]
+    },
+    "\n\n􀆝\n\n\n\n\n\n\nZ",
+    "\n\n􀆕\n\n\n\n\n\n\nX",
+    "\n\n􀆔\n\n\n\n\n\n\nC",
+    "\n\n􀗡\n\n\n\n\n\n\nV",
+    {
+      "f": 4
+    },
     "\n\n{\n\n&nbsp;Next to }&nbsp;",
+    {
+      "f": 4
+    },
     "\n\n}\n\n<b>􀅇</b> ≈ }\n\n\n\n\n􀅇",
-    "\n\n&nbsp;\n\n\n\n\n\n\nH",
-    "\n\n\\\n\nBackslash\n\n\n\n\nB",
+    {
+      "f": 4
+    },
+    "\n\n􀓃\n\n\n\n\n\n\nH",
+    "\n\n􀆍\n\nBackslash\n\n\n\n\nB",
+    {
+      "f": 4
+    },
     "\n\n:\n\n<i>K</i>olon\n\n\n\n\nK",
+    {
+      "f": 4
+    },
     "\n\n&nbsp;\n\n\n\n\n\n\n􀆧"
   ]
 ]
