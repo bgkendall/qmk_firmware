@@ -1,0 +1,6 @@
+ENCODER_ENABLE = yes
+RGBLIGHT_ENABLE = yes
+RGBLIGHT_SUPPORTED = yes
+CONSOLE_ENABLE = no
+
+SRC += bgk_gherkin.c

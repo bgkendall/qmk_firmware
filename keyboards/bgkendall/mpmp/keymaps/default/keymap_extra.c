@@ -1,5 +1,5 @@
-#include "users/bgkendall/cmd-tab.h"
-#include "users/bgkendall/encoder.h"
+#include "bgk_cmd-tab.h"
+#include "bgk_encoder.h"
 
 
 const uint16_t PROGMEM encodermaps[][1][2] =

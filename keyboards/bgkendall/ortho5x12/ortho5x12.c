@@ -1,7 +1,7 @@
 #include "ortho5x12.h"
 
-#include "users/bgkendall/cmd-tab.h"
-#include "users/bgkendall/rgb.h"
+#include "bgk_cmd-tab.h"
+#include "bgk_rgb.h"
 #include "users/bgkendall/private/texts.h"
 
 #ifdef CONSOLE_ENABLE

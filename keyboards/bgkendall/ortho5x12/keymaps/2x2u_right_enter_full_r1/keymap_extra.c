@@ -1,4 +1,4 @@
-#include "users/bgkendall/encoder.h"
+#include "bgk_encoder.h"
 
 const uint16_t PROGMEM encodermaps[][1][2] =
 {
