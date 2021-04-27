@@ -21,4 +21,4 @@ void bgkencoder_update(uint8_t encoder_index, bool clockwise);
 
 void encoder_update_user(uint8_t encoder_index, bool clockwise);
 
-# endif /* encoders_pad_a */
+#endif /* encoder_enable */

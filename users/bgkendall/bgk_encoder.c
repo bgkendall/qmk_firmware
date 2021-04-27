@@ -7,7 +7,7 @@
 //
 
 #include "bgk_encoder.h"
-#include "config.h"
+
 #include "mousekey.h"
 
 
