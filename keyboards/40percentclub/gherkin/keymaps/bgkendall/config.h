@@ -1,10 +1,11 @@
 #pragma once
 
-#include "bgk_keycodes.h"
+#include "bgk_gherkin.h"
 
 #ifdef BACKLIGHT_PIN
 #undef BACKLIGHT_LEVELS
 #define BACKLIGHT_LEVELS 8
+#define BACKLIGHT_BREATHING
 #endif
 
 #define ENCODERS_PAD_A { F6 }

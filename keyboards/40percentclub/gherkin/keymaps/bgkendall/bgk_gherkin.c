@@ -1,24 +1,13 @@
+#include "bgk_gherkin.h"
 #include "bgk_encoder.h"
 #include "bgk_rgb.h"
 
 
-enum LAYERS
-{
-    KL_COLEMAK = 0,
-    KL_QWERTY,
-    KL_NUMBER,
-    KL_SYMBOL_CM,
-    KL_SYMBOL_QW,
-    KL_NAVIGATION,
-    KL_FUNCTION,
-    KL_META,
-    RGBL_OK,
-    RGBL_CAPS
-};
+bool CURSOR_VERTICAL = false;
 
 const uint16_t PROGMEM encodermaps[][1][2] =
 {
-    [KL_COLEMAK...KL_QWERTY]      = { { KC_LEFT,    KC_RGHT   } },
+    [KL_COLEMAK...KL_QWERTY]      = { { CK_LTDN,    CK_RTUP   } },
     [KL_NUMBER]                   = { { KC_BRID,    KC_BRIU   } },
     [KL_SYMBOL_CM...KL_SYMBOL_QW] = { { KC_VOLD,    KC_VOLU   } },
     [KL_NAVIGATION]               = { { KC_WH_U,    KC_WH_D   } }, // Flipped *back* for trad. scrolling
@@ -67,6 +56,47 @@ bool led_update_user(led_t led_state)
     return true;
 }
 
+bool process_custom_keycode(uint16_t keycode, bool pressed)
+{
+    bool process = true;
+
+    if (pressed)
+    {
+        switch (keycode)
+        {
+            case CK_CRSVRT:
+                CURSOR_VERTICAL = true;
+                process = false;
+                break;
+            case CK_CRSHRZ:
+                CURSOR_VERTICAL = false;
+                process = false;
+                break;
+            case CK_CRSTOG:
+                CURSOR_VERTICAL = !CURSOR_VERTICAL;
+                process = false;
+                break;
+            case CK_LTDN:
+                tap_code16(CURSOR_VERTICAL ? KC_DOWN : KC_LEFT);
+                process = false;
+                break;
+            case CK_RTUP:
+                tap_code16(CURSOR_VERTICAL ? KC_UP : KC_RIGHT);
+                process = false;
+                break;
+            default:
+                break;
+        }
+    }
+
+    return process;
+}
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record)
+{
+    return process_custom_keycode(keycode, record->event.pressed);
+};
+
 void keyboard_post_init_user(void)
 {
     // Enable/disable debugging (requires CONSOLE_ENABLE = yes in rules.mk):
@@ -79,6 +109,9 @@ void keyboard_post_init_user(void)
 
     // Enable the LED layers:
     rgblight_layers = bgk_gherkin_rgb_layers;
+
+    // Set custom key handler for encoders
+    bgkencoder_init(&process_custom_keycode);
 
     // Flash OK layer:
     rgblight_blink_layer(RGBL_OK, 1000);

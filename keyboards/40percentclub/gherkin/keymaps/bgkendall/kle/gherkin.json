@@ -3,12 +3,13 @@
     "backcolor": "#0C3A0C",
     "name": "Gherkin",
     "author": "u/bgkendall",
-    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 600;\n}\n\n.keylabel10 {\n    font-size: .5em !important;\n    margin-top: .025em;\n    font-weight: 200;\n}\n"
+    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 600;\n}\n\n.keylabel10, .keylabel11 {\n    font-size: .5em !important;\n    margin-top: .025em;\n    font-weight: 200;\n}\n"
   },
   [
     {
       "t": "#ffffff",
       "a": 6,
+      "f": 4,
       "w": 2,
       "h": 0.5,
       "d": true
@@ -38,7 +39,7 @@
     },
     "􀅂 􀆍\n􀅂 􀆍\n\"\nF1\n\n\n\n\n\nQ 􀆍",
     "@\n􀆍􀅁\n\\\nF2\n\n\n\n\n\nW",
-    "#\n􀄤\n=\nF3\n\n\n\n\n\nE",
+    "#\n􀄤\n=\nF3\nENC. 􀑹\n\n\n\n\nE",
     "$\n􀆍􀅂\n]\nF4\n\n\n\n\n\nR",
     "%\n􀄿\n`\nF5\n\n\n\n\n\nT",
     "^\n􀈻\n?\nF6\n\n\n\n\n\nY",
@@ -76,10 +77,18 @@
       ]
     },
     "1\n`\n'\n“\n\n\n\n\n\nA",
-    "2\n􀄦\n/\n”\n\n\n\n\n\nS",
-    "3\n􀄥\n.\n‘\n\n\n\n\n\nD",
-    "4\n􀄧\n[\n’\n\n\n\n\n\nF",
-    "5\n􀅀\n>\n\n\n\n\n\n\nG",
+    "2\n􀄦\n/\n”\nENC. 􀄾\n\n\n\n\nS",
+    "3\n􀄥\n.\n‘\nENC. 􀑹\n\n\n\n\nD",
+    "4\n􀄧\n[\n’\nENC. 􀄾\n\n\n\n\nF",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n#db6500\n\n\n\n\n\n#bb0000",
+      "a": 0
+    },
+    "5\n􀅀\n>\nEnc.\n\n􀄾/􀑹\n\n\n\nG",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
+      "a": 4
+    },
     "6\n􀈽\n-\n—\n\n\n\n\n\nH",
     "7\n􀁺\n,\n–\n\n\n\n\n\nJ",
     "8\n􀁸\n:\n…\n\n\n\n\n\nK",
@@ -88,7 +97,7 @@
     {
       "x": 0.25,
       "c": "#cccccc",
-      "t": "#ffffff",
+      "t": "#ffffff\n\n\n\n#bb0000",
       "w": 1.25,
       "h": 0.5,
       "d": true
@@ -99,12 +108,7 @@
     {
       "y": -0.5,
       "x": 10.25,
-      "fa": [
-        1,
-        0,
-        1,
-        1
-      ],
+      "f": 2,
       "w": 1.25,
       "h": 0.5,
       "d": true
@@ -115,13 +119,7 @@
     {
       "y": -0.5,
       "c": "#eeeeee",
-      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
-      "fa": [
-        1,
-        1,
-        1,
-        1
-      ]
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000"
     },
     "􀆝\n􀆝\n􀆝\n􀆝\n\n\n\n\n\nZ 􀆝",
     "􀆕\n􀆔X\n􀆕\n􀆕\n\n\n\n\n\nX 􀆕",
@@ -130,8 +128,8 @@
     "!\n􀓃\n{\n􀃖\n􀓃\n\n\n\n\n􀏃 􀃒",
     "?\n􀓃\n}\n􀃖\n􀓃\n\n\n\n\n􀅇 􀃒",
     "􀃔\n􀀿\n􀓃\n􀓃\n􀓃\n\n\n\n\nB 􀃐",
-    ",\n􀆔\n~\n􀆔\n\n\n\n\n\nN 􀆔",
-    ".\n􀆕\n􀆍\n􀆕\nBREATHE\n\n\n\n\nM 􀆕",
+    ",\n􀆔\n~\n􀆔\nBREATHE\n\n\n\n\nN 􀆔",
+    ".\n􀆕\n􀆍\n􀆕\n\n\n\n\n\nM 􀆕",
     "􀥦\n􀄿\n􀊢\n􀆡\n􀇮 TOG.\n\n\n\n\n􀆧 􀆝",
     {
       "x": 0.25,
@@ -154,9 +152,9 @@
   [
     {
       "y": 0.5,
-      "t": "#ffffff",
+      "t": "#ffffff\n\n\n\n#bb0000",
       "a": 6,
-      "f": 2,
+      "f": 4,
       "w": 2,
       "h": 0.5,
       "d": true
@@ -168,6 +166,7 @@
       "y": -0.5,
       "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
       "a": 4,
+      "f": 2,
       "fa": [
         1,
         1,
@@ -177,7 +176,7 @@
     },
     "􀅂 􀆍\n􀅂 􀆍\n\"\nF1\nQWERTY\n\n\n\n\nQ 􀆍",
     "@\n􀆍􀅁\n\\\nF2\n\n\n\n\n\nW",
-    "#\n􀄤\n[\nF3\n\n\n\n\n\nF",
+    "#\n􀄤\n[\nF3\nENC. 􀑹\n\n\n\n\nF",
     "$\n􀆍􀅂\n+\nF4\n\n\n\n\n\nP",
     "%\n􀄿\n>\nF5\n\n\n\n\n\nG",
     "^\n􀈻\n,\nF6\n\n\n\n\n\nJ",
@@ -188,10 +187,18 @@
   ],
   [
     "1\n`\n'\n“\n\n\n\n\n\nA",
-    "2\n􀄦\n]\n”\n\n\n\n\n\nR",
-    "3\n􀄥\n/\n‘\n\n\n\n\n\nS",
-    "4\n􀄧\n`\n’\n\n\n\n\n\nT",
-    "5\n􀅀\n.\n\n\n\n\n\n\nD",
+    "2\n􀄦\n]\n”\nENC. 􀄾\n\n\n\n\nR",
+    "3\n􀄥\n/\n‘\nENC. 􀑹\n\n\n\n\nS",
+    "4\n􀄧\n`\n’\nENC. 􀄾\n\n\n\n\nT",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n#db6500\n\n\n\n\n\n#bb0000",
+      "a": 0
+    },
+    "5\n􀅀\n.\nEnc.\n\n􀄾/􀑹\n\n\n\nD",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
+      "a": 4
+    },
     "6\n􀈽\n-\n—\n\n\n\n\n\nM",
     "7\n􀁺\n~\n–\n\n\n\n\n\nN",
     "8\n􀁸\n=\n…\n\n\n\n\n\nE",
@@ -203,13 +210,8 @@
       "y": -0.5,
       "x": 10.25,
       "c": "#cccccc",
-      "t": "#ffffff",
-      "fa": [
-        1,
-        0,
-        1,
-        1
-      ],
+      "t": "#ffffff\n\n\n\n#bb0000",
+      "f": 2,
       "w": 1.25,
       "h": 0.5,
       "d": true
@@ -220,13 +222,7 @@
     {
       "y": -0.5,
       "c": "#eeeeee",
-      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000",
-      "fa": [
-        1,
-        1,
-        1,
-        1
-      ]
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000"
     },
     "􀆝\n􀆝\n􀆝\n􀆝\n\n\n\n\n\nZ 􀆝",
     "􀆕\n􀆔X\n􀆕\n􀆕\n\n\n\n\n\nX 􀆕",
@@ -235,8 +231,8 @@
     "!\n􀓃\n{\n􀃖\n􀓃\n\n\n\n\n􀏃 􀃒",
     "?\n􀓃\n}\n􀃖\n􀓃\n\n\n\n\n􀅇 􀃒",
     "􀃔\n􀀿\n􀓃\n􀓃\n􀓃\n\n\n\n\nH 􀃎",
-    ",\n􀆔\n􀆍\n􀆔\n\n\n\n\n\nB 􀆔",
-    ".\n􀆕\n:\n􀆕\nBREATHE\n\n\n\n\nK 􀆕",
+    ",\n􀆔\n􀆍\n􀆔\nBREATHE\n\n\n\n\nB 􀆔",
+    ".\n􀆕\n:\n􀆕\n\n\n\n\n\nK 􀆕",
     "􀥦\n􀄿\n􀊢\n􀆡\n􀇮 TOG.\n\n\n\n\n􀆧 􀆝",
     {
       "x": 0.25,
