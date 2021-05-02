@@ -84,6 +84,18 @@ bool process_custom_keycode(uint16_t keycode, bool pressed)
                 tap_code16(CURSOR_VERTICAL ? KC_UP : KC_RIGHT);
                 process = false;
                 break;
+            case KC_CUT:
+                tap_code16(keymap_config.swap_lctl_lgui ? C(KC_X) : G(KC_X));
+                process = false;
+                break;
+            case KC_COPY:
+                tap_code16(keymap_config.swap_lctl_lgui ? C(KC_C) : G(KC_C));
+                process = false;
+                break;
+            case KC_PASTE:
+                tap_code16(keymap_config.swap_lctl_lgui ? C(KC_V) : G(KC_V));
+                process = false;
+                break;
             default:
                 break;
         }
