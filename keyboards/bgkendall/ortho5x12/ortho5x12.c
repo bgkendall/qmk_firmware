@@ -82,7 +82,8 @@ void matrix_scan_user(void)
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    bgkrgb_set_from_highest_layer(state, KL_DEF4+1, KL_META);
+    // bgkrgb_set_from_highest_layer(state, KL_DEF4+1, KL_META);
+    bgkrgb_blink_highest_layer(state, KL_DEF4+1, KL_META);
 
     return state;
 }

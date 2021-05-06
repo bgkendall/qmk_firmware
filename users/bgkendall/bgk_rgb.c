@@ -50,10 +50,27 @@ const rgblight_segment_t PROGMEM bgkrgb_magenta_indicator_layer[]     = BGKRGB_I
 const rgblight_segment_t PROGMEM bgkrgb_pink_indicator_layer[]        = BGKRGB_INDICATOR(HSV_PINK);
 
 
+void bgkrgb_set_all_layers(uint16_t on_layer, uint16_t lowest_layer, uint16_t highest_layer)
+{
+    for (uint16_t layer = highest_layer; layer >= lowest_layer; layer--)
+    {
+        rgblight_set_layer_state(layer, layer == on_layer);
+    }
+}
+
 void bgkrgb_set_from_highest_layer(layer_state_t state, uint16_t lowest_layer, uint16_t highest_layer)
 {
-    for (int l = highest_layer; l >= lowest_layer; l--)
+    bgkrgb_set_all_layers(get_highest_layer(state), lowest_layer, highest_layer);
+}
+
+void bgkrgb_blink_highest_layer(layer_state_t state, uint16_t lowest_layer, uint16_t highest_layer)
+{
+    uint16_t current_highest_layer = get_highest_layer(state);
+
+    bgkrgb_set_all_layers(-1, lowest_layer, highest_layer); // All RGB layers off
+
+    if (current_highest_layer >= lowest_layer && current_highest_layer <= highest_layer)
     {
-        rgblight_set_layer_state(l, get_highest_layer(state) == l);
+        rgblight_blink_layer(current_highest_layer, BGKRGB_BLINK_TIME);
     }
 }

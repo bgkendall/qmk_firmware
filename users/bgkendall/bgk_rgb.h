@@ -58,6 +58,13 @@ extern const rgblight_segment_t PROGMEM bgkrgb_magenta_layer[];
 extern const rgblight_segment_t PROGMEM bgkrgb_pink_layer[];
 
 
+#ifndef BGKRGB_BLINK_TIME
+
+    #define BGKRGB_BLINK_TIME 2500
+
+#endif /* BGKRGB_BLINK_TIME */
+
+
 #ifndef BGKRGB_INDICATOR
 
     // If BGKRGB_INDICATOR has been defined, use it as is.
@@ -78,6 +85,7 @@ extern const rgblight_segment_t PROGMEM bgkrgb_pink_layer[];
 
 #endif /* RGBLIGHT_INDICATOR */
 #endif /* BGKRGB_INDICATOR */
+
 
 extern const rgblight_segment_t PROGMEM bgkrgb_white_indicator_layer[];
 extern const rgblight_segment_t PROGMEM bgkrgb_red_indicator_layer[];
@@ -101,6 +109,7 @@ extern const rgblight_segment_t PROGMEM bgkrgb_pink_indicator_layer[];
 
 
 void bgkrgb_set_from_highest_layer(layer_state_t state, uint16_t lowest_layer, uint16_t highest_layer);
+void bgkrgb_blink_highest_layer(layer_state_t state, uint16_t lowest_layer, uint16_t highest_layer);
 
 
 #endif /* RGB enabled */
