@@ -61,18 +61,20 @@ const rgblight_segment_t* const PROGMEM ortho_5_12_rgb_layers[RGBLIGHT_MAX_LAYER
 
 void keyboard_post_init_user(void)
 {
+#ifdef CONSOLE_ENABLE
     // Enable/disable debugging (requires CONSOLE_ENABLE = yes in rules.mk):
-    debug_enable = false;
-    debug_matrix = false;
-
-    // Turn off lighting:
-    rgblight_disable();
+    debug_enable = true;
+    debug_matrix = true;
+#endif
 
     // Enable the LED layers:
     rgblight_layers = ortho_5_12_rgb_layers;
 
+    // Turn off lighting:
+    rgblight_disable();
+
     // Flash OK layer:
-    rgblight_blink_layer(RGBL_OK, 1000);
+    rgblight_blink_layer(RGBL_OK, 1800);
 }
 
 void matrix_scan_user(void)
