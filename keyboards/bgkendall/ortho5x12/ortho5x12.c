@@ -62,7 +62,7 @@ const rgblight_segment_t* const PROGMEM ortho_5_12_rgb_layers[RGBLIGHT_MAX_LAYER
 void keyboard_post_init_user(void)
 {
 #ifdef CONSOLE_ENABLE
-    // Enable/disable debugging (requires CONSOLE_ENABLE = yes in rules.mk):
+    // Enable/disable debugging:
     debug_enable = true;
     debug_matrix = true;
 #endif
