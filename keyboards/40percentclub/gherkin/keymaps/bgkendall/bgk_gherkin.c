@@ -1,24 +1,37 @@
-#include "bgk_gherkin.h"
 #include "bgk_encoder.h"
 #include "bgk_rgb.h"
+
+#ifdef CONSOLE_ENABLE
+#include <print.h>
+#endif
 
 
 bool CURSOR_VERTICAL = false;
 
+
+enum LAYERS
+{
+    KL_COLEMAK = 0,
+    KL_QWERTY,
+    KL_NUMBER,
+    KL_SYMBOL_CM,
+    KL_SYMBOL_QW,
+    KL_NAVIGATION,
+    KL_FUNCTION,
+    KL_META,
+    RGBL_OK,
+    RGBL_CAPS
+};
+
 const uint16_t PROGMEM encodermaps[][1][2] =
 {
-    [KL_COLEMAK...KL_QWERTY]      = { { CK_LTDN,    CK_RTUP   } },
+    [KL_COLEMAK...KL_QWERTY]      = { { KC_WBAK,    KC_WFWD   } },
     [KL_NUMBER]                   = { { KC_BRID,    KC_BRIU   } },
     [KL_SYMBOL_CM...KL_SYMBOL_QW] = { { KC_VOLD,    KC_VOLU   } },
     [KL_NAVIGATION]               = { { KC_WH_U,    KC_WH_D   } }, // Flipped *back* for trad. scrolling
     [KL_FUNCTION]                 = { { G(KC_MINS), G(KC_EQL) } },
     [KL_META]                     = { { BL_DEC,     BL_INC    } }
 };
-
-const rgblight_segment_t PROGMEM gherkin_red_green_layer[] = RGBLIGHT_LAYER_SEGMENTS
-(
-    {0, 1, HSV_RED}, {1, 1, HSV_GREEN}
-);
 
 const rgblight_segment_t* const PROGMEM bgk_gherkin_rgb_layers[] = RGBLIGHT_LAYERS_LIST
 (
@@ -56,7 +69,7 @@ bool led_update_user(led_t led_state)
     return true;
 }
 
-bool process_custom_keycode(uint16_t keycode, bool pressed)
+bool bgk_gherkin_process_custom_keycode(uint16_t keycode, bool pressed)
 {
     bool process = true;
 
@@ -64,23 +77,15 @@ bool process_custom_keycode(uint16_t keycode, bool pressed)
     {
         switch (keycode)
         {
-            case CK_CRSVRT:
-                CURSOR_VERTICAL = true;
-                process = false;
-                break;
-            case CK_CRSHRZ:
-                CURSOR_VERTICAL = false;
-                process = false;
-                break;
-            case CK_CRSTOG:
+            case KC_WREF:
                 CURSOR_VERTICAL = !CURSOR_VERTICAL;
                 process = false;
                 break;
-            case CK_LTDN:
+            case KC_WBAK:
                 tap_code16(CURSOR_VERTICAL ? KC_DOWN : KC_LEFT);
                 process = false;
                 break;
-            case CK_RTUP:
+            case KC_WFWD:
                 tap_code16(CURSOR_VERTICAL ? KC_UP : KC_RIGHT);
                 process = false;
                 break;
@@ -106,14 +111,16 @@ bool process_custom_keycode(uint16_t keycode, bool pressed)
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record)
 {
-    return process_custom_keycode(keycode, record->event.pressed);
+    return bgk_gherkin_process_custom_keycode(keycode, record->event.pressed);
 };
 
 void keyboard_post_init_user(void)
 {
-    // Enable/disable debugging (requires CONSOLE_ENABLE = yes in rules.mk):
-    debug_enable = false;
-    debug_matrix = false;
+#ifdef CONSOLE_ENABLE
+    // Enable/disable debugging:
+    debug_enable = true;
+    debug_matrix = true;
+#endif
 
     // Turn off lighting:
     backlight_disable();
@@ -123,7 +130,7 @@ void keyboard_post_init_user(void)
     rgblight_layers = bgk_gherkin_rgb_layers;
 
     // Set custom key handler for encoders
-    bgkencoder_init(&process_custom_keycode);
+    bgkencoder_init(&bgk_gherkin_process_custom_keycode);
 
     // Flash OK layer:
     rgblight_blink_layer(RGBL_OK, 1000);

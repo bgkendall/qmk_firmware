@@ -1,7 +1,5 @@
 #pragma once
 
-#include "bgk_gherkin.h"
-
 #ifdef BACKLIGHT_PIN
 #undef BACKLIGHT_LEVELS
 #define BACKLIGHT_LEVELS 8
