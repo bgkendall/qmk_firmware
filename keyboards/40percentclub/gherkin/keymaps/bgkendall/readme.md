@@ -35,7 +35,8 @@
  8. **META** — Keyboard options, including reset and backlight on/off/breathe.
 
 For a full layout visualisation, load `kle/gherkin.json` into
-[Keyboard Layout Editor](http://www.keyboard-layout-editor.com/).
+[Keyboard Layout Editor](http://www.keyboard-layout-editor.com/), or `keymap.json` can be
+uploaded to [QMK Configurator](https://config.qmk.fm/).
 
 
 ## Symbol Mnemonics
@@ -44,29 +45,29 @@ All the symbols are represented by a mnemonic tied to the alpha keys. The locati
 change depending on whether the base keyboard is Colemak or QWERTY.
 
 | Symbol | Symbol Name              | Letter | Mnemonic |
-| :----: | :----------------------- | :----: | :--------------------------------------------------------------- |
-|   ~    | Tilde                    |   N    | e**Ñ**e                                                          |
-|   \`   | Back-tick                |   T    | Back-**T**ick                                                    |
+| :----: | :----------------------- | :----: | :----------------------------------------------------------------------- |
+|   ~    | Tilde                    |   N    | e**Ñ**e                                                                  |
+|   \`   | Back-tick                |   T    | Back-**T**ick                                                            |
 |   -    | Hyphen/Minus  | B or<br>H or<br>M | **B**ar (not QWERTY as B is layer key)<br>**H**yphen (not Colemak as H is layer key)<br>**M**inus |
-|   _    | Underscore               |   U    | **U**nderscore                                                   |
-|   =    | Equals                   |   E    | **E**quals                                                       |
-|   +    | Plus                     |   P    | **P**lus                                                         |
-|   \[   | Left Bracket             |   F    | Top of **F** ≈ ⊏ ≈ \[                                            |
-|   \]   | Right Bracket            |   J    | **J** looks like bottom of \]                                    |
-|   {    | Left Brace               | Space  | None — convenient location on keyboard next to }                 |
-|   }    | Right Brace              | Enter  | 􀅇 vaguely like } — convenient location on keyboard next to {    |
-|   \\   | Backslash                |   W‡   | **W** starts with a backslash (**\\**/\\/)                       |
-|   \|   | Pipe                     |   I    | **I** ≊ \|                                                       |
-|   ;    | Semicolon                |   O    | **o** ≈ ⦁ ≈ half a colon                                         |
-|   :    | Colon                    |   K    | [**K**]olon                                                      |
-|   ‘    | Apostrophe/Single Quote  |   A    | **A**phostrophe                                                  |
-|   "    | Double Quote             |   Q    | **Q**uote                                                        |
-|   ,    | Comma                    |   R    | **r** looks a bit like a rotated ,                               |
-|   <    | Less Than                |   L    | **L**ess than                                                    |
-|   .    | Dot/Full Stop/Period     |   D    | **D**ot                                                          |
-|   >    | Greater Than             |   G    | **G**reater than                                                 |
-|   /    | (Forward) Slash          |   S    | **S**lash                                                        |
-|   ?    | Question Mark            |   Y    | Why?                                                             |
+|   _    | Underscore               |   U    | **U**nderscore                                                           |
+|   =    | Equals                   |   E    | **E**quals                                                               |
+|   +    | Plus                     |   P    | **P**lus                                                                 |
+|   \[   | Left Bracket             |   F    | Top of **F** ≈ ⊏ ≈ \[                                                    |
+|   \]   | Right Bracket            |   J    | **J** looks like bottom of \]                                            |
+|   {    | Left Brace               | Space  | None — convenient location on keyboard next to }                         |
+|   }    | Right Brace              | Enter  | Return symbol vaguely like } — convenient location on keyboard next to { |
+|   \\   | Backslash                |   W‡   | **W** starts with a backslash (**\\**/\\/)                               |
+|   \|   | Pipe                     |   I    | **I** ≊ \|                                                               |
+|   ;    | Semicolon                |   O    | **o** ≈ ⦁ ≈ half a colon                                                 |
+|   :    | Colon                    |   K    | [**K**]olon                                                              |
+|   ‘    | Apostrophe/Single Quote  |   A    | **A**phostrophe                                                          |
+|   "    | Double Quote             |   Q    | **Q**uote                                                                |
+|   ,    | Comma                    |   R    | **r** looks a bit like a rotated ,                                       |
+|   <    | Less Than                |   L    | **L**ess than                                                            |
+|   .    | Dot/Full Stop/Period     |   D    | **D**ot                                                                  |
+|   >    | Greater Than             |   G    | **G**reater than                                                         |
+|   /    | (Forward) Slash          |   S    | **S**lash                                                                |
+|   ?    | Question Mark            |   Y    | Why?                                                                     |
 
 For a visualisation, load `kle/gherkin-mnemonic-symbol-layer.json` into
 [Keyboard Layout Editor](http://www.keyboard-layout-editor.com/).
