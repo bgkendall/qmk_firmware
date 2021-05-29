@@ -193,6 +193,12 @@ bool process_custom_keycode(uint16_t keycode, bool pressed)
                 }
                 process = false;
                 break;
+            case CK_THOU:
+                tap_code16(KC_P0);
+                tap_code16(KC_P0);
+                tap_code16(KC_P0);
+                process = false;
+                break;
             case KC_TAB:
                 if (get_highest_layer(layer_state) >= KL_FN &&
                     get_highest_layer(layer_state) <= KL_FN2)

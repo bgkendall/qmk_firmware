@@ -158,6 +158,7 @@ enum CUSTOM_KEYCODES
     CK_TONL,
     CK_PAREN,
     CK_COMDOT,
+    CK_THOU,
     RGB_TGVAD,
     RGB_TGVAI
 };
