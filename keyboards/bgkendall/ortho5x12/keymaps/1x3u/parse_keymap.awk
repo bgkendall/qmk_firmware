@@ -2,12 +2,11 @@ BEGIN {
 
     layer_name[0] = "KL_DEF";
     layer_name[1] = "KL_DEF1";
-    layer_name[2] = "KL_DEF2";
+    layer_name[2] = "KL_NUM";
     layer_name[3] = "KL_NP";
     layer_name[4] = "KL_FN";
     layer_name[5] = "KL_FN1";
-    layer_name[6] = "KL_FN2";
-    layer_name[7] = "KL_META";
+    layer_name[6] = "KL_META";
 
     NUMBER_OF_LAYERS = 0;
     for (l in layer_name) NUMBER_OF_LAYERS++;
@@ -17,6 +16,9 @@ BEGIN {
         layer_init[l] = layer_name[l];
         layer_omit[l] = 0;
     }
+
+    layer_init[2] = "KL_NUM...KL_NP";
+    layer_omit[3] = 1;
 }
 
 {
