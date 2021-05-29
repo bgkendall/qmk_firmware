@@ -1,7 +1,7 @@
 [
   {
     "backcolor": "#ffffff",
-    "name": "BGK Ortho 5×12 1×3U 1×2U (Qwerty)",
+    "name": "BGK Ortho 5×12 1×3U (Qwerty)",
     "author": "u/bgkendall",
     "notes": "\n",
     "radii": "0",
@@ -15,19 +15,10 @@
       "c": "#eeeeee",
       "f": 6,
       "fa": [
-        1,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        0,
-        4
+        1
       ]
     },
-    "􀏎\n\n\n\n\n\n\n\n\n􀆔􀄤",
+    "􀆍􀄤\n\n\n\n\n\n\n\n\nM4",
     {
       "f": 7,
       "fa": [
@@ -38,9 +29,9 @@
     },
     "F1\n\n!\n\nColemak\n\n\n\n\n\n1",
     "F2\n\n@\n\nQwerty\n\n\n\n\n\n2",
-    "F3\n\n#\n\nMinimak-12\n\n\n\n\n\n3",
+    "F3\n\n#\n\n\n\n\n\n\n\n3",
     "F4\n\n$\n\n\n\n\n\n\n\n4",
-    "F5\n\n%\n\n\n\n\n\n\n\n5",
+    "F5\n\n%\n\nDebug\n\n\n\n\n\n5",
     "F6\n\n^\n\n\n\n\n\n\n\n6",
     "F7\n\n&\n\n\n\n\n\n\n\n7",
     "F8\n\n*\n\n\n\n\n\n\n\n8",
@@ -110,12 +101,12 @@
     "F9\n\n\n\n􀆫\n\n\n\n\nQ",
     "F10\n\n\n\n􀆭\n\n\n\n\nW",
     "F11\n\n\n\n\n\n\n\n\nE",
-    "F12\n\n\n\nReset\n\n\n\n\nR",
+    "F12\n\n\n\n\n\n\n\n\nR",
     {
       "a": 7,
       "f": 7
     },
-    "T\n\n\n\nDebug",
+    "T",
     {
       "a": 4
     },
@@ -139,7 +130,7 @@
         2
       ]
     },
-    "=\n\n–\n<b></b>\n\n\n\n\n\n-"
+    "\n\n–\n<b></b>\n\n\n\n\n\n-"
   ],
   [
     {
@@ -158,33 +149,34 @@
     {
       "y": -0.3999999999999999,
       "x": 1.25,
-      "a": 5,
-      "f": 6
+      "f": 6,
+      "fa": [
+        1
+      ]
     },
-    "Tab\n\n\n\n􀆡\n\n􀅆",
+    "􀆡\n\n\n\n\n\n\n\nTab\n􀅆",
     {
-      "a": 4,
       "f": 7,
       "fa": [
         1
       ]
     },
-    "<i class=\"larger\">“</i>\n\n\n\n1Password\n\n\n\n\nA",
-    "<i class=\"larger\">”</i>\n\n\n\nOutlook\n\n\n\n\nS",
-    "<i class=\"larger\">‘</i>\n\n\n\nTeams\n\n\n\n\nD",
-    "<i class=\"larger\">’</i>\n\n\n\nOneNote\n\n\n\n\nF",
-    "􀍳\n\n\n\nRemote\n\n\n\n\nG",
-    "–\n\n\n\nSafari\n\n\n\n\nH",
-    "—\n\n\n\nWord\n\n\n\n\nJ",
+    "<i class=\"larger\">“</i>\n\n\n\n\n\n\n\n\nA",
+    "<i class=\"larger\">”</i>\n\n\n\n\n\n\n\n\nS",
+    "<i class=\"larger\">‘</i>\n\n\n\n\n\n\n\n\nD",
+    "<i class=\"larger\">’</i>\n\n\n\n\n\n\n\n\nF",
+    "􀍳\n\n\n\n\n\n\n\n\nG",
+    "–\n\n\n\n\n\n\n\n\nH",
+    "—\n\n\n\n\n\n\n\n\nJ",
     {
       "a": 7,
       "f": 7
     },
-    "K\n\n\n\nExcel",
+    "K",
     {
       "a": 4
     },
-    "…\n\n\n\nProject\n\n\n\n\nL",
+    "…\n\n\n\n\n\n\n\n\nL",
     {
       "fa": [
         1,
@@ -192,30 +184,41 @@
         5
       ]
     },
-    "+\n\n:\n\n\n\n\n\n\n;",
-    "<i class=\"larger\">`</i>\n\n\"\n\n􀅇\n\n\n\n\n\n'"
+    "\n\n:\n\n\n\n\n\n\n;",
+    {
+      "f": 6,
+      "fa": [
+        1,
+        0,
+        5
+      ]
+    },
+    "\n\n+\n\n􀅇\n\n\n\n\n="
   ],
   [
     {
       "x": 1.25,
-      "a": 7,
-      "f": 6
-    },
-    "􀆝\n\n\n\n􀋥Plain",
-    {
-      "a": 4,
       "f": 7,
       "fa": [
-        1
+        1,
+        0,
+        5,
+        2
       ]
     },
-    "M1\n\n\n\n􀋥Snake\n\n\n\n\nZ",
+    "M1\n\n\n􀆝\n􀋥Snake\n\n\n\n\nZ",
     "M2\n\n\n\n􀋥Xmas\n\n\n\n\nX",
     "M4\n\n\n\n􀋥Swirl\n\n\n\n\nC",
     "<i class=\"smaller\">􀂒􀂓􀂒</i>\n\n\n\n􀋥Rainbow\n\n\n\n\nV",
     "M3\n\n\n\n􀋥Breathe\n\n\n\n\nB",
+    "<i class=\"larger\">`</i>\n\n\"\n\n􀋥Plain\n\n\n\n\n\n'",
     "􀊄\n\n\n\n􀋥Knight\n\n\n\n\nN",
     "􀊣\n\n\n\n􀋥Grad.\n\n\n\n\nM",
+    {
+      "fa": [
+        1
+      ]
+    },
     "􀊥\n\n<\n\n􀋥􀄂\n\n\n\n\n,",
     "􀊧\n\n>\n\n􀋥􀄄\n\n\n\n\n.",
     {
@@ -256,7 +259,11 @@
       ]
     },
     "<i class=\"smaller\">􀆊</i>􀆕\n\n\n\n\n\n􀆉\n\n\n􀆕",
-    "<i class=\"meta\">􀍱</i>\n\n\n\n\n\n\n\n\n<i class=\"fn\">􀗢</i>",
+    {
+      "a": 7,
+      "f": 6
+    },
+    "<i class=\"fn\">􀗢</i>",
     {
       "a": 5,
       "f": 6
@@ -278,12 +285,12 @@
       "fa": [
         1,
         0,
-        1,
+        0,
         2
-      ],
-      "w": 2
+      ]
     },
-    "􀄜\n\n<i class=\"meta\">􀍱</i>\n􀆔\n\n\n\n\nReturn\n􀅇",
+    "􀄜\n\n\n􀆔\n\n\n\n\nReturn\n􀅇",
+    "<i class=\"meta\">􀍱</i>\n\n\n\n\n\n\n\n\n􀅇",
     {
       "c": "#eeeeee",
       "t": "#000000"
