@@ -52,7 +52,7 @@ const rgblight_segment_t* const PROGMEM ortho_5_12_rgb_layers[RGBLIGHT_MAX_LAYER
     [KL_NP]     = bgkrgb_blue_indicator_layer,
     [KL_FN]     = bgkrgb_orange_indicator_layer,
     [KL_FN1]    = bgkrgb_orange_indicator_layer,
-    [KL_FN2]    = bgkrgb_orange_indicator_layer,
+    [KL_FN2]    = bgkrgb_magenta_indicator_layer,
     [KL_META]   = bgkrgb_purple_indicator_layer,
     [RGBL_OK]   = ortho_5_12_ok_layer,
     [RGBL_CAPS] = ortho_5_12_caps_layer,
@@ -240,3 +240,4 @@ bool led_update_user(led_t led_state)
     rgblight_set_layer_state(RGBL_CAPS, led_state.caps_lock);
     return true;
 }
+
