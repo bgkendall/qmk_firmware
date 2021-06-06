@@ -8,6 +8,7 @@
 
 #define ENCODERS_PAD_A { F6 }
 #define ENCODERS_PAD_B { F5 }
+#define ENCODERS_KEY_LAYER { 8 }
 
 #define RGB_DI_PIN D3
 #ifdef RGB_DI_PIN

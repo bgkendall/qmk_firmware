@@ -19,9 +19,19 @@
 #include "bgk_encoder.h"
 
 
-#if defined(ENCODERS_CLOCKWISE_KEY) || defined(ENCODERS_KEY_LAYER)
+#include "debug.h"
 
-static uint8_t encoder_state[BGK_NUM_ENCODERS] = {0};
+void debug_encoder_event(uint8_t index, bool clockwise, keyevent_t event)
+{
+    dprintf("Sending encoder %d %s turn as %s event: (%d, %d) with layers ",
+            index, (clockwise ? "clockwise" : "anticlock" ),
+            (event.pressed ? "-press-" : "release"), event.key.row, event.key.col);
+    debug_bin32(layer_state);
+    dprint("\n");
+}
+
+
+#if defined(ENCODERS_CLOCKWISE_KEY) || defined(ENCODERS_KEY_LAYER)
 
 
 #ifdef ENCODERS_CLOCKWISE_KEY
@@ -33,25 +43,51 @@ keypos_t get_key_position(uint8_t index, bool clockwise)
     return encoder_keys[(clockwise ? 1 : 0)][index];
 }
 
+#define PRE_ACTION  // No-op
+#define POST_ACTION // No-op
+
 #endif // ENCODERS_CLOCKWISE_KEY
+
 
 #ifdef ENCODERS_KEY_LAYER
 
-static keypos_t encoder_layers[BGK_NUM_ENCODERS] = { ENCODERS_KEY_LAYER };
-// Allow setting of which keys are mapped for each layer **IF** this is needed (test by messing with mapping)
+static uint8_t encoder_layers[BGK_NUM_ENCODERS] = ENCODERS_KEY_LAYER;
+// TODO: Allow configuration of which keys on the encoder layer map to the actions for a key layer.
 
 keypos_t get_key_position(uint8_t index, bool clockwise)
 {
-    set_oneshot_layer(encoder_layers[index], ONESHOT_START);
+    uint8_t current_layer = get_highest_layer(layer_state);
 
     return (keypos_t)
-    {
-        (clockwise ? 0 : 1),
-        get_highest_layer(layer_state)
-    };
+        {
+            (current_layer % MATRIX_COLS),
+            ((clockwise ? 0 : 1) + ((current_layer / MATRIX_COLS) * 2))
+        };
 }
 
+#define PRE_ACTION  layer_on(encoder_layers[index]);
+#define POST_ACTION layer_off(encoder_layers[index]);
+
 #endif // ENCODERS_KEY_LAYER
+
+
+enum ENCODER_STATES
+{
+    OFF = 0,
+    ANTICLOCKWISE,
+    CLOCKWISE,
+};
+
+static uint8_t encoder_state[BGK_NUM_ENCODERS] = {OFF};
+
+
+void do_encoder_action(uint8_t index, bool clockwise, keyevent_t event)
+{
+    PRE_ACTION
+    debug_encoder_event(index, clockwise, event);
+    action_exec(event);
+    POST_ACTION
+}
 
 void encoder_action_register(uint8_t index, bool clockwise)
 {
@@ -62,26 +98,27 @@ void encoder_action_register(uint8_t index, bool clockwise)
             .pressed = true,
             .time = (timer_read() | 1)
         };
-    encoder_state[index] = (clockwise ^ 1) | (clockwise << 1);
 
-    action_exec(encoder_event);
+    do_encoder_action(index, clockwise, encoder_event);
+    encoder_state[index] = (clockwise ? CLOCKWISE : ANTICLOCKWISE);
 }
 
 void encoder_action_unregister(void)
 {
     for (int index = 0; index < BGK_NUM_ENCODERS; index++)
     {
-        if (encoder_state[index])
+        if (encoder_state[index] != OFF)
         {
             keyevent_t encoder_event =
                 (keyevent_t)
                 {
-                    .key = get_key_position(index, (encoder_state[index] >> 1)),
+                    .key = get_key_position(index, (encoder_state[index] == CLOCKWISE)),
                     .pressed = false,
                     .time = (timer_read() | 1)
                 };
-            encoder_state[index] = 0;
-            action_exec(encoder_event);
+
+            do_encoder_action(index, (encoder_state[index] == CLOCKWISE), encoder_event);
+            encoder_state[index] = OFF;
         }
     }
 }
