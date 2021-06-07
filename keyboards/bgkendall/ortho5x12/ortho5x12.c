@@ -52,7 +52,7 @@ const rgblight_segment_t* const PROGMEM ortho_5_12_rgb_layers[RGBLIGHT_MAX_LAYER
     [KL_NP]     = bgkrgb_blue_indicator_layer,
     [KL_FN]     = bgkrgb_orange_indicator_layer,
     [KL_FN1]    = bgkrgb_orange_indicator_layer,
-    [KL_FN2]    = bgkrgb_orange_indicator_layer,
+    [KL_FN2]    = bgkrgb_magenta_indicator_layer,
     [KL_META]   = bgkrgb_purple_indicator_layer,
     [RGBL_OK]   = ortho_5_12_ok_layer,
     [RGBL_CAPS] = ortho_5_12_caps_layer,
@@ -77,15 +77,19 @@ void keyboard_post_init_user(void)
     rgblight_blink_layer(RGBL_OK, 1800);
 }
 
-void matrix_scan_user(void)
+void matrix_scan_kb(void)
 {
     bgkey_unregister_command_for_tab();
+    matrix_scan_user();
 }
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    // bgkrgb_set_from_highest_layer(state, KL_DEF4+1, KL_META);
-    bgkrgb_blink_highest_layer(state, KL_DEF4+1, KL_META);
+    if (get_highest_layer(state) <= KL_META)
+    {
+        // bgkrgb_set_from_highest_layer(state, KL_DEF4+1, KL_META);
+        bgkrgb_blink_highest_layer(state, KL_DEF4+1, KL_META);
+    }
 
     return state;
 }
@@ -240,3 +244,4 @@ bool led_update_user(led_t led_state)
     rgblight_set_layer_state(RGBL_CAPS, led_state.caps_lock);
     return true;
 }
+

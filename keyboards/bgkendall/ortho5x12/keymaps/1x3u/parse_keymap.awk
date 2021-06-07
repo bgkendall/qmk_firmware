@@ -6,7 +6,8 @@ BEGIN {
     layer_name[3] = "KL_NP";
     layer_name[4] = "KL_FN";
     layer_name[5] = "KL_FN1";
-    layer_name[6] = "KL_META";
+    layer_name[6] = "KL_FN2";
+    layer_name[7] = "KL_META";
 
     NUMBER_OF_LAYERS = 0;
     for (l in layer_name) NUMBER_OF_LAYERS++;
@@ -17,8 +18,8 @@ BEGIN {
         layer_omit[l] = 0;
     }
 
-    layer_init[2] = "KL_NUM...KL_NP";
-    layer_omit[3] = 1;
+#    layer_init[2] = "KL_NUM...KL_NP";
+#    layer_omit[3] = 1;
 }
 
 {
@@ -36,8 +37,6 @@ BEGIN {
         gsub("\\(" l "\\)", "(" layer_name[l] ")");
         gsub("\\(" l ",",   "(" layer_name[l] ",");
     }
-
-    sub("LAYOUT_ortho_5x12_2x2uC", "LAYOUT_ortho_1x3u");
 
     print;
 }
