@@ -59,7 +59,7 @@ const rgblight_segment_t* const PROGMEM ortho_5_12_rgb_layers[RGBLIGHT_MAX_LAYER
     [RGBL_APPS] = ortho_5_12_apps_layer
 );
 
-void keyboard_post_init_user(void)
+void keyboard_post_init_kb(void)
 {
 #ifdef CONSOLE_ENABLE
     // Enable/disable debugging:
