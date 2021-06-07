@@ -155,6 +155,7 @@ enum CUSTOM_KEYCODES
     CK_M1 = SAFE_RANGE,
     CK_M2,
     CK_M3,
+    CK_MULT,
     CK_TONL,
     CK_PAREN,
     CK_COMDOT,
@@ -168,5 +169,3 @@ enum CUSTOM_KEYCODES
 //
 //#define SFT_DEF SHIFT_ONTO_DEFAULT_LAYER
 //#define ALT_DEF ALT_ONTO_DEFAULT_LAYER
-
-bool process_custom_keycode(uint16_t keycode, bool pressed);

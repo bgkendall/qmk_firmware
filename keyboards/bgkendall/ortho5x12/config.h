@@ -23,6 +23,10 @@
 #define MATRIX_COL_PINS { D3, B5, B6, B2, F7, B1, F4, D1, F5, D0, F6, D4 }  // TX0, 9, 10, 16, A0, 15, A3, 2, A2, 3, A1, 4
 #define UNUSED_PINS
 
+//#ifdef CONSOLE_ENABLE
+//#define DEBUG_ACTION
+//#endif
+
 /* encoder pins and settings */
 #define ENCODERS_PAD_A { D5 }                                               // TxLED
 #define ENCODERS_PAD_B { B0 }                                               // RxLED

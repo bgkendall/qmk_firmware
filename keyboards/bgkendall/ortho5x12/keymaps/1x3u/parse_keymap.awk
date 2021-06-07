@@ -16,9 +16,6 @@ BEGIN {
         layer_init[l] = layer_name[l];
         layer_omit[l] = 0;
     }
-
-    layer_init[2] = "KL_NUM...KL_NP";
-    layer_omit[3] = 1;
 }
 
 {

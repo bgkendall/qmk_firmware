@@ -109,11 +109,7 @@ bool process_custom_keycode(uint16_t keycode, bool pressed)
                 process = false;
                 break;
             case CK_M3:
-                if (shifted)
-                {
-                    SEND_STRING(TEXT_STRING_3s);
-                }
-                else if (modifiers & MOD_BIT(KC_LGUI))
+                if (modifiers & MOD_BIT(KC_LGUI))
                 {
                     unregister_code(KC_LGUI);
                     SEND_STRING(TEXT_STRING_3g);
@@ -153,6 +149,14 @@ bool process_custom_keycode(uint16_t keycode, bool pressed)
                 {
                     SEND_STRING(TEXT_STRING_3);
                 }
+                process = false;
+                break;
+            case CK_MULT:
+                tap_code16(C(KC_SPACE));  // Switch to Unicode input (hopefully)
+                register_code(KC_RALT);   // Hold down right alt
+                SEND_STRING("00d7");      // Send Unicode for multiplication sign
+                unregister_code(KC_RALT); // Release right alt
+                tap_code16(C(KC_SPACE));  // Switch away from Unicode input
                 process = false;
                 break;
             case CK_TONL:
