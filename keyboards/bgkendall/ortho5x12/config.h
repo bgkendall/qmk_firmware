@@ -11,7 +11,7 @@
 #define DESCRIPTION     B.G. Kendall Ortho 5×12
 
 /* key matrix size */
-#define MATRIX_ROWS 5
+#define MATRIX_ROWS 6
 #define MATRIX_COLS 12
 
 /* Bootmagic reset key */
@@ -19,7 +19,7 @@
 #define BOOTMAGIC_LITE_COLUMN 11
 
 /* key matrix pins                                                             Pro Micro pins */
-#define MATRIX_ROW_PINS { D2, D7, B3, C6, E6 }                              // RX1, 6, 14, 5, 7
+#define MATRIX_ROW_PINS { D2, D7, B3, C6, E6, NO_PIN }                      // RX1, 6, 14, 5, 7, dummy row for encoder
 #define MATRIX_COL_PINS { D3, B5, B6, B2, F7, B1, F4, D1, F5, D0, F6, D4 }  // TX0, 9, 10, 16, A0, 15, A3, 2, A2, 3, A1, 4
 #define UNUSED_PINS
 
@@ -30,6 +30,9 @@
 /* encoder pins and settings */
 #define ENCODERS_PAD_A { D5 }                                               // TxLED
 #define ENCODERS_PAD_B { B0 }                                               // RxLED
+
+#define ENCODERS_CLOCKWISE_KEY      { {1,5} }
+#define ENCODERS_ANTI_CLOCKWISE_KEY { {2,5} }
 
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW

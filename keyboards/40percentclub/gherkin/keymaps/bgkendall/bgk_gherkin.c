@@ -23,15 +23,7 @@ enum LAYERS
     RGBL_CAPS
 };
 
-const uint16_t PROGMEM encodermaps[][1][2] =
-{
-    [KL_COLEMAK...KL_QWERTY]      = { { KC_WBAK,    KC_WFWD   } },
-    [KL_NUMBER]                   = { { KC_BRID,    KC_BRIU   } },
-    [KL_SYMBOL_CM...KL_SYMBOL_QW] = { { KC_VOLD,    KC_VOLU   } },
-    [KL_NAVIGATION]               = { { KC_WH_U,    KC_WH_D   } }, // Flipped *back* for trad. scrolling
-    [KL_FUNCTION]                 = { { G(KC_MINS), G(KC_EQL) } },
-    [KL_META]                     = { { BL_DEC,     BL_INC    } }
-};
+#ifdef RGBLIGHT_ENABLE
 
 const rgblight_segment_t* const PROGMEM bgk_gherkin_rgb_layers[] = RGBLIGHT_LAYERS_LIST
 (
@@ -47,7 +39,10 @@ const rgblight_segment_t* const PROGMEM bgk_gherkin_rgb_layers[] = RGBLIGHT_LAYE
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    bgkrgb_set_from_highest_layer(state, KL_NUMBER, KL_FUNCTION);
+    if (get_highest_layer(state) <= KL_META)
+    {
+        bgkrgb_set_from_highest_layer(state, KL_NUMBER, KL_FUNCTION);
+    }
 
     if (get_highest_layer(state) == KL_META)
     {
@@ -69,11 +64,13 @@ bool led_update_user(led_t led_state)
     return true;
 }
 
-bool bgk_gherkin_process_custom_keycode(uint16_t keycode, bool pressed)
+#endif // RGBLIGHT_ENABLE
+
+bool process_record_user(uint16_t keycode, keyrecord_t* record)
 {
     bool process = true;
 
-    if (pressed)
+    if (record->event.pressed)
     {
         switch (keycode)
         {
@@ -109,29 +106,27 @@ bool bgk_gherkin_process_custom_keycode(uint16_t keycode, bool pressed)
     return process;
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t* record)
-{
-    return bgk_gherkin_process_custom_keycode(keycode, record->event.pressed);
-};
-
 void keyboard_post_init_user(void)
 {
 #ifdef CONSOLE_ENABLE
     // Enable/disable debugging:
     debug_enable = true;
     debug_matrix = true;
+    debug_keyboard = true;
 #endif
 
     // Turn off lighting:
     backlight_disable();
+
+#ifdef RGBLIGHT_ENABLE
+
     rgblight_disable();
 
     // Enable the LED layers:
     rgblight_layers = bgk_gherkin_rgb_layers;
 
-    // Set custom key handler for encoders
-    bgkencoder_init(&bgk_gherkin_process_custom_keycode);
-
     // Flash OK layer:
     rgblight_blink_layer(RGBL_OK, 1000);
+
+#endif // RGBLIGHT_ENABLE
 }
