@@ -123,13 +123,12 @@ void encoder_action_unregister(void)
     }
 }
 
-void matrix_scan_kb(void)
+void matrix_scan_user(void)
 {
     encoder_action_unregister();
-    matrix_scan_user();
 }
 
-void encoder_update_kb(uint8_t index, bool clockwise)
+void encoder_update_user(uint8_t index, bool clockwise)
 {
     encoder_action_register(index, clockwise);
 };
@@ -149,7 +148,7 @@ void bgkencoder_init(bool (*custom_keycode_handler)(uint16_t, bool))
     bgkencoder_custom_keycode_handler = custom_keycode_handler;
 }
 
-void bgkencoder_update(uint8_t encoder_index, bool clockwise)
+void encoder_update_user(uint8_t encoder_index, bool clockwise)
 {
     const uint16_t keycode =
         pgm_read_word(&encodermaps[get_highest_layer(layer_state)][encoder_index][(clockwise ? 1 : 0)]);
@@ -196,11 +195,6 @@ void bgkencoder_update(uint8_t encoder_index, bool clockwise)
             tap_code16(keycode);
         }
     }
-}
-
-void encoder_update_kb(uint8_t encoder_index, bool clockwise)
-{
-    bgkencoder_update(encoder_index, clockwise);
 }
 
 

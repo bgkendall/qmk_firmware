@@ -77,15 +77,19 @@ void keyboard_post_init_user(void)
     rgblight_blink_layer(RGBL_OK, 1800);
 }
 
-void matrix_scan_user(void)
+void matrix_scan_kb(void)
 {
     bgkey_unregister_command_for_tab();
+    matrix_scan_user();
 }
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    // bgkrgb_set_from_highest_layer(state, KL_DEF4+1, KL_META);
-    bgkrgb_blink_highest_layer(state, KL_DEF4+1, KL_META);
+    if (get_highest_layer(state) <= KL_META)
+    {
+        // bgkrgb_set_from_highest_layer(state, KL_DEF4+1, KL_META);
+        bgkrgb_blink_highest_layer(state, KL_DEF4+1, KL_META);
+    }
 
     return state;
 }
