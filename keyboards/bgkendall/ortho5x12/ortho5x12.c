@@ -83,7 +83,7 @@ void matrix_scan_kb(void)
     matrix_scan_user();
 }
 
-layer_state_t layer_state_set_user(layer_state_t state)
+layer_state_t layer_state_set_kb(layer_state_t state)
 {
     if (get_highest_layer(state) <= KL_META)
     {
@@ -94,13 +94,13 @@ layer_state_t layer_state_set_user(layer_state_t state)
     return state;
 }
 
-bool process_custom_keycode(uint16_t keycode, bool pressed)
+bool process_record_kb(uint16_t keycode, keyrecord_t* record)
 {
     bool process = true;
     const uint8_t modifiers = get_mods();
     const bool shifted = modifiers & MOD_MASK_SHIFT;
 
-    if (pressed)
+    if (record->event.pressed)
     {
         switch (keycode)
         {
@@ -238,12 +238,7 @@ bool process_custom_keycode(uint16_t keycode, bool pressed)
     return process;
 }
 
-bool process_record_user(uint16_t keycode, keyrecord_t* record)
-{
-    return process_custom_keycode(keycode, record->event.pressed);
-};
-
-bool led_update_user(led_t led_state)
+bool led_update_kb(led_t led_state)
 {
     rgblight_set_layer_state(RGBL_CAPS, led_state.caps_lock);
     return true;
