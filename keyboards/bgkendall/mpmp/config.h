@@ -24,6 +24,9 @@
 #define ENCODERS_PAD_A { D3 }                   // TX0
 #define ENCODERS_PAD_B { D2 }                   // RX1
 
+#define ENCODERS_CLOCKWISE_KEY      { {0,1} }
+#define ENCODERS_ANTI_CLOCKWISE_KEY { {0,2} }
+
 /* COL2ROW or ROW2COL */
 #define DIODE_DIRECTION COL2ROW
 

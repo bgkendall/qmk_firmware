@@ -5,3 +5,5 @@ endif
 ifeq ($(strip $(RGBLIGHT_ENABLE)), yes)
     SRC += bgk_rgb.c
 endif
+
+SRC += bgk_cmd-tab.c
