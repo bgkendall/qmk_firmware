@@ -165,11 +165,12 @@ enum CUSTOM_KEYCODES
     CK_M1 = SAFE_RANGE,
     CK_M2,
     CK_M3,
-    CK_MULT,
-    CK_TONL,
-    CK_PAREN,
     CK_COMDOT,
+    CK_GDEL,
+    CK_MULT,
+    CK_PAREN,
     CK_THOU,
+    CK_TONL,
     RGB_TGVAD,
     RGB_TGVAI
 };

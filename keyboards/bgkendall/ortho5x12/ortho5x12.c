@@ -94,144 +94,170 @@ layer_state_t layer_state_set_kb(layer_state_t state)
     return state;
 }
 
+static bool grave_del_was_shifted = false;
+static bool paren_was_shifted = false;
+
 bool process_record_kb(uint16_t keycode, keyrecord_t* record)
 {
     bool process = true;
     const uint8_t modifiers = get_mods();
-    const bool shifted = modifiers & MOD_MASK_SHIFT;
 
     if (record->event.pressed)
     {
         switch (keycode)
         {
-            case CK_M1:
-                SEND_STRING(TEXT_STRING_1 "\n");
-                process = false;
-                break;
-            case CK_M2:
-                SEND_STRING(TEXT_STRING_2 "\n");
-                process = false;
-                break;
-            case CK_M3:
-                if (modifiers & MOD_BIT(KC_LGUI))
-                {
-                    unregister_code(KC_LGUI);
-                    SEND_STRING(TEXT_STRING_3g);
-                    register_code(KC_LGUI);
-                }
-                else if (modifiers & MOD_BIT(KC_RGUI))
-                {
-                    unregister_code(KC_RGUI);
-                    SEND_STRING(TEXT_STRING_3g);
-                    register_code(KC_RGUI);
-                }
-                else if (modifiers & MOD_BIT(KC_LALT))
-                {
-                    unregister_code(KC_LALT);
-                    SEND_STRING(TEXT_STRING_3a);
-                    register_code(KC_LALT);
-                }
-                else if (modifiers & MOD_BIT(KC_RALT))
-                {
-                    unregister_code(KC_RALT);
-                    SEND_STRING(TEXT_STRING_3a);
-                    register_code(KC_RALT);
-                }
-                else if (modifiers & MOD_BIT(KC_LCTL))
-                {
-                    unregister_code(KC_LCTL);
-                    SEND_STRING(TEXT_STRING_3c);
-                    register_code(KC_LCTL);
-                }
-                else if (modifiers & MOD_BIT(KC_RCTL))
-                {
-                    unregister_code(KC_RCTL);
-                    SEND_STRING(TEXT_STRING_3c);
-                    register_code(KC_RCTL);
-                }
-                else
-                {
-                    SEND_STRING(TEXT_STRING_3);
-                }
-                process = false;
-                break;
-            case CK_MULT:
-                tap_code16(C(KC_SPACE));  // Switch to Unicode input (hopefully)
-                register_code(KC_RALT);   // Hold down right alt
-                SEND_STRING("00d7");      // Send Unicode for multiplication sign
-                unregister_code(KC_RALT); // Release right alt
-                tap_code16(C(KC_SPACE));  // Switch away from Unicode input
-                process = false;
-                break;
-            case CK_TONL:
+        case CK_M1:
+            SEND_STRING(TEXT_STRING_1 "\n");
+            process = false;
+            break;
+        case CK_M2:
+            SEND_STRING(TEXT_STRING_2 "\n");
+            process = false;
+            break;
+        case CK_M3:
+            if (modifiers & MOD_BIT(KC_LGUI))
             {
-                uint8_t new_layer = get_highest_layer(layer_state) + 1;
-                if (new_layer > KL_DEF4) { new_layer = KL_DEF; }
-                layer_move(new_layer);
-                process = false;
-                break;
+                unregister_code(KC_LGUI);
+                SEND_STRING(TEXT_STRING_3g);
+                register_code(KC_LGUI);
             }
-            case CK_PAREN:
-                if (shifted)
-                {
-                    tap_code16(KC_RIGHT_PAREN);
-                }
-                else
-                {
-                    tap_code16(KC_LEFT_PAREN);
-                }
-                process = false;
-                break;
-            case CK_COMDOT:
-                if (modifiers & MOD_BIT(KC_LSHIFT))
-                {
-                    unregister_code(KC_LSHIFT);
-                    tap_code16(KC_DOT);
-                    register_code(KC_LSHIFT);
-                }
-                else if (modifiers & MOD_BIT(KC_RSHIFT))
-                {
-                    unregister_code(KC_RSHIFT);
-                    tap_code16(KC_DOT);
-                    register_code(KC_RSHIFT);
-                }
-                else
-                {
-                    tap_code16(KC_COMM);
-                }
-                process = false;
-                break;
-            case CK_THOU:
-                tap_code16(KC_P0);
-                tap_code16(KC_P0);
-                tap_code16(KC_P0);
-                process = false;
-                break;
-            case KC_TAB:
-                if (get_highest_layer(layer_state) >= KL_FN &&
-                    get_highest_layer(layer_state) <= KL_FN2)
-                {
-                    bgkey_register_command_for_tab();
-                }
-                break;
-            case RGB_TGVAD:
-                rgblight_decrease_val();
-                if (rgblight_get_val() == 0)
-                {
-                    rgblight_disable();
-                }
-                process = false;
-                break;
-            case RGB_TGVAI:
-                if (!rgblight_is_enabled())
-                {
-                    rgblight_enable();
-                }
-                rgblight_increase_val();
-                process = false;
-                break;
-            default:
-                break;
+            else if (modifiers & MOD_BIT(KC_RGUI))
+            {
+                unregister_code(KC_RGUI);
+                SEND_STRING(TEXT_STRING_3g);
+                register_code(KC_RGUI);
+            }
+            else if (modifiers & MOD_BIT(KC_LALT))
+            {
+                unregister_code(KC_LALT);
+                SEND_STRING(TEXT_STRING_3a);
+                register_code(KC_LALT);
+            }
+            else if (modifiers & MOD_BIT(KC_RALT))
+            {
+                unregister_code(KC_RALT);
+                SEND_STRING(TEXT_STRING_3a);
+                register_code(KC_RALT);
+            }
+            else if (modifiers & MOD_BIT(KC_LCTL))
+            {
+                unregister_code(KC_LCTL);
+                SEND_STRING(TEXT_STRING_3c);
+                register_code(KC_LCTL);
+            }
+            else if (modifiers & MOD_BIT(KC_RCTL))
+            {
+                unregister_code(KC_RCTL);
+                SEND_STRING(TEXT_STRING_3c);
+                register_code(KC_RCTL);
+            }
+            else
+            {
+                SEND_STRING(TEXT_STRING_3);
+            }
+            process = false;
+            break;
+        case CK_COMDOT:
+            if (modifiers & MOD_BIT(KC_LSHIFT))
+            {
+                unregister_code(KC_LSHIFT);
+                tap_code16(KC_DOT);
+                register_code(KC_LSHIFT);
+            }
+            else if (modifiers & MOD_BIT(KC_RSHIFT))
+            {
+                unregister_code(KC_RSHIFT);
+                tap_code16(KC_DOT);
+                register_code(KC_RSHIFT);
+            }
+            else
+            {
+                tap_code16(KC_COMM);
+            }
+            process = false;
+            break;
+        case CK_MULT:
+            tap_code16(C(KC_SPACE));  // Switch to Unicode input (hopefully)
+            register_code(KC_RALT);   // Hold down right alt
+            SEND_STRING("00d7");      // Send Unicode for multiplication sign
+            unregister_code(KC_RALT); // Release right alt
+            tap_code16(C(KC_SPACE));  // Switch away from Unicode input
+            process = false;
+            break;
+        case CK_THOU:
+            tap_code16(KC_P0);
+            tap_code16(KC_P0);
+            tap_code16(KC_P0);
+            process = false;
+            break;
+        case CK_TONL:
+        {
+            uint8_t new_layer = get_highest_layer(layer_state) + 1;
+            if (new_layer > KL_DEF4) { new_layer = KL_DEF; }
+            layer_move(new_layer);
+            process = false;
+            break;
+        }
+        case KC_TAB:
+            if (get_highest_layer(layer_state) >= KL_FN &&
+                get_highest_layer(layer_state) <= KL_FN2)
+            {
+                bgkey_register_command_for_tab();
+            }
+            break;
+        case RGB_TGVAD:
+            rgblight_decrease_val();
+            if (rgblight_get_val() == 0)
+            {
+                rgblight_disable();
+            }
+            process = false;
+            break;
+        case RGB_TGVAI:
+            if (!rgblight_is_enabled())
+            {
+                rgblight_enable();
+            }
+            rgblight_increase_val();
+            process = false;
+            break;
+        default:
+            break;
+        }
+    }
+
+    if (process)
+    {
+        switch (keycode)
+        {
+        case CK_GDEL:
+            if (record->event.pressed)
+            {
+                grave_del_was_shifted = modifiers & MOD_MASK_SG;
+                add_key(grave_del_was_shifted ? KC_GRAVE : KC_DELETE);
+            }
+            else
+            {
+                del_key(grave_del_was_shifted ? KC_GRAVE : KC_DELETE);
+            }
+            send_keyboard_report();
+            process = false;
+            break;
+        case CK_PAREN:
+            if (record->event.pressed)
+            {
+                paren_was_shifted  = modifiers & MOD_MASK_SHIFT;
+                add_key(paren_was_shifted ? KC_RIGHT_PAREN : KC_LEFT_PAREN);
+            }
+            else
+            {
+                del_key(paren_was_shifted ? KC_RIGHT_PAREN : KC_LEFT_PAREN);
+            }
+            send_keyboard_report();
+            process = false;
+            break;
+        default:
+            break;
         }
     }
 

@@ -8,7 +8,7 @@
   "layers": [
     [
       "KC_PGUP",
-      "ANY(KC_TOGGL)",
+      "KC_ESC",
       "KC_1",
       "KC_2",
       "KC_3",
@@ -21,7 +21,7 @@
       "KC_0",
       "KC_BSPC",
       "KC_PGDN",
-      "KC_GESC",
+      "ANY(CK_GDEL)",
       "KC_Q",
       "KC_W",
       "KC_F",
@@ -74,7 +74,7 @@
     ],
     [
       "KC_PGUP",
-      "ANY(KC_TOGGL)",
+      "KC_ESC",
       "KC_1",
       "KC_2",
       "KC_3",
@@ -87,7 +87,7 @@
       "KC_0",
       "KC_BSPC",
       "KC_PGDN",
-      "KC_GESC",
+      "ANY(CK_GDEL)",
       "KC_Q",
       "KC_W",
       "KC_E",
