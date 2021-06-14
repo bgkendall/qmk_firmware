@@ -57,10 +57,10 @@
       "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333"
     },
     "@\n􀆍􀅁\n\\\nF2\nWINDOWS\n\n\n\n\nW",
-    "#\n􀄤\n=\nF3\n\n\n\n\n\nE",
     {
       "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333"
     },
+    "#\n􀄤\n=\nF3\n\n\n\n\n\nE",
     "$\n􀆍􀅂\n,\nF4\n\n\n\n\n\nR",
     "%\n􀄿\n`\nF5\n\n\n\n\n\nT",
     "^\n􀈻\n?\nF6\n\n\n\n\n\nY",
@@ -85,9 +85,6 @@
       "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333"
     },
     "1\n`\n'•􀆍\n“\n\n\n\n\n\nA",
-    {
-      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333"
-    },
     "2\n􀄦\n/\n”\n\n\n\n\n\nS",
     "3\n􀄥\n.\n‘\n\n\n\n\n\nD",
     "4\n􀄧\n[\n’\n\n\n\n\n\nF",
@@ -210,13 +207,13 @@
     },
     "􀅂•􀆍\n􀅂•􀆍\n\"\nF1\nQWERTY\n\n\n\n\nQ•􀆍",
     "@\n􀆍􀅁\n\\\nF2\nWINDOWS\n\n\n\n\nW",
-    "#\n􀄤\n.\nF3\n\n\n\n\n\nD",
     {
       "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333"
     },
+    "#\n􀄤\n.\nF3\n\n\n\n\n\nD",
     "$\n􀆍􀅂\n+\nF4\n\n\n\n\n\nP",
-    "%\n􀄿\n>\nF5\n\n\n\n\n\nG",
-    "^\n􀈻\n-\nF6\n\n\n\n\n\nM",
+    "%\n􀄿\n[\nF5\n\n\n\n\n\nF",
+    "^\n􀈻\n]\nF6\n\n\n\n\n\nJ",
     "&\n􀀻\n<\nF7\n\n\n\n\n\nL",
     "*\n􀁶\n_\nF8\n\n\n\n\n\nU",
     {
@@ -230,9 +227,6 @@
       "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333"
     },
     "1\n`\n'•􀆍\n“\n\n\n\n\n\nA",
-    {
-      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333"
-    },
     "2\n􀄦\n,\n”\n\n\n\n\n\nR",
     "3\n􀄥\n/\n‘\n\n\n\n\n\nS",
     "4\n􀄧\n`\n’\n\n\n\n\n\nT",
@@ -240,12 +234,12 @@
       "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n#db6500\n\n\n\n#333333",
       "a": 0
     },
-    "5\n􀅀\n[\nEnc.\n\n􀄾/􀑹\n\n\n\nF",
+    "5\n􀅀\n>\nEnc.\n\n􀄾/􀑹\n\n\n\nG",
     {
       "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333",
       "a": 4
     },
-    "6\n􀈽\n]\n—\n\n\n\n\n\nJ",
+    "6\n􀈽\n-\n—\n\n\n\n\n\nM",
     "7\n􀁺\n~\n–\n\n\n\n\n\nN",
     "8\n􀁸\n=\n…\n\n\n\n\n\nE",
     "9\n􀁼\n|\n􀆍\n\n\n\n\n\nI",
