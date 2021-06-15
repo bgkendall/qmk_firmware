@@ -94,11 +94,6 @@ layer_state_t layer_state_set_kb(layer_state_t state)
     return state;
 }
 
-static bool is_left_shift_pressed = false;
-static bool comma_dot_was_shifted = false;
-static bool grave_del_was_shifted = false;
-static bool paren_was_shifted = false;
-
 bool process_record_kb(uint16_t keycode, keyrecord_t* record)
 {
     bool process = true;
@@ -109,14 +104,19 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
         switch (keycode)
         {
             case CK_M1:
+            {
                 SEND_STRING(TEXT_STRING_1 "\n");
                 process = false;
                 break;
+            }
             case CK_M2:
+            {
                 SEND_STRING(TEXT_STRING_2 "\n");
                 process = false;
                 break;
+            }
             case CK_M3:
+            {
                 if (modifiers & MOD_BIT(KC_LGUI))
                 {
                     unregister_code(KC_LGUI);
@@ -159,7 +159,9 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 }
                 process = false;
                 break;
+            }
             case CK_MULT:
+            {
                 tap_code16(C(KC_SPACE));  // Switch to Unicode input (hopefully)
                 register_code(KC_RALT);   // Hold down right alt
                 SEND_STRING("00d7");      // Send Unicode for multiplication sign
@@ -167,12 +169,15 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 tap_code16(C(KC_SPACE));  // Switch away from Unicode input
                 process = false;
                 break;
+            }
             case CK_THOU:
+            {
                 tap_code16(KC_P0);
                 tap_code16(KC_P0);
                 tap_code16(KC_P0);
                 process = false;
                 break;
+            }
             case CK_TONL:
             {
                 uint8_t new_layer = get_highest_layer(layer_state) + 1;
@@ -182,13 +187,16 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 break;
             }
             case KC_TAB:
+            {
                 if (get_highest_layer(layer_state) >= KL_FN &&
                     get_highest_layer(layer_state) <= KL_FN2)
                 {
                     bgkey_register_command_for_tab();
                 }
                 break;
+            }
             case RGB_TGVAD:
+            {
                 rgblight_decrease_val();
                 if (rgblight_get_val() == 0)
                 {
@@ -196,7 +204,9 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 }
                 process = false;
                 break;
+            }
             case RGB_TGVAI:
+            {
                 if (!rgblight_is_enabled())
                 {
                     rgblight_enable();
@@ -204,6 +214,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 rgblight_increase_val();
                 process = false;
                 break;
+            }
             default:
                 break;
         }
@@ -211,12 +222,18 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
 
     if (process)
     {
+        static bool is_left_shift_pressed = false;
+
         switch (keycode)
         {
             case KC_LSFT:
+            {
                 is_left_shift_pressed = record->event.pressed;
                 break;
+            }
             case CK_COMDOT:
+            {
+                static bool comma_dot_was_shifted = false;
                 if (record->event.pressed)
                 {
                     comma_dot_was_shifted = is_left_shift_pressed;
@@ -237,7 +254,10 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 send_keyboard_report();
                 process = false;
                 break;
+            }
             case CK_GDEL:
+            {
+                static bool grave_del_was_shifted = false;
                 if (record->event.pressed)
                 {
                     if (modifiers & MOD_BIT(KC_LCTL))
@@ -262,7 +282,10 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 send_keyboard_report();
                 process = false;
                 break;
+            }
             case CK_PAREN:
+            {
+                static bool paren_was_shifted = false;
                 if (record->event.pressed)
                 {
                     paren_was_shifted  = modifiers & MOD_MASK_SHIFT;
@@ -275,6 +298,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 send_keyboard_report();
                 process = false;
                 break;
+            }
             default:
                 break;
         }
