@@ -18,7 +18,7 @@
         1
       ]
     },
-    "􀆍􀄤\n\n\n\n\n\n\n\n\nM4",
+    "􀆍􀄤\n\n\n\n\n\n\n\n\n􀆧",
     {
       "f": 7,
       "fa": [
@@ -43,7 +43,7 @@
         1
       ]
     },
-    "􀆗\n\n\n\nReset\n\n\n\nBackspace\n􀆛",
+    "=\n\n\n\nReset\n\n\n\nBackspace\n􀆛",
     {
       "t": "#222222",
       "a": 6,
@@ -91,7 +91,7 @@
         5
       ]
     },
-    "􀆙\n\n~\n\n􀆔􀆕􀆧\n\n\n\nEscape\n􀆧",
+    "􀆙\n\n~\n\n􀆔􀆕􀆧\n\n\n\nEscape\n􀆗",
     {
       "f": 7,
       "fa": [
@@ -102,15 +102,7 @@
     "F10\n\n\n\n􀆭\n\n\n\n\nW",
     "F11\n\n\n\n\n\n\n\n\nF",
     "F12\n\n\n\n\n\n\n\n\nP",
-    {
-      "a": 7,
-      "f": 7
-    },
-    "B",
-    {
-      "a": 4,
-      "f": 7
-    },
+    "M3\n\n\n\n\n\n\n\n\nB",
     "F13\n\n\n\n\n\n\n\n\nJ",
     {
       "a": 7,
@@ -122,8 +114,7 @@
     },
     "U",
     {
-      "a": 4,
-      "f": 7
+      "a": 4
     },
     "[\n\n\n\n􀋥􀓐\n\n\n\n\nY",
     {
@@ -134,7 +125,7 @@
       ]
     },
     "]\n\n:\n\n􀋥􀓎\n\n\n\n\n;",
-    "\n\n+\n\n\n\n\n\n\n="
+    "\n\n_\n\n\n\n\n\n\n\n-"
   ],
   [
     {
@@ -174,58 +165,37 @@
     "–\n\n\n\n\n\n\n\n\nN",
     "…\n\n\n\n\n\n\n\n\nE",
     "|\n\n\n\n\n\n\n\n\nI",
+    "+\n\n\n\n\n\n\n\n\nO",
     {
-      "a": 7,
-      "f": 7
-    },
-    "O",
-    {
-      "a": 4,
       "fa": [
         1,
         0,
         5
       ]
     },
-    "\n\n–\n\n􀅇\n\n\n\n\n-"
+    "<i class=\"larger\">`</i>\n\n\"\n\n\n\n\n\n\n'"
   ],
   [
     {
       "x": 1.25,
-      "f": 6,
-      "fa": [
-        1,
-        0,
-        5,
-        2
-      ]
+      "a": 7,
+      "f": 6
     },
-    "M1\n\n\n􀆝\n􀋥Snake\n\n\n\n\nZ",
+    "􀆝\n\n\n\n􀋥Plain",
     {
+      "a": 4,
       "f": 7,
       "fa": [
         1
       ]
     },
-    "M2\n\n\n\n􀋥Xmas\n\n\n\n\nX",
+    "M1\n\n\n\n􀋥Snake\n\n\n\n\nZ",
+    "×\n\n\n\n􀋥Xmas\n\n\n\n\nX",
     "M4\n\n\n\n􀋥Swirl\n\n\n\n\nC",
+    "M2\n\n\n\n􀋥Breathe\n\n\n\n\nD",
     "<i class=\"smaller\">􀂒􀂓􀂒</i>\n\n\n\n􀋥Rainbow\n\n\n\n\nV",
-    "M3\n\n\n\n􀋥Breathe\n\n\n\n\nD",
-    {
-      "fa": [
-        1,
-        0,
-        5
-      ]
-    },
-    "<i class=\"larger\">`</i>\n\n\"\n\n􀋥Plain\n\n\n\n\n\n'",
     "􀊄\n\n\n\n􀋥Knight\n\n\n\n\nK",
     "􀊣\n\n\n\n􀋥Grad.\n\n\n\n\nH",
-    {
-      "fa": [
-        1
-      ]
-    },
     "􀊥\n\n<\n\n􀋥􀄂\n\n\n\n\n,",
     "􀊧\n\n>\n\n􀋥􀄄\n\n\n\n\n.",
     {
@@ -273,7 +243,8 @@
     "<i class=\"fn\">􀗢</i>",
     {
       "a": 5,
-      "f": 6
+      "f": 6,
+      "w": 1.25
     },
     "Command\n\n\n\n\n\n􀆔",
     {
@@ -284,7 +255,7 @@
       "fa": [
         1
       ],
-      "w": 3
+      "w": 2
     },
     "􀆔􀏃\n\n\n\n􀋥􀐓",
     {
@@ -294,14 +265,20 @@
         0,
         0,
         2
-      ]
+      ],
+      "w": 1.75
     },
     "􀄜\n\n\n􀆔\n\n\n\n\nReturn\n􀅇",
-    "<i class=\"meta\">􀍱</i>\n\n\n\n\n\n\n\n\n􀅇",
     {
       "c": "#eeeeee",
-      "t": "#000000"
+      "t": "#000000",
+      "fa": [
+        1,
+        0,
+        5
+      ]
     },
+    "<i class=\"meta\">􀍱</i>\n\n{\n\n\n\n\n\n\n[",
     "􀄿\n\n\n\n􀋥􀎗\n\n\n\n\n􀄦",
     "􀈽\n\n\n\n􀋥􀎑\n\n\n\n\n􀄥",
     "􀅀\n\n\n\n􀋥􀎙\n\n\n\n\n􀄧"
