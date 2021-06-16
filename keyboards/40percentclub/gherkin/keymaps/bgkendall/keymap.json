@@ -130,8 +130,8 @@
       "KC_LCBR",
       "KC_RCBR",
       "KC_TRNS",
-      "KC_MINS",
-      "RALT_T(KC_COLN)",
+      "RALT_T(KC_MINS)",
+      "KC_COLN",
       "KC_MUTE"
     ],
     [
