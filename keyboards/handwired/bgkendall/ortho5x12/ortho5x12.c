@@ -312,4 +312,3 @@ bool led_update_kb(led_t led_state)
     rgblight_set_layer_state(RGBL_CAPS, led_state.caps_lock);
     return true;
 }
-
