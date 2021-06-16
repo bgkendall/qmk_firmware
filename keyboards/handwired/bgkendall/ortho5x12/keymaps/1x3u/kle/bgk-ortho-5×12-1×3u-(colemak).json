@@ -5,7 +5,7 @@
     "author": "u/bgkendall",
     "notes": "\n",
     "radii": "0",
-    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 500;\n}\n\n.keylabels i {\n    font-style: normal;\n}\n\n.keylabel1 {\n    color: rgba(0,0,0,0) !important;\n}\n\n.keylabels .normal {\n    color: black !important;\n}\n\n.keylabel0, .fn {\n    color: DarkOrange !important;\n}\n\n.keylabel6, .pad {\n    color: DarkBlue !important;\n}\n\n.keylabel10, .meta {\n    color: DarkMagenta !important;\n    margin-top: 1px;\n}\n\n.keylabel8, .hold {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 800;\n    color: DimGray !important;\n}\n\n.keylabel9, .keylabel10, .keylabel11 {\n    font-size: 6px !important;\n    overflow: visible;\n}\n\n.smaller {\n    font-size: 0.5em !important;\n    line-height: 100%;\n}\n\n.larger {\n    font-size: 1.5em !important;\n    line-height: 100%;\n}\n\n.keylabels p, .keylabels ol, .keylabels ul {\n    font-weight: 400;\n    line-height: 1.1;\n}\n\nol, ul {\n    padding-left: 20px;\n}\n\np + ol, p + ul {\n    margin-top: -8px;\n}\n\nli {\n    margin-bottom: 3px;\n}",
+    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 500;\n}\n\n.keylabels i {\n    font-style: normal;\n}\n\n.keylabel1 {\n    color: rgba(0,0,0,0) !important;\n}\n\n.keylabels .normal {\n    color: black !important;\n}\n\n.keylabel0, .fn {\n    color: DarkOrange !important;\n}\n\n.keylabel6, .pad {\n    color: DarkCyan !important;\n}\n\n.keylabel10, .meta {\n    color: DarkMagenta !important;\n    margin-top: 1px;\n}\n\n.keylabel8, .hold {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 800;\n    color: DimGray !important;\n}\n\n.keylabel9, .keylabel10, .keylabel11 {\n    font-size: 6px !important;\n    overflow: visible;\n}\n\n.smaller {\n    font-size: 0.5em !important;\n    line-height: 100%;\n}\n\n.larger {\n    font-size: 1.5em !important;\n    line-height: 100%;\n}\n\n.keylabels p, .keylabels ol, .keylabels ul {\n    font-weight: 400;\n    line-height: 1.1;\n}\n\nol, ul {\n    padding-left: 20px;\n}\n\np + ol, p + ul {\n    margin-top: -8px;\n}\n\nli {\n    margin-bottom: 3px;\n}",
     "plate": false,
     "pcb": false
   },
@@ -15,35 +15,37 @@
       "c": "#eeeeee",
       "f": 6,
       "fa": [
+        1,
         1
       ]
     },
-    "􀆍􀄤\n\n\n\n\n\n\n\n\n􀆧",
+    "􀆍􀄤\n􀊣\n\n\n\n\n\n\n\n􀆧",
     {
       "f": 7,
       "fa": [
         1,
-        0,
+        1,
         5
       ]
     },
     "F1\n\n!\n\nColemak\n\n\n\n\n\n1",
-    "F2\n\n@\n\nQwerty\n\n\n\n\n\n2",
-    "F3\n\n#\n\n\n\n\n\n\n\n3",
-    "F4\n\n$\n\n\n\n\n\n\n\n4",
-    "F5\n\n%\n\nDebug\n\n\n\n\n\n5",
+    "F2\n􀆚\n@\n\nQwerty\n\n\n\n\n\n2",
+    "F3\n􀃤\n#\n\n\n\n\n\n\n\n3",
+    "F4\n􀃢\n$\n\n\n\n\n\n\n\n4",
+    "F5\n􀃠\n%\n\nDebug\n\n\n\n\n\n5",
     "F6\n\n^\n\n\n\n\n\n\n\n6",
     "F7\n\n&\n\n\n\n\n\n\n\n7",
     "F8\n\n*\n\n\n\n\n\n\n\n8",
     "{\n\n(\n\n􀇭\n\n\n\n\n\n9",
-    "}\n\n)\n\n􀇮\n\n\n\n\n\n0",
+    "}\n􀆗\n)\n\n􀇮\n\n\n\n\n\n0",
     {
       "f": 6,
       "fa": [
+        1,
         1
       ]
     },
-    "=\n\n\n\nReset\n\n\n\nBackspace\n􀆛",
+    "=\n􀆛\n\n\nReset\n\n\n\nBackspace\n􀆛",
     {
       "t": "#222222",
       "a": 6,
@@ -52,7 +54,7 @@
       "h": 5,
       "d": true
     },
-    "<p>There are three layers:<ul><li>􀅯 — Default alphanumeric keys<li>􀗢 — Function (Fn) layer (top left <i class=\"fn\">orange</i> legends)<li>􀍱 — Meta layer (bottom <i class=\"meta\">purple</i> legends)</ul><p>Notes:<ul><li>Encoder replaces first key on one of the top three rows.<li>Bottom right legends indicate modifier when held.<li>Encoder press on default layer cycles clockwise/anticlockwise operation (lights will flash colour):<ul><li>Page up/down (white)<li>Zoom in/out (yellow)<li>Brush size increase/decrease (green)<li>Mouse up/down (cyan)<li>Mouse right/left (magenta)</ul><li>Meta layer is accessed by pressing Escape while on Fn layer.<li>Meta layer can be toggled on with two taps of Escape.<li>Right Alt (Option) on Fn layer is Right Alt+<em>Default layer</em> key (e.g., RAlt+F3 is ‘£’).<li>Application shortcuts on Meta layer are actually function keys that trigger <a href=\"https://apps.apple.com/us/app/hotkey-app/id975890633\">HotKey App</a> actions."
+    "<p>There are five layers:<ul><li>􀅯 — Default alphanumeric keys<li>􀃫 — Number Pad (Num) layer (bottom left <i class=\"pad\">cyan</i> legends)<li>􀗢 — Function (Fn) layer (top left <i class=\"fn\">orange</i> legends)<li>Quick Navigaton layer (not shown):<ul><li>F//S/T become arrow keys<li>Arrow keys become mouse controllers<li>. and / mouse buttons</ul><li>􀍱 — Meta layer (bottom <i class=\"meta\">purple</i> legends)</ul><p>Notes:<ul><li>Encoder replaces first key on one of the top three rows.<li>Bottom right legends indicate modifier when held.<li>Meta layer is accessed by pressing [ while on Fn layer."
   ],
   [
     {
@@ -66,19 +68,20 @@
   ],
   [
     {
-      "y": -0.6000000000000001,
+      "y": -0.6,
       "x": 0.1,
       "c": "#eeeeee",
       "t": "#000000",
       "a": 4,
       "f": 4,
       "fa": [
+        1,
         1
       ],
       "w": 0.9,
       "h": 0.9
     },
-    "􀆭\n\n\n\n􀇮\n\n\n\n\n􀈻"
+    "􀆭\n􀊧\n\n\n􀇮\n\n\n\n\n􀈻"
   ],
   [
     {
@@ -87,29 +90,27 @@
       "f": 6,
       "fa": [
         1,
-        0,
+        1,
         5
       ]
     },
-    "􀆙\n\n~\n\n􀆔􀆕􀆧\n\n\n\nEscape\n􀆗",
+    "􀆙\n􀆧\n~\n\n􀆔􀆕􀆧\n\n\n\nEscape\n􀆗",
     {
       "f": 7,
       "fa": [
+        1,
         1
       ]
     },
-    "F9\n\n\n\n􀆫\n\n\n\n\nQ",
-    "F10\n\n\n\n􀆭\n\n\n\n\nW",
-    "F11\n\n\n\n\n\n\n\n\nF",
-    "F12\n\n\n\n\n\n\n\n\nP",
-    "M3\n\n\n\n\n\n\n\n\nB",
+    "F9\n􀆔'\n\n\n􀆫\n\n\n\n\nQ",
+    "F10\n􀃖\n\n\n􀆭\n\n\n\n\nW",
+    "F11\n􀃘\n\n\n\n\n\n\n\nF",
+    "F12\n􀃚\n\n\n\n\n\n\n\nP",
+    "M3\n􀃞\n\n\n\n\n\n\n\nB",
     "F13\n\n\n\n\n\n\n\n\nJ",
+    "\n􀃫􀢶\n\n\n\n\n\n\n\nL",
     {
       "a": 7,
-      "f": 7
-    },
-    "L",
-    {
       "f": 7
     },
     "U",
@@ -120,7 +121,7 @@
     {
       "fa": [
         1,
-        0,
+        1,
         5
       ]
     },
@@ -133,12 +134,13 @@
       "x": 0.1,
       "f": 4,
       "fa": [
+        1,
         1
       ],
       "w": 0.9,
       "h": 0.9
     },
-    "􀆫\n\n\n\n􀇭\n\n\n\n\n􀈽"
+    "􀆫\n􀊥\n\n\n􀇭\n\n\n\n\n􀈽"
   ],
   [
     {
@@ -146,21 +148,23 @@
       "x": 1.25,
       "f": 6,
       "fa": [
+        1,
         1
       ]
     },
-    "􀆡\n\n\n\n\n\n\n\nTab\n􀅆",
+    "􀆡\n􀅅\n\n\n\n\n\n\nTab\n􀅆",
     {
       "f": 7,
       "fa": [
+        1,
         1
       ]
     },
-    "<i class=\"larger\">“</i>\n\n\n\n\n\n\n\n\nA",
-    "<i class=\"larger\">”</i>\n\n\n\n\n\n\n\n\nS",
-    "<i class=\"larger\">‘</i>\n\n\n\n\n\n\n\n\nR",
-    "<i class=\"larger\">’</i>\n\n\n\n\n\n\n\n\nT",
-    "􀍳\n\n\n\n\n\n\n\n\nG",
+    "<i class=\"larger\">“</i>\n􀅆\n\n\n\n\n\n\n\nA",
+    "<i class=\"larger\">”</i>\n􀃐\n\n\n\n\n\n\n\nR",
+    "<i class=\"larger\">‘</i>\n􀃒\n\n\n\n\n\n\n\nS",
+    "<i class=\"larger\">’</i>\n􀃔\n\n\n\n\n\n\n\nT",
+    "􀍳\n􀃜\n\n\n\n\n\n\n\nG",
     "—\n\n\n\n\n\n\n\n\nM",
     "–\n\n\n\n\n\n\n\n\nN",
     "…\n\n\n\n\n\n\n\n\nE",
@@ -169,7 +173,7 @@
     {
       "fa": [
         1,
-        0,
+        1,
         5
       ]
     },
@@ -186,14 +190,15 @@
       "a": 4,
       "f": 7,
       "fa": [
+        1,
         1
       ]
     },
-    "M1\n\n\n\n􀋥Snake\n\n\n\n\nZ",
-    "×\n\n\n\n􀋥Xmas\n\n\n\n\nX",
-    "M4\n\n\n\n􀋥Swirl\n\n\n\n\nC",
-    "M2\n\n\n\n􀋥Breathe\n\n\n\n\nD",
-    "<i class=\"smaller\">􀂒􀂓􀂒</i>\n\n\n\n􀋥Rainbow\n\n\n\n\nV",
+    "M1\nZ\n\n\n􀋥Snake\n\n\n\n\nZ",
+    "×\n􀃊\n\n\n􀋥Xmas\n\n\n\n\nX",
+    "M4\n􀃌\n\n\n􀋥Swirl\n\n\n\n\nC",
+    "M2\n􀃎\n\n\n􀋥Breathe\n\n\n\n\nD",
+    "<i class=\"smaller\">􀂒􀂓􀂒</i>\n􀃜\n\n\n􀋥Rainbow\n\n\n\n\nV",
     "􀊄\n\n\n\n􀋥Knight\n\n\n\n\nK",
     "􀊣\n\n\n\n􀋥Grad.\n\n\n\n\nH",
     "􀊥\n\n<\n\n􀋥􀄂\n\n\n\n\n,",
@@ -237,48 +242,49 @@
     },
     "<i class=\"smaller\">􀆊</i>􀆕\n\n\n\n\n\n􀆉\n\n\n􀆕",
     {
-      "a": 7,
-      "f": 6
+      "fa": [
+        1,
+        1
+      ]
     },
-    "<i class=\"fn\">􀗢</i>",
+    "\n􀔩\n\n\n\n\n\n\n\n<i class=\"fn\">􀗢</i>",
     {
-      "a": 5,
-      "f": 6,
       "w": 1.25
     },
-    "Command\n\n\n\n\n\n􀆔",
+    "\n􀪵\n\n\n\n\n\n\nCommand\n􀆔",
     {
       "c": "#999999",
       "t": "#eeeeee",
-      "a": 4,
       "f": 3,
       "fa": [
+        1,
         1
       ],
       "w": 2
     },
-    "􀆔􀏃\n\n\n\n􀋥􀐓",
+    "􀆔􀏃\n􀃈\n\n\n􀋥􀐓",
     {
       "f": 6,
       "fa": [
         1,
-        0,
+        1,
         0,
         2
       ],
       "w": 1.75
     },
-    "􀄜\n\n\n􀆔\n\n\n\n\nReturn\n􀅇",
+    "􀄜\n􀄜\n\n􀆔\n\n\n\n\nReturn\n􀅇",
     {
       "c": "#eeeeee",
       "t": "#000000",
       "fa": [
         1,
-        0,
-        5
+        1,
+        5,
+        2
       ]
     },
-    "<i class=\"meta\">􀍱</i>\n\n{\n\n\n\n\n\n\n[",
+    "<i class=\"meta\">􀍱</i>\n\n{\n<i class=\"pad\">􀃫</i>\n\n\n\n\n\n[",
     "􀄿\n\n\n\n􀋥􀎗\n\n\n\n\n􀄦",
     "􀈽\n\n\n\n􀋥􀎑\n\n\n\n\n􀄥",
     "􀅀\n\n\n\n􀋥􀎙\n\n\n\n\n􀄧"
