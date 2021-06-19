@@ -18,8 +18,10 @@
 
 #include "bgk_encoder.h"
 
+#include "bgk_keycodes.h"
 
 #include "debug.h"
+
 
 void debug_encoder_event(uint8_t index, bool clockwise, keyevent_t event)
 {
@@ -126,6 +128,7 @@ void encoder_action_unregister(void)
 void matrix_scan_user(void)
 {
     encoder_action_unregister();
+    bgkey_unregister_command_for_tab();
 }
 
 void encoder_update_user(uint8_t index, bool clockwise)

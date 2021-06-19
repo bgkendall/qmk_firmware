@@ -9,30 +9,61 @@
 #pragma once
 
 
-#define KC_LEFT_SINGLE_CURLY_QUOTE  RALT(KC_RBRACKET)
-#define KC_RIGHT_SINGLE_CURLY_QUOTE RALT(KC_RIGHT_CURLY_BRACE)
-#define KC_LEFT_DOUBLE_CURLY_QUOTE  RALT(KC_LBRACKET)
-#define KC_RIGHT_DOUBLE_CURLY_QUOTE RALT(KC_LEFT_CURLY_BRACE)
+#include "quantum.h"
 
-#define KC_LSCQ KC_LEFT_SINGLE_CURLY_QUOTE
-#define KC_RSCQ KC_RIGHT_SINGLE_CURLY_QUOTE
-#define KC_LDCQ KC_LEFT_DOUBLE_CURLY_QUOTE
-#define KC_RDCQ KC_RIGHT_DOUBLE_CURLY_QUOTE
 
-#define KC_LSBS LSFT_T(KC_BSLASH)
-#define KC_RSSL RSFT_T(KC_SLASH)
+// Typographical quotes
+//
+#define BK_LSQUO    RALT(KC_RBRACKET)           // ‘
+#define BK_RSQUO    RALT(KC_RIGHT_CURLY_BRACE)  // ’
+#define BK_LDQUO    RALT(KC_LBRACKET)           // “
+#define BK_RDQUO    RALT(KC_LEFT_CURLY_BRACE)   // ”
 
-#define KC_EN_DASH      RALT(KC_MINUS)
-#define KC_EM_DASH      RALT(KC_UNDERSCORE)
-#define KC_NOT_EQUAL    RALT(KC_EQUAL)
-#define KC_PLUS_MINUS   RALT(KC_PLUS)
-#define KC_ELLIPSIS     RALT(KC_SCOLON)
+// Common symbols
+//
+#define BK_NDASH    RALT(KC_MINUS)      // En-dash –
+#define BK_MDASH    RALT(KC_UNDERSCORE) // Em-dash —
+#define BK_NE       RALT(KC_EQUAL)      // Not equal ≠
+#define BK_PLUSMN   RALT(KC_PLUS)       // Plus or minus ±
+#define BK_HELLIP   RALT(KC_SCOLON)     // Ellipsis …
 
-#define KC_NDSH KC_EN_DASH
-#define KC_MDSH KC_EM_DASH
-#define KC_NOEQ KC_NOT_EQUAL
-#define KC_PLMI KC_PLUS_MINUS
-#define KC_ELIP KC_ELLIPSIS
+// Shift/slashes
+//
+#define BK_LSBS     LSFT_T(KC_BSLASH)
+#define BK_RSSL     RSFT_T(KC_SLASH)
 
-#define KC_1PASS LGUI(LCTL(KC_QUOT))
-#define KC_TOGGL LCAG(KC_F10)
+// Application shortcuts
+//
+#define BK_1PASS            LGUI(LCTL(KC_QUOT))
+#define BK_TOGGL            LCAG(KC_F10)
+
+// Custom keys requiring special processing
+//
+enum BGK_CUSTOM_KEYCODES
+{
+    BK_000 = SAFE_RANGE,
+    BK_M1,
+    BK_M2,
+    BK_M3,
+    BK_CMDTAB_BACKWARD,
+    BK_CMDTAB_FORWARD,
+    BK_COMMA_DOT,
+    BK_GRAVE_DELETE,
+    BK_TIMES,
+    BK_PAREN,
+    KB_SAFE_RANGE
+};
+
+#define BK_COMDOT BK_COMMA_DOT
+#define BK_GDEL   BK_GRAVE_DELETE
+
+
+// Command-Tab simulation
+//
+void bgkey_register_command_for_tab(void);
+
+void bgkey_register_forward_command_tab(void);
+
+void bgkey_register_backward_command_tab(void);
+
+void bgkey_unregister_command_for_tab(void);
