@@ -53,7 +53,7 @@ keypos_t get_key_position(uint8_t index, bool clockwise)
 
 #ifdef ENCODERS_KEY_LAYER
 
-static uint8_t encoder_layers[BGK_NUM_ENCODERS] = ENCODERS_KEY_LAYER;
+static uint8_t encoder_layer = ENCODERS_KEY_LAYER;
 // TODO: Allow configuration of which keys on the encoder layer map to the actions for a key layer.
 
 keypos_t get_key_position(uint8_t index, bool clockwise)
@@ -67,8 +67,8 @@ keypos_t get_key_position(uint8_t index, bool clockwise)
         };
 }
 
-#define PRE_ACTION  layer_on(encoder_layers[index]);
-#define POST_ACTION layer_off(encoder_layers[index]);
+#define PRE_ACTION  layer_on(encoder_layer);
+#define POST_ACTION layer_off(encoder_layer);
 
 #endif // ENCODERS_KEY_LAYER
 
