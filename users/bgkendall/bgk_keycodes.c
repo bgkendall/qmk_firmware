@@ -63,10 +63,10 @@ __attribute__ ((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t*
 
 bool process_record_user(uint16_t keycode, keyrecord_t* record)
 {
-    bool process = true;
+    bool process = process_record_keymap(keycode, record);
     const uint8_t modifiers = get_mods();
 
-    if (process_record_keymap(keycode, record))
+    if (process)
     {
         if (record->event.pressed)
         {
