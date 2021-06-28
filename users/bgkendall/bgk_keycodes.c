@@ -64,22 +64,15 @@ __attribute__ ((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t*
 bool process_record_user(uint16_t keycode, keyrecord_t* record)
 {
     bool process = process_record_keymap(keycode, record);
-    const uint8_t modifiers = get_mods();
 
     if (process)
     {
+        const uint8_t modifiers = get_mods();
+
         if (record->event.pressed)
         {
             switch (keycode)
             {
-                case BK_000:
-                {
-                    tap_code16(KC_P0);
-                    tap_code16(KC_P0);
-                    tap_code16(KC_P0);
-                    process = false;
-                    break;
-                }
                 case BK_M1:
                 {
                     SEND_STRING(TEXT_STRING_1 "\n");
@@ -94,46 +87,25 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                 }
                 case BK_M3:
                 {
-                    if (modifiers & MOD_BIT(KC_LGUI))
+                    clear_mods();
+                    clear_oneshot_mods();
+                    if (modifiers & MOD_MASK_GUI)
                     {
-                        unregister_code(KC_LGUI);
                         SEND_STRING(TEXT_STRING_3g);
-                        register_code(KC_LGUI);
                     }
-                    else if (modifiers & MOD_BIT(KC_RGUI))
+                    else if (modifiers & MOD_MASK_ALT)
                     {
-                        unregister_code(KC_RGUI);
-                        SEND_STRING(TEXT_STRING_3g);
-                        register_code(KC_RGUI);
-                    }
-                    else if (modifiers & MOD_BIT(KC_LALT))
-                    {
-                        unregister_code(KC_LALT);
                         SEND_STRING(TEXT_STRING_3a);
-                        register_code(KC_LALT);
                     }
-                    else if (modifiers & MOD_BIT(KC_RALT))
+                    else if (modifiers & MOD_MASK_CTRL)
                     {
-                        unregister_code(KC_RALT);
-                        SEND_STRING(TEXT_STRING_3a);
-                        register_code(KC_RALT);
-                    }
-                    else if (modifiers & MOD_BIT(KC_LCTL))
-                    {
-                        unregister_code(KC_LCTL);
                         SEND_STRING(TEXT_STRING_3c);
-                        register_code(KC_LCTL);
-                    }
-                    else if (modifiers & MOD_BIT(KC_RCTL))
-                    {
-                        unregister_code(KC_RCTL);
-                        SEND_STRING(TEXT_STRING_3c);
-                        register_code(KC_RCTL);
                     }
                     else
                     {
                         SEND_STRING(TEXT_STRING_3);
                     }
+                    set_mods(modifiers);
                     process = false;
                     break;
                 }
@@ -149,8 +121,30 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                     process = false;
                     break;
                 }
+                case BK_MAKE:
+                {
+                    // Sends terminal command to make current keymap for this keyboard
+                    // Based on https://docs.qmk.fm/#/feature_userspace?id=consolidated-macros
+                    //
+                    clear_mods();
+                    clear_oneshot_mods();
+                    SEND_STRING("make " QMK_KEYBOARD ":" QMK_KEYMAP);
+                    if (modifiers & MOD_MASK_CTRL)
+                    {
+                        SEND_STRING(":flash");
+                    }
+                    tap_code(KC_ENT);
+                    set_mods(modifiers);
+                    process = false;
+                    break;
+                }
                 case BK_TIMES:
                 {
+                    // Somewhat brittle multiplication sign (×) key
+                    // Relies on only two Input Sources being enabled — the one in use and Unicode Hex Input
+                    // May sometimes not switch to the Unicode source before sending the Unicode string, or
+                    // may not switch back to the usual Input Source
+                    //
                     tap_code16(C(KC_SPACE));  // Switch to Unicode input (hopefully)
                     register_code(KC_RALT);   // Hold down right alt
                     SEND_STRING("00d7");      // Send Unicode for multiplication sign
@@ -172,11 +166,32 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
             {
                 case KC_LSFT:
                 {
+                    // Record Left Shift state for other keys
+                    //
                     is_left_shift_pressed = record->event.pressed;
+                    break;
+                }
+                case BK_000:
+                {
+                    // Thousands (000) key
+                    //
+                    if (record->event.pressed)
+                    {
+                        tap_code(KC_P0);
+                        tap_code(KC_P0);
+                        register_code(KC_P0);
+                    }
+                    else
+                    {
+                        unregister_code(KC_P0);
+                    }
+                    process = false;
                     break;
                 }
                 case BK_COMDOT:
                 {
+                    // Sends Comma normally, Dot when Left Shift is held
+                    //
                     static bool comma_dot_was_shifted = false;
                     if (record->event.pressed)
                     {
@@ -185,11 +200,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                         {
                             unregister_code(KC_LSHIFT);
                         }
-                        add_key(comma_dot_was_shifted ? KC_DOT : KC_COMM);
+                        register_code(comma_dot_was_shifted ? KC_DOT : KC_COMM);
                     }
                     else
                     {
-                        del_key(comma_dot_was_shifted ? KC_DOT : KC_COMM);
+                        unregister_code(comma_dot_was_shifted ? KC_DOT : KC_COMM);
                         if (is_left_shift_pressed)
                         {
                             register_code(KC_LSHIFT);
@@ -201,6 +216,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                 }
                 case BK_GDEL:
                 {
+                    // Like Grave-Escape, but for Delete
+                    //
                     static bool grave_del_was_shifted = false;
                     if (record->event.pressed)
                     {
@@ -229,6 +246,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                 }
                 case BK_PAREN:
                 {
+                    // Sends ( normally, ) when Left Shift is held
+                    //
                     static bool paren_was_shifted = false;
                     if (record->event.pressed)
                     {
