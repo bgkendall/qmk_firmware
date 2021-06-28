@@ -72,8 +72,149 @@ layer_state_t layer_state_set_kb(layer_state_t state)
     return state;
 }
 
-bool led_update_kb(led_t led_state)
+
+void td_copy_cut_press(qk_tap_dance_state_t* state, void* user_data)
 {
-    rgblight_set_layer_state(RGBL_CAPS, led_state.caps_lock);
-    return true;
+    if ((get_mods() & MOD_MASK_CG) && state->count == 2)
+    {
+        register_code(KC_X);
+    }
+    else
+    {
+        register_code(KC_C);
+    }
 }
+
+void td_copy_cut_reset(qk_tap_dance_state_t* state, void* user_data)
+{
+    unregister_code(KC_C);
+
+    if (state->count == 2)
+    {
+        unregister_code(KC_X);
+    }
+}
+
+
+typedef enum
+{
+    TD_NONE = 0,
+    TD_UNKNOWN,
+    TD_SINGLE_TAP,
+    TD_SINGLE_HOLD,
+    TD_DOUBLE_TAP,
+    TD_DOUBLE_HOLD,
+    TD_DOUBLE_SINGLE_TAP
+} td_state_t;
+
+td_state_t td_get_current_state(qk_tap_dance_state_t* td_state)
+{
+    td_state_t current_state = TD_UNKNOWN;
+
+    if (td_state->count == 1)
+    {
+        if (td_state->interrupted || !td_state->pressed)
+        {
+            current_state = TD_SINGLE_TAP;
+        }
+        else
+        {
+            current_state = TD_SINGLE_HOLD;
+        }
+    }
+    else if (td_state->count == 2)
+    {
+        if (td_state->interrupted)
+        {
+            current_state = TD_DOUBLE_SINGLE_TAP;
+        }
+        else if (td_state->pressed)
+        {
+            current_state = TD_DOUBLE_HOLD;
+        }
+        else
+        {
+            current_state = TD_DOUBLE_TAP;
+        }
+    }
+
+    return current_state;
+}
+
+static td_state_t td_lrb_state[KL_META];
+
+void td_bracket_layer_finished(qk_tap_dance_state_t* td_state, void* user_data)
+{
+    uint8_t layer = (uint16_t)user_data;
+    td_lrb_state[layer] = td_get_current_state(td_state);
+
+    switch (td_lrb_state[layer])
+    {
+        case TD_SINGLE_TAP:
+        {
+            register_code(KC_LBRC);
+            break;
+        }
+        case TD_SINGLE_HOLD:
+        case TD_DOUBLE_HOLD:
+        {
+            layer_on(layer);
+            break;
+        }
+        case TD_DOUBLE_TAP:
+        {
+            register_code(KC_RBRC);
+            break;
+        }
+        case TD_DOUBLE_SINGLE_TAP:
+        {
+            tap_code(KC_LBRC);
+            register_code(KC_LBRC);
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+void td_bracket_layer_reset(qk_tap_dance_state_t* td_state, void* user_data)
+{
+    uint8_t layer = (uint16_t)user_data;
+
+    switch (td_lrb_state[layer])
+    {
+        case TD_SINGLE_TAP:
+        {
+            unregister_code(KC_LBRC);
+            break;
+        }
+        case TD_SINGLE_HOLD:
+        {
+            layer_off(layer);
+            break;
+        }
+        case TD_DOUBLE_TAP:
+        {
+            unregister_code(KC_RBRC);
+            break;
+        }
+        case TD_DOUBLE_SINGLE_TAP:
+        {
+            unregister_code(KC_LBRC);
+            break;
+        }
+        default:
+            break;
+    }
+
+    td_lrb_state[layer] = TD_NONE;
+}
+
+qk_tap_dance_action_t tap_dance_actions[] =
+{
+    [TD_CPCT] = ACTION_TAP_DANCE_FN_ADVANCED(td_copy_cut_press, NULL, td_copy_cut_reset),
+    [TD_LRBR] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
+    [TD_LRB2] = { .fn = { NULL, td_bracket_layer_finished, td_bracket_layer_reset}, .user_data = (void*)KL_NUM, },
+    [TD_LRB3] = { .fn = { NULL, td_bracket_layer_finished, td_bracket_layer_reset}, .user_data = (void*)KL_NP,  },
+    [TD_QESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC)
+};

@@ -158,3 +158,12 @@ enum LAYERS
     RGBL_OK,
     RGBL_CAPS
 };
+
+enum TAP_DANCE_KEYCODES
+{
+    TD_CPCT = 0,
+    TD_LRBR,
+    TD_LRB2,
+    TD_LRB3,
+    TD_QESC
+};

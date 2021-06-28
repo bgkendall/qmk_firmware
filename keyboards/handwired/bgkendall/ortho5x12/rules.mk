@@ -61,5 +61,6 @@ RGBLIGHT_ENABLE = yes       # Enable keyboard RGB underglow
 BLUETOOTH_ENABLE = no       # Enable Bluetooth
 AUDIO_ENABLE = no           # Audio output
 MIDI_ENABLE = no            # MIDI support
+TAP_DANCE_ENABLE = yes      # Tap Dance support
 
 USER_NAME := bgkendall
