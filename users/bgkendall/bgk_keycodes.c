@@ -221,24 +221,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                     static bool grave_del_was_shifted = false;
                     if (record->event.pressed)
                     {
-                        if (modifiers & MOD_BIT(KC_LCTL))
-                        {
-                            unregister_code(KC_LCTL);
-                            tap_code16(KC_ESCAPE);
-                            register_code(KC_LCTL);
-                        }
-                        else
-                        {
-                            grave_del_was_shifted = modifiers & MOD_MASK_SG;
-                            add_key(grave_del_was_shifted ? KC_GRAVE : KC_DELETE);
-                        }
+                        grave_del_was_shifted = modifiers & MOD_MASK_SG;
+                        add_key(grave_del_was_shifted ? KC_GRAVE : KC_DELETE);
                     }
                     else
                     {
-                        if (!(modifiers & MOD_BIT(KC_LCTL)))
-                        {
-                            del_key(grave_del_was_shifted ? KC_GRAVE : KC_DELETE);
-                        }
+                        del_key(grave_del_was_shifted ? KC_GRAVE : KC_DELETE);
                     }
                     send_keyboard_report();
                     process = false;
@@ -246,7 +234,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                 }
                 case BK_PAREN:
                 {
-                    // Sends ( normally, ) when Left Shift is held
+                    // Sends '(' normally, ')' when Left Shift is held
                     //
                     static bool paren_was_shifted = false;
                     if (record->event.pressed)
