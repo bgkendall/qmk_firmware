@@ -1,10 +1,14 @@
 #include "ortho5x12.h"
 
-#include "bgk_rgb.h"
 
 #ifdef CONSOLE_ENABLE
 #include <print.h>
 #endif
+
+
+#ifdef RGBLIGHT_ENABLE
+
+#include "bgk_rgb.h"
 
 const rgblight_segment_t PROGMEM ortho_5_12_ok_layer[] = RGBLIGHT_LAYER_SEGMENTS
 (
@@ -43,24 +47,6 @@ const rgblight_segment_t* const PROGMEM ortho_5_12_rgb_layers[RGBLIGHT_MAX_LAYER
     [RGBL_CAPS] = ortho_5_12_caps_layer
 );
 
-void keyboard_post_init_kb(void)
-{
-#ifdef CONSOLE_ENABLE
-    // Enable/disable debugging:
-    debug_enable = true;
-    debug_matrix = true;
-#endif
-
-    // Enable the LED layers:
-    rgblight_layers = ortho_5_12_rgb_layers;
-
-    // Turn off lighting:
-    rgblight_disable();
-
-    // Flash OK layer:
-    rgblight_blink_layer(RGBL_OK, 1800);
-}
-
 layer_state_t layer_state_set_kb(layer_state_t state)
 {
     if (get_highest_layer(state) <= KL_META)
@@ -72,6 +58,17 @@ layer_state_t layer_state_set_kb(layer_state_t state)
     return state;
 }
 
+bool led_update_kb(led_t led_state)
+ {
+     rgblight_set_layer_state(RGBL_CAPS, led_state.caps_lock);
+     return true;
+ }
+
+#endif // RGBLIGHT_ENABLE
+
+
+
+#ifdef TAP_DANCE_ENABLE
 
 void td_copy_cut_press(qk_tap_dance_state_t* state, void* user_data)
 {
@@ -218,3 +215,27 @@ qk_tap_dance_action_t tap_dance_actions[] =
     [TD_LRB3] = { .fn = { NULL, td_bracket_layer_finished, td_bracket_layer_reset}, .user_data = (void*)KL_NP,  },
     [TD_QESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC)
 };
+
+#endif // TAP_DANCE_ENABLE
+
+
+
+void keyboard_post_init_kb(void)
+{
+#ifdef CONSOLE_ENABLE
+    // Enable/disable debugging:
+    debug_enable = true;
+    debug_matrix = true;
+#endif
+
+#ifdef RGBLIGHT_ENABLE
+    // Enable the LED layers:
+    rgblight_layers = ortho_5_12_rgb_layers;
+
+    // Turn off lighting:
+    rgblight_disable();
+
+    // Flash OK layer:
+    rgblight_blink_layer(RGBL_OK, 1800);
+#endif
+}
