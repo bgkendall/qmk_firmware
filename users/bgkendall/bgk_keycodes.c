@@ -127,11 +127,32 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                     process = bgkey_mod_munge(record->event.pressed, KC_COMM, KC_DOT, MOD_BIT(KC_LSFT), true);
                     break;
                 }
-                case BK_GDEL:
+                case BK_BSDEL:
+                {
+                    // Sends Backspace normally, Delete when Shift is held
+                    //
+                    process = bgkey_mod_munge(record->event.pressed, KC_BSPACE, KC_DEL, MOD_MASK_SHIFT, true);
+                    break;
+                }
+                case BK_GRVDEL:
                 {
                     // Like Grave-Escape, but for Delete
                     //
                     process = bgkey_mod_munge(record->event.pressed, KC_DELETE, KC_GRAVE, MOD_MASK_SG, false);
+                    break;
+                }
+                case BK_GRVEQ:
+                {
+                    // Sends Equals normally, Grave when Left GUI is held
+                    //
+                    process = bgkey_mod_munge(record->event.pressed, KC_DELETE, KC_GRAVE, MOD_BIT(KC_LGUI), false);
+                    break;
+                }
+                case BK_GRVQUO:
+                {
+                    // Sends Apostrophe normally, Grave when Left GUI is held
+                    //
+                    process = bgkey_mod_munge(record->event.pressed, KC_QUOT, KC_GRAVE, MOD_BIT(KC_LGUI), false);
                     break;
                 }
                 case BK_PAREN:
