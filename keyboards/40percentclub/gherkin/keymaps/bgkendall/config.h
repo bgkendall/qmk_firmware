@@ -1,5 +1,7 @@
 #pragma once
 
+#define IGNORE_MOD_TAP_INTERRUPT
+
 #ifdef BACKLIGHT_PIN
 #undef BACKLIGHT_LEVELS
 #define BACKLIGHT_LEVELS 8
@@ -9,6 +11,7 @@
 #define ENCODERS_PAD_A { F6 }
 #define ENCODERS_PAD_B { F5 }
 #define ENCODERS_KEY_LAYER { 8 }
+#define ENCODER_RESOLUTION 3
 
 #define RGB_DI_PIN D3
 #ifdef RGB_DI_PIN
