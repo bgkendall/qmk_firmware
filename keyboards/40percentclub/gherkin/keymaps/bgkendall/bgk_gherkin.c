@@ -1,12 +1,10 @@
 #include "bgk_encoder.h"
+#include "bgk_keycommands.h"
 #include "bgk_rgb.h"
 
 #ifdef CONSOLE_ENABLE
 #include <print.h>
 #endif
-
-
-bool CURSOR_VERTICAL = false;
 
 
 enum LAYERS
@@ -39,19 +37,15 @@ const rgblight_segment_t* const PROGMEM bgk_gherkin_rgb_layers[] = RGBLIGHT_LAYE
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    if (get_highest_layer(state) <= KL_META)
+    if (get_highest_layer(state) < KL_META)
     {
+        rgblight_disable_noeeprom();
         bgkrgb_set_from_highest_layer(state, KL_NUMBER, KL_FUNCTION);
-    }
-
-    if (get_highest_layer(state) == KL_META)
-    {
-        rgblight_enable_noeeprom();
-        rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_MOOD+2);
     }
     else
     {
-        rgblight_disable();
+        rgblight_enable_noeeprom();
+        rgblight_mode_noeeprom(RGBLIGHT_MODE_RAINBOW_MOOD+2);
     }
 
     return state;
@@ -70,20 +64,51 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record)
 {
     bool process = true;
 
-    if (record->event.pressed)
+    switch (keycode)
     {
+        case KC_Q:
+        {
+            // Sends Q normally, Tab when Left Command or Left Alt is held
+            //
+            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_TAB, (MOD_BIT(KC_LALT) | MOD_BIT(KC_LGUI)), false);
+            break;
+        }
+        case KC_A:
+        {
+            // Sends A normally, Grave when Left Command is held
+            //
+            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_GRV, MOD_BIT(KC_LGUI), false);
+            break;
+        }
+        case KC_BSPC:
+        {
+            // Sends Backspace normally, Delete when Shift is held
+            //
+            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_DEL, MOD_MASK_SHIFT, true);
+            break;
+        }
+    }
+
+    if (process && record->event.pressed)
+    {
+        static bool cursor_vertical = false;
+
         switch (keycode)
         {
             case KC_WREF:
-                CURSOR_VERTICAL = !CURSOR_VERTICAL;
+                cursor_vertical = !cursor_vertical;
                 process = false;
                 break;
             case KC_WBAK:
-                tap_code16(CURSOR_VERTICAL ? KC_DOWN : KC_LEFT);
+                tap_code16(cursor_vertical ? KC_DOWN : KC_LEFT);
                 process = false;
                 break;
             case KC_WFWD:
-                tap_code16(CURSOR_VERTICAL ? KC_UP : KC_RIGHT);
+                tap_code16(cursor_vertical ? KC_UP : KC_RIGHT);
+                process = false;
+                break;
+            case KC_UNDO:
+                tap_code16(keymap_config.swap_lctl_lgui ? C(KC_Z) : G(KC_Z));
                 process = false;
                 break;
             case KC_CUT:
@@ -98,6 +123,11 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record)
                 tap_code16(keymap_config.swap_lctl_lgui ? C(KC_V) : G(KC_V));
                 process = false;
                 break;
+            case KC_EXEC:
+            {
+                process = bgkey_make();
+                break;
+            }
             default:
                 break;
         }
