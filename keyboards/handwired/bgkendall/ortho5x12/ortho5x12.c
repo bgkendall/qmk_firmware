@@ -38,10 +38,11 @@ const rgblight_segment_t* const PROGMEM ortho_5_12_rgb_layers[RGBLIGHT_MAX_LAYER
     [KL_DEF3]   = bgkrgb_cyan_indicator_layer,
     [KL_DEF4]   = bgkrgb_magenta_indicator_layer,
     [KL_NUM]    = bgkrgb_springgreen_indicator_layer,
-    [KL_NP]     = bgkrgb_blue_indicator_layer,
+    [KL_NP]     = bgkrgb_springgreen_indicator_layer,
     [KL_FN]     = bgkrgb_orange_indicator_layer,
     [KL_FN1]    = bgkrgb_orange_indicator_layer,
     [KL_FN2]    = bgkrgb_magenta_indicator_layer,
+    [KL_NAV]    = bgkrgb_magenta_indicator_layer,
     [KL_META]   = bgkrgb_purple_indicator_layer,
     [RGBL_OK]   = ortho_5_12_ok_layer,
     [RGBL_CAPS] = ortho_5_12_caps_layer

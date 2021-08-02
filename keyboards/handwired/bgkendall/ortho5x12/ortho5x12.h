@@ -154,6 +154,7 @@ enum LAYERS
     KL_FN,
     KL_FN1,
     KL_FN2,
+    KL_NAV,
     KL_META,
     RGBL_OK,
     RGBL_CAPS
