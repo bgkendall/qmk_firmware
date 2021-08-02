@@ -57,14 +57,3 @@ enum BGK_CUSTOM_KEYCODES
 
 #define BK_COMDOT BK_COMMA_DOT
 #define BK_GDEL   BK_GRAVE_DELETE
-
-
-// Command-Tab simulation
-//
-void bgkey_register_command_for_tab(void);
-
-void bgkey_register_forward_command_tab(void);
-
-void bgkey_register_backward_command_tab(void);
-
-void bgkey_unregister_command_for_tab(void);

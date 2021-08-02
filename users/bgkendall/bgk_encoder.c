@@ -18,7 +18,7 @@
 
 #include "bgk_encoder.h"
 
-#include "bgk_keycodes.h"
+#include "bgk_keycommands.h"
 
 #include "debug.h"
 

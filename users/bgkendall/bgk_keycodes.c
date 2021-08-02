@@ -7,53 +7,8 @@
 //
 
 #include "bgk_keycodes.h"
-
-#include "quantum.h"
+#include "bgk_keycommands.h"
 #include "users/bgkendall/private/texts.h"
-
-
-// Global variables and functions for Cmd+Tab via encoder or other non-standard mechanism.
-// Adapted from https://docs.splitkb.com/hc/en-us/articles/360010513760
-//
-const int16_t bgkey_command_tab_hold_time = 800; // ms
-bool bgkey_is_command_tab_active = false;
-uint16_t bgkey_command_tab_timer = 0;
-
-void bgkey_register_command_for_tab(void)
-{
-    if (!bgkey_is_command_tab_active)
-    {
-        // Register Command for Cmd+Tab handling:
-        bgkey_is_command_tab_active = true;
-        register_code(KC_LCMD);
-    }
-    bgkey_command_tab_timer = timer_read();
-}
-
-void bgkey_register_forward_command_tab(void)
-{
-    bgkey_register_command_for_tab();
-    tap_code16(KC_TAB);
-}
-
-void bgkey_register_backward_command_tab(void)
-{
-    bgkey_register_command_for_tab();
-    tap_code16(S(KC_TAB));
-}
-
-void bgkey_unregister_command_for_tab(void)
-{
-    if (bgkey_is_command_tab_active)
-    {
-        // Unregister Command after Cmd+Tab times out:
-        if (timer_elapsed(bgkey_command_tab_timer) > bgkey_command_tab_hold_time)
-        {
-            bgkey_is_command_tab_active = false;
-            unregister_code(KC_LCMD);
-        }
-    }
-}
 
 
 __attribute__ ((weak)) bool process_record_keymap(uint16_t keycode, keyrecord_t* record)
@@ -111,31 +66,17 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                 }
                 case BK_CMDTAB_FORWARD:
                 {
-                    bgkey_register_forward_command_tab();
-                    process = false;
+                    process = bgkey_register_forward_command_tab();
                     break;
                 }
                 case BK_CMDTAB_BACKWARD:
                 {
-                    bgkey_register_backward_command_tab();
-                    process = false;
+                    process = bgkey_register_backward_command_tab();
                     break;
                 }
                 case BK_MAKE:
                 {
-                    // Sends terminal command to make current keymap for this keyboard
-                    // Based on https://docs.qmk.fm/#/feature_userspace?id=consolidated-macros
-                    //
-                    clear_mods();
-                    clear_oneshot_mods();
-                    SEND_STRING("make " QMK_KEYBOARD ":" QMK_KEYMAP);
-                    if (modifiers & MOD_MASK_CTRL)
-                    {
-                        SEND_STRING(":flash");
-                    }
-                    tap_code(KC_ENT);
-                    set_mods(modifiers);
-                    process = false;
+                    process = bgkey_make();
                     break;
                 }
                 case BK_TIMES:
@@ -160,17 +101,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
 
         if (process)
         {
-            static bool is_left_shift_pressed = false;
-
             switch (keycode)
             {
-                case KC_LSFT:
-                {
-                    // Record Left Shift state for other keys
-                    //
-                    is_left_shift_pressed = record->event.pressed;
-                    break;
-                }
                 case BK_000:
                 {
                     // Thousands (000) key
@@ -192,62 +124,21 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                 {
                     // Sends Comma normally, Dot when Left Shift is held
                     //
-                    static bool comma_dot_was_shifted = false;
-                    if (record->event.pressed)
-                    {
-                        comma_dot_was_shifted = is_left_shift_pressed;
-                        if (is_left_shift_pressed)
-                        {
-                            unregister_code(KC_LSHIFT);
-                        }
-                        register_code(comma_dot_was_shifted ? KC_DOT : KC_COMM);
-                    }
-                    else
-                    {
-                        unregister_code(comma_dot_was_shifted ? KC_DOT : KC_COMM);
-                        if (is_left_shift_pressed)
-                        {
-                            register_code(KC_LSHIFT);
-                        }
-                    }
-                    send_keyboard_report();
-                    process = false;
+                    process = bgkey_mod_munge(record->event.pressed, KC_COMM, KC_DOT, MOD_BIT(KC_LSFT), true);
                     break;
                 }
                 case BK_GDEL:
                 {
                     // Like Grave-Escape, but for Delete
                     //
-                    static bool grave_del_was_shifted = false;
-                    if (record->event.pressed)
-                    {
-                        grave_del_was_shifted = modifiers & MOD_MASK_SG;
-                        add_key(grave_del_was_shifted ? KC_GRAVE : KC_DELETE);
-                    }
-                    else
-                    {
-                        del_key(grave_del_was_shifted ? KC_GRAVE : KC_DELETE);
-                    }
-                    send_keyboard_report();
-                    process = false;
+                    process = bgkey_mod_munge(record->event.pressed, KC_DELETE, KC_GRAVE, MOD_MASK_SG, false);
                     break;
                 }
                 case BK_PAREN:
                 {
-                    // Sends '(' normally, ')' when Left Shift is held
+                    // Sends '(' normally, ')' when Shift is held
                     //
-                    static bool paren_was_shifted = false;
-                    if (record->event.pressed)
-                    {
-                        paren_was_shifted  = modifiers & MOD_MASK_SHIFT;
-                        add_key(paren_was_shifted ? KC_RIGHT_PAREN : KC_LEFT_PAREN);
-                    }
-                    else
-                    {
-                        del_key(paren_was_shifted ? KC_RIGHT_PAREN : KC_LEFT_PAREN);
-                    }
-                    send_keyboard_report();
-                    process = false;
+                    process = bgkey_mod_munge(record->event.pressed, KC_LEFT_PAREN, KC_0, MOD_MASK_SHIFT, false);
                     break;
                 }
                 default:
