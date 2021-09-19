@@ -46,8 +46,15 @@
 /* prevent stuck modifiers */
 #define PREVENT_STUCK_MODIFIERS
 
+/* Don't hold tap-hold modifiers in roll-over scenarios */
+//#define IGNORE_MOD_TAP_INTERRUPT
+#define PERMISSIVE_HOLD_PER_KEY
+
 /* Number of taps before a tap-toggle layer locks */
 #define TAPPING_TOGGLE 2
+
+/* declare low power usage for iOS */
+#define USB_MAX_POWER_CONSUMPTION 100
 
 #define RGB_DI_PIN B4                                                       // 8
 #ifdef RGB_DI_PIN

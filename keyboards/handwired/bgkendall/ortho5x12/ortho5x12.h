@@ -156,6 +156,8 @@ enum LAYERS
     KL_FN2,
     KL_NAV,
     KL_META,
+//    KL_EXT1,
+//    KL_EXT2,
     RGBL_OK,
     RGBL_CAPS
 };
@@ -166,5 +168,6 @@ enum TAP_DANCE_KEYCODES
     TD_LRBR,
     TD_LRB2,
     TD_LRB3,
+    TD_GESC,
     TD_QESC
 };

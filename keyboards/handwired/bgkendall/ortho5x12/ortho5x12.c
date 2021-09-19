@@ -214,6 +214,7 @@ qk_tap_dance_action_t tap_dance_actions[] =
     [TD_LRBR] = ACTION_TAP_DANCE_DOUBLE(KC_LBRC, KC_RBRC),
     [TD_LRB2] = { .fn = { NULL, td_bracket_layer_finished, td_bracket_layer_reset}, .user_data = (void*)KL_NUM, },
     [TD_LRB3] = { .fn = { NULL, td_bracket_layer_finished, td_bracket_layer_reset}, .user_data = (void*)KL_NP,  },
+    [TD_GESC] = ACTION_TAP_DANCE_DOUBLE(KC_GRV, KC_ESC),
     [TD_QESC] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_ESC)
 };
 
