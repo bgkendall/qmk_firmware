@@ -64,8 +64,10 @@ bool led_update_user(led_t led_state)
 const key_override_t override_backspace_delete = ko_make_basic(MOD_MASK_SHIFT,   KC_BSPC, KC_DEL);
 const key_override_t override_q_command_grave  = ko_make_basic(MOD_BIT(KC_LGUI), KC_Q,    G(KC_GRV));
 const key_override_t override_q_alt_shift_tab  = ko_make_basic(MOD_BIT(KC_LALT), KC_Q,    A(S(KC_TAB)));
+const key_override_t override_q_ctrl_shift_tab = ko_make_basic(MOD_BIT(KC_LCTL), KC_Q,    C(S(KC_TAB)));
 const key_override_t override_w_command_tab    = ko_make_basic(MOD_BIT(KC_LGUI), KC_W,    G(KC_TAB));
-const key_override_t override_w_alt_shift_tab  = ko_make_basic(MOD_BIT(KC_LALT), KC_W,    A(KC_TAB));
+const key_override_t override_w_alt_tab        = ko_make_basic(MOD_BIT(KC_LALT), KC_W,    A(KC_TAB));
+const key_override_t override_w_control_tab    = ko_make_basic(MOD_BIT(KC_LCTL), KC_W,    C(KC_TAB));
 const key_override_t override_comma_semicolon  = ko_make_basic(MOD_MASK_SHIFT,   KC_COMM, KC_SCLN);
 const key_override_t override_dot_colon        = ko_make_basic(MOD_MASK_SHIFT,   KC_DOT,  KC_COLN);
 
@@ -76,8 +78,10 @@ const key_override_t** key_overrides = (const key_override_t *[])
     &override_backspace_delete,
     &override_q_command_grave,
     &override_q_alt_shift_tab,
+    &override_q_ctrl_shift_tab,
     &override_w_command_tab,
-    &override_w_alt_shift_tab,
+    &override_w_alt_tab,
+    &override_w_control_tab,
     &override_comma_semicolon,
     &override_dot_colon,
     NULL // Terminate the array of overrides
