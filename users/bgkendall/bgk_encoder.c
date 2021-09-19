@@ -131,9 +131,10 @@ void matrix_scan_user(void)
     bgkey_unregister_command_for_tab();
 }
 
-void encoder_update_user(uint8_t index, bool clockwise)
+bool encoder_update_user(uint8_t index, bool clockwise)
 {
     encoder_action_register(index, clockwise);
+    return false;
 };
 
 
@@ -151,7 +152,7 @@ void bgkencoder_init(bool (*custom_keycode_handler)(uint16_t, bool))
     bgkencoder_custom_keycode_handler = custom_keycode_handler;
 }
 
-void encoder_update_user(uint8_t encoder_index, bool clockwise)
+bool encoder_update_user(uint8_t encoder_index, bool clockwise)
 {
     const uint16_t keycode =
         pgm_read_word(&encodermaps[get_highest_layer(layer_state)][encoder_index][(clockwise ? 1 : 0)]);
@@ -198,6 +199,8 @@ void encoder_update_user(uint8_t encoder_index, bool clockwise)
             tap_code16(keycode);
         }
     }
+
+    return false;
 }
 
 
