@@ -60,34 +60,72 @@ bool led_update_user(led_t led_state)
 
 #endif // RGBLIGHT_ENABLE
 
+
+const key_override_t override_backspace_delete = ko_make_basic(MOD_MASK_SHIFT,   KC_BSPC, KC_DEL);
+const key_override_t override_q_command_grave  = ko_make_basic(MOD_BIT(KC_LGUI), KC_Q,    G(KC_GRV));
+const key_override_t override_q_alt_shift_tab  = ko_make_basic(MOD_BIT(KC_LALT), KC_Q,    A(S(KC_TAB)));
+const key_override_t override_w_command_tab    = ko_make_basic(MOD_BIT(KC_LGUI), KC_W,    G(KC_TAB));
+const key_override_t override_w_alt_shift_tab  = ko_make_basic(MOD_BIT(KC_LALT), KC_W,    A(KC_TAB));
+const key_override_t override_comma_semicolon  = ko_make_basic(MOD_MASK_SHIFT,   KC_COMM, KC_SCLN);
+const key_override_t override_dot_colon        = ko_make_basic(MOD_MASK_SHIFT,   KC_DOT,  KC_COLN);
+
+
+// This globally defines all key overrides to be used
+const key_override_t** key_overrides = (const key_override_t *[])
+{
+    &override_backspace_delete,
+    &override_q_command_grave,
+    &override_q_alt_shift_tab,
+    &override_w_command_tab,
+    &override_w_alt_shift_tab,
+    &override_comma_semicolon,
+    &override_dot_colon,
+    NULL // Terminate the array of overrides
+};
+
+
 bool process_record_keymap(uint16_t keycode, keyrecord_t* record)
 {
     bool process = true;
 
-    switch (keycode)
-    {
-        case KC_Q:
-        {
-            // Sends Q normally, Tab when Left Command or Left Alt is held
-            //
-            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_TAB, (MOD_BIT(KC_LALT) | MOD_BIT(KC_LGUI)), false);
-            break;
-        }
-        case KC_A:
-        {
-            // Sends A normally, Grave when Left Command is held
-            //
-            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_GRV, MOD_BIT(KC_LGUI), false);
-            break;
-        }
-        case KC_BSPC:
-        {
-            // Sends Backspace normally, Delete when Shift is held
-            //
-            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_DEL, MOD_MASK_SHIFT, true);
-            break;
-        }
-    }
+//    switch (keycode)
+//    {
+//        case KC_Q:
+//        {
+//            // Sends Q normally, Tab when Left Command or Left Alt is held
+//            //
+//            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_TAB, (MOD_BIT(KC_LALT) | MOD_BIT(KC_LGUI)), false);
+//            break;
+//        }
+//        case KC_A:
+//        {
+//            // Sends A normally, Grave when Left Command is held
+//            //
+//            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_GRV, MOD_BIT(KC_LGUI), false);
+//            break;
+//        }
+//        case KC_COMM:
+//        {
+//            // Sends Comma normally, Semicolon when Left Shift is held
+//            //
+//            process = bgkey_mod_munge(record->event.pressed, KC_COMM, KC_SCLN, MOD_MASK_SHIFT, true);
+//            break;
+//        }
+//        case KC_DOT:
+//        {
+//            // Sends Dot normally, Colon when Left Shift is held
+//            //
+//            process = bgkey_mod_munge(record->event.pressed, KC_DOT, KC_SCLN, MOD_MASK_SHIFT, false);
+//            break;
+//        }
+//        case KC_BSPC:
+//        {
+//            // Sends Backspace normally, Delete when Shift is held
+//            //
+//            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_DEL, MOD_MASK_SHIFT, true);
+//            break;
+//        }
+//    }
 
     if (process && record->event.pressed)
     {
@@ -96,35 +134,43 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record)
         switch (keycode)
         {
             case KC_WREF:
+                // Flip encoder cursor orientation:
                 cursor_vertical = !cursor_vertical;
                 process = false;
                 break;
             case KC_WBAK:
+                // Encoder cursor left (down if flipped):
                 tap_code16(cursor_vertical ? KC_DOWN : KC_LEFT);
                 process = false;
                 break;
             case KC_WFWD:
+                // Encoder cursor right (up if flipped):
                 tap_code16(cursor_vertical ? KC_UP : KC_RIGHT);
                 process = false;
                 break;
             case KC_UNDO:
+                // Command+ or Control+Z depending on state of GUI and Control:
                 tap_code16(keymap_config.swap_lctl_lgui ? C(KC_Z) : G(KC_Z));
                 process = false;
                 break;
             case KC_CUT:
+                // Command+ or Control+X depending on state of GUI and Control:
                 tap_code16(keymap_config.swap_lctl_lgui ? C(KC_X) : G(KC_X));
                 process = false;
                 break;
             case KC_COPY:
+                // Command+ or Control+C depending on state of GUI and Control:
                 tap_code16(keymap_config.swap_lctl_lgui ? C(KC_C) : G(KC_C));
                 process = false;
                 break;
             case KC_PASTE:
+                // Command+ or Control+V depending on state of GUI and Control:
                 tap_code16(keymap_config.swap_lctl_lgui ? C(KC_V) : G(KC_V));
                 process = false;
                 break;
             case KC_EXEC:
             {
+                // Send command to build QMK:
                 process = bgkey_make();
                 break;
             }
@@ -135,6 +181,7 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record)
 
     return process;
 }
+
 
 void keyboard_post_init_user(void)
 {
