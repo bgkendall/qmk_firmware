@@ -59,6 +59,9 @@
 /* prevent stuck modifiers */
 #define PREVENT_STUCK_MODIFIERS
 
+/* declare low power usage for iOS */
+#define USB_MAX_POWER_CONSUMPTION 100
+
 #define RGB_DI_PIN F4                           // A3
 #ifdef RGB_DI_PIN
 #define RGBLIGHT_ANIMATIONS
