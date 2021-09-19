@@ -120,6 +120,20 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                     process = false;
                     break;
                 }
+                case BK_BSDEL:
+                {
+                    // Sends Backspace normally, Delete when Shift is held
+                    //
+                    process = bgkey_mod_munge(record->event.pressed, KC_BSPACE, KC_DEL, MOD_MASK_SHIFT, true);
+                    break;
+                }
+                case BK_COMSCL:
+                {
+                    // Sends Comma normally, Semicolon when Left Shift is held
+                    //
+                    process = bgkey_mod_munge(record->event.pressed, KC_COMM, KC_SCLN, MOD_MASK_SHIFT, true);
+                    break;
+                }
                 case BK_COMDOT:
                 {
                     // Sends Comma normally, Dot when Left Shift is held
@@ -127,11 +141,11 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                     process = bgkey_mod_munge(record->event.pressed, KC_COMM, KC_DOT, MOD_BIT(KC_LSFT), true);
                     break;
                 }
-                case BK_BSDEL:
+                case BK_DOTCLN:
                 {
-                    // Sends Backspace normally, Delete when Shift is held
+                    // Sends Dot normally, Colon when Left Shift is held
                     //
-                    process = bgkey_mod_munge(record->event.pressed, KC_BSPACE, KC_DEL, MOD_MASK_SHIFT, true);
+                    process = bgkey_mod_munge(record->event.pressed, KC_DOT, KC_SCLN, MOD_MASK_SHIFT, false);
                     break;
                 }
                 case BK_GRVDEL:
