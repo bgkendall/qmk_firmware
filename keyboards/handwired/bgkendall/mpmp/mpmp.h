@@ -3,7 +3,6 @@
 #include "quantum.h"
 
 #include "bgk_keycodes.h"
-#include "bgk_cmd-tab.h"
 
 
 #define LAYOUT( \
@@ -31,15 +30,5 @@ enum LAYERS
     RGBL_CAPS,
     RGBL_CMDTAB
 };
-
-enum CUSTOM_KEYCODES
-{
-    CK_CMDTAB_FORWARD = SAFE_RANGE,
-    CK_CMDTAB_BACKWARD,
-    CK_SPACEBACK
-};
-
-#define CK_CTFD CK_CMDTAB_FORWARD
-#define CK_CTBK CK_CMDTAB_BACKWARD
 
 void mpmp_rgb_init(void);

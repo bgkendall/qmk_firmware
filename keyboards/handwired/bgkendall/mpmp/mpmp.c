@@ -74,35 +74,3 @@ void keyboard_post_init_kb(void)
 }
 
 #endif // RGBLIGHT_ENABLE
-
-
-void matrix_scan_kb(void)
-{
-    bgkey_unregister_command_for_tab();
-    matrix_scan_user();
-}
-
-bool process_record_kb(uint16_t keycode, keyrecord_t* record)
-{
-    bool result = true;
-
-    if (record->event.pressed)
-    {
-        switch (keycode)
-        {
-            case CK_CMDTAB_FORWARD:
-                bgkey_register_forward_command_tab();
-                result = false;
-                break;
-            case CK_CMDTAB_BACKWARD:
-                bgkey_register_command_for_tab();
-                tap_code16(S(KC_TAB));
-                result = false;
-                break;
-            default:
-                break;
-        }
-    }
-
-    return result;
-}
