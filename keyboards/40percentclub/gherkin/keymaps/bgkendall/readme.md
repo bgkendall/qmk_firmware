@@ -3,7 +3,7 @@
  * **Author** — [bgkendall](https://github.com/bgkendall/qmk_firmware)
  * **Hardware** — [Gherkin](http://www.40percent.club/2016/11/gherkin.html) customised
    to add rotary encoder and RGB indicator lights
- * **Features** — Colemak-based primary layer; macOS focused
+ * **Features** — Modified [Averak] primary layer; macOS focused
 
 
 ## Building
@@ -12,6 +12,7 @@
 
  * `users/bgkendall/bgk_encoder.h`
  * `users/bgkendall/bgk_encoder.c`
+ * `users/bgkendall/bgk_keycommands.h`
  * `users/bgkendall/bgk_rgb.h`
  * `users/bgkendall/bgk_rgb.c`
 
@@ -22,13 +23,11 @@
 
 ## Layers
 
- 1. **Colemak** “Mod-FJ” — adaption of Colemak/Colemak Mod-DH to account for 30% layout
-    and the fact that my key caps have homing F and J keys that looked untidy in the
-    regular locations.
+ 1. **AVERAK** — adaption of [Averak] Mod-HM/FY/OIU to account for 30% layout.
  2. **QWERTY** — mostly standard QWERTY layout with adjustments for 30% layout and P moved
-    to Semicolon location (to keep the Backspace the same on both QWERTY and Colemak).
+    to Semicolon location (to keep the Backspace the same on both QWERTY and Averak).
  3. **NUMBER** — Numbers and Shift+number symbols (@, #, etc.) plus common punctuation.
- 4. **SYMBOL_CM** — Symbols in mnemonic locations (see below) for Colemak layer.
+ 4. **SYMBOL_AV** — Symbols in mnemonic locations (see below) for Averak layer.
  5. **SYMBOL_QW** — Symbols in mnemonic locations (see below) for QWERTY layer.
  6. **NAVIGATION** — Cursor and mouse control
  7. **FUNCTION** — F1–10, special (Mac) character shortcuts, Caps Lock.
@@ -42,13 +41,13 @@ uploaded to [QMK Configurator](https://config.qmk.fm/).
 ## Symbol Mnemonics
 
 All the symbols are represented by a mnemonic tied to the alpha keys. The locations will
-change depending on whether the base keyboard is Colemak or QWERTY.
+change depending on whether the base keyboard is Averak or QWERTY.
 
 | Symbol | Symbol Name              | Letter | Mnemonic |
 | :----: | :----------------------- | :----: | :----------------------------------------------------------------------- |
 |   ~    | Tilde                    |   N    | e**Ñ**e                                                                  |
 |   \`   | Back-tick                |   T    | Back-**T**ick                                                            |
-|   -    | Hyphen/Minus  | B or<br>H or<br>M | **B**ar (not QWERTY as B is layer key)<br>**H**yphen (not Colemak as H is layer key)<br>**M**inus |
+|   -    | Hyphen/Minus  | B or<br>H or<br>M | **B**ar (not QWERTY as B is layer key)<br>**H**yphen (not Averak as H is layer key)<br>**M**inus |
 |   _    | Underscore               |   U    | **U**nderscore                                                           |
 |   =    | Equals                   |   E    | **E**quals                                                               |
 |   +    | Plus                     |   P    | **P**lus                                                                 |
@@ -79,7 +78,7 @@ The `bgk_encoder` library allows rotary encoder actions to be easily defined in 
 way as key layouts, including layer switching. The encoder has the following behaviour on
 the different layers (anti-clockwise/clockwise):
 
- 1. Colemak — cursor right/left or up/down (axis is toggled by FUNCTION+F or META+Y)
+ 1. AVERAK — cursor right/left or up/down (axis is toggled by FUNCTION+F or META+Y)
  2. QWERTY — cursor right/left or up/down (axis is toggled by FUNCTION+G or META+O)
  3. NUMBER — display brightness up/down
  4. SYMBOL_CM — volume up/down
@@ -87,3 +86,7 @@ the different layers (anti-clockwise/clockwise):
  6. NAVIGATION — mouse wheel up/down
  7. FUNCTION — zoom in/out (Cmd+=/Cmd+-)
  8. META — backlight brightness up/down
+
+
+
+[Averak]: https://www.reddit.com/r/MechanicalKeyboards/comments/ow4ve1/introducing_averak_a_very_average_layout/

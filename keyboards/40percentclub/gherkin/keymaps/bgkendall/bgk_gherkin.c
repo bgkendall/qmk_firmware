@@ -88,45 +88,6 @@ bool process_record_keymap(uint16_t keycode, keyrecord_t* record)
 {
     bool process = true;
 
-//    switch (keycode)
-//    {
-//        case KC_Q:
-//        {
-//            // Sends Q normally, Tab when Left Command or Left Alt is held
-//            //
-//            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_TAB, (MOD_BIT(KC_LALT) | MOD_BIT(KC_LGUI)), false);
-//            break;
-//        }
-//        case KC_A:
-//        {
-//            // Sends A normally, Grave when Left Command is held
-//            //
-//            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_GRV, MOD_BIT(KC_LGUI), false);
-//            break;
-//        }
-//        case KC_COMM:
-//        {
-//            // Sends Comma normally, Semicolon when Left Shift is held
-//            //
-//            process = bgkey_mod_munge(record->event.pressed, KC_COMM, KC_SCLN, MOD_MASK_SHIFT, true);
-//            break;
-//        }
-//        case KC_DOT:
-//        {
-//            // Sends Dot normally, Colon when Left Shift is held
-//            //
-//            process = bgkey_mod_munge(record->event.pressed, KC_DOT, KC_SCLN, MOD_MASK_SHIFT, false);
-//            break;
-//        }
-//        case KC_BSPC:
-//        {
-//            // Sends Backspace normally, Delete when Shift is held
-//            //
-//            process = bgkey_mod_munge(record->event.pressed, KC_TRNS, KC_DEL, MOD_MASK_SHIFT, true);
-//            break;
-//        }
-//    }
-
     if (process && record->event.pressed)
     {
         static bool cursor_vertical = false;
