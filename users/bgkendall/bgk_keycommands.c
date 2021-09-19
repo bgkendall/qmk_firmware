@@ -110,6 +110,7 @@ bool bgkey_mod_munge(bool pressed,
                     del_mods(trigger_modifiers);
                 }
                 register_code(modified_key);
+                send_keyboard_report();
                 if (release_modifiers)
                 {
                     set_mods(current_modifiers);
