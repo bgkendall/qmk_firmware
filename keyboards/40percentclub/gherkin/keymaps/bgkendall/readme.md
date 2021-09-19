@@ -81,7 +81,7 @@ the different layers (anti-clockwise/clockwise):
  1. AVERAK — cursor right/left or up/down (axis is toggled by FUNCTION+F or META+Y)
  2. QWERTY — cursor right/left or up/down (axis is toggled by FUNCTION+G or META+O)
  3. NUMBER — display brightness up/down
- 4. SYMBOL_CM — volume up/down
+ 4. SYMBOL_AV — volume up/down
  5. SYMBOL_QW — volume up/down
  6. NAVIGATION — mouse wheel up/down
  7. FUNCTION — zoom in/out (Cmd+=/Cmd+-)
