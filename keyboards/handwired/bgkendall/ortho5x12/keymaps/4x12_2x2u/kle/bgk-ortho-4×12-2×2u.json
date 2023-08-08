@@ -1,0 +1,333 @@
+[
+  {
+    "backcolor": "#ffffff",
+    "name": "BGK Ortho 4×12 2×2U",
+    "author": "Barnaby Kendall",
+    "notes": "\n",
+    "radii": "0",
+    "switchMount": "cherry",
+    "switchBrand": "greetech",
+    "switchType": "GT02A1Bxx",
+    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 500;\n}\n\n.keylabels i {\n    font-style: normal;\n}\n\n.keylabel1 {\n    color: rgba(0,0,0,0) !important;\n}\n\n.keylabels .normal {\n    color: black !important;\n}\n\n.keylabel0, .fn {\n    color: DarkOrange !important;\n}\n\n.keylabel6, .numbers {\n    color: DarkGreen !important;\n}\n\n.keylabel10, .meta {\n    color: DarkMagenta !important;\n    margin-top: 1px;\n}\n\n.keylabel8, .pad {\n    color: DarkBlue !important;\n}\n\n.keylabel9, .keylabel10, .keylabel11 {\n    font-size: 6px !important;\n    overflow: visible;\n}\n\n.hold {\n    font-weight: 800;\n    color: DimGray !important;\n}\n\n.smaller {\n    font-size: 0.5em !important;\n    line-height: 100%;\n}\n\n.larger {\n    font-size: 1.5em !important;\n    line-height: 100%;\n}\n\n.keylabels p, .keylabels ol, .keylabels ul {\n    font-weight: 400;\n    line-height: 1.1;\n}\n\nol, ul {\n    padding-left: 20px;\n}\n\np + ol, p + ul {\n    margin-top: -8px;\n}\n\nli {\n    margin-bottom: 3px;\n}",
+    "plate": true
+  },
+  [
+    {
+      "x": 13.25,
+      "t": "#222222",
+      "a": 6,
+      "fa": [
+        2
+      ],
+      "w": 5.75,
+      "h": 4.5,
+      "d": true
+    },
+    "<p>There are five layers:<ul><li>􀅯 — Default alphanumeric keys</li><li>􀃉 — Number layer (bottom left <i class=\"numbers\">green</i> legends</li><li>􀗢 — Function (Fn) layer (top left <i class=\"fn\">orange</i> legends)</li><li>􀃫 — Number Pad (NP) (bottom right <i class=\"pad\">blue</i> legends)</li><li>􀍱 — Meta layer (bottom <i class=\"meta\">purple</i> legends)</li></ul><p>Notes:<ul><li>Encoder replaces first key on one of the top two rows.<li>Fn layer can be accessed from Default and NP layers.</li><li>NP layer is access by pressing 􀗢 while 􀃉 is held.</li><li>Meta layer is accessed by pressing 􀃉 while 􀗢 is held.</li><li>NP and Meta layers can be toggled on with three taps</li><li>Unmarked letters on Number, NP and Meta layers have no action. However, Shift on NP is Shift+<em>Default layer</em> key (e.g., Shift+􀄜 is ‘?’) for all keys.</li><li>Application shortcuts on Meta layer are actually modified function keys that trigger <a href=\"https://apps.apple.com/us/app/hotkey-app/id975890633\">HotKey App</a> actions."
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 1.25,
+      "c": "#eeeeee",
+      "t": "#000000",
+      "a": 4,
+      "f": 7,
+      "fa": [
+        1,
+        2,
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        1,
+        5
+      ]
+    },
+    "􀏎\n<i class=\"larger\">`</i>\n~\n\n<i class=\"normal\">􀅯</i>\n\n\n\nEscape\n􀆧",
+    {
+      "fa": [
+        2,
+        2
+      ]
+    },
+    "!\n1\n\n\n􀆫\n\n\n\n\nQ",
+    "@\n2\n\n\n􀆭\n\n\n\n\nW",
+    {
+      "fa": [
+        2,
+        2,
+        0,
+        1
+      ]
+    },
+    "#\n3\n\n􀃤\n\n\n\n\n\nE",
+    "$\n4\n\n\nReset\n\n\n\n\nR",
+    "%\n5\n\n\nDebug\n\n\n\n\nT",
+    "^\n6\n\n􀃖\n\n\n\n\n\nY",
+    "&\n7\n\n􀃘\n\n\n\n\n\nU",
+    "*\n8\n\n􀃚\n\n\n\n\n\nI",
+    "(\n9\n\n􀃠\n􀇭\n\n\n\n\nO",
+    ")\n0\n\n􀃢\n􀇮\n\n\n\n\nP",
+    {
+      "fa": [
+        1,
+        2,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        9
+      ]
+    },
+    "􀆗\n\n\n\n\n\n\n\nBackspace\n􀆛"
+  ],
+  [
+    {
+      "y": -0.87,
+      "c": "#cccccc",
+      "t": "#222222",
+      "a": 6,
+      "f": 2,
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "Encoder:"
+  ],
+  [
+    {
+      "y": -0.63,
+      "x": 0.13,
+      "c": "#eeeeee",
+      "t": "#000000",
+      "a": 4,
+      "f": 7,
+      "fa": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ]
+    },
+    "􀆭\n\n\n􀈻\n􀇮\n\n\n\n\n􀈻"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 1.25,
+      "fa": [
+        1,
+        1,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        9
+      ]
+    },
+    "􀆡\n􀍳\n\n\n􀊄\n\n\n\nTab\n􀅆",
+    {
+      "fa": [
+        2,
+        1,
+        0,
+        1
+      ]
+    },
+    "<i class=\"larger\">“</i>\nF1\n\nA\n1Password\n\n\n\n\nA",
+    "<i class=\"larger\">”</i>\nF2\n\nS\nOutlook\n\n\n\n\nS",
+    "<i class=\"larger\">‘</i>\nF3\n\nD\nTeams\n\n\n\n\nD",
+    "<i class=\"larger\">’</i>\nF4\n\nF\nOneNote\n\n\n\n\nF",
+    "±\nF5\n\nG\nRemote\n\n\n\n\nG",
+    "—\nF6\n\n􀃐\nSafari\n\n\n\n\nH",
+    {
+      "fa": [
+        2,
+        2,
+        0,
+        1
+      ]
+    },
+    "_\n-\n\n􀃒\nWord\n\n\n\n\nJ",
+    "=\n+\n\n􀑵\nExcel\n\n\n\n\nK",
+    "{\n[\n\n􀃜\nProject\n\n\n\n\nL",
+    {
+      "fa": [
+        2,
+        2,
+        5,
+        1
+      ]
+    },
+    "}\n]\n:\n􀃞\n􀋥􀓐\n\n\n\n\n;",
+    "~\n<i class=\"larger\">`</i>\n\"\n\n􀋥􀓎\n\n\n\n\n\n'"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 0.13,
+      "fa": [
+        1,
+        2,
+        5,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        6
+      ]
+    },
+    "􀆫\n\n\n􀈽\n􀇭\n\n\n\n\n􀈽"
+  ],
+  [
+    {
+      "y": -0.5,
+      "x": 1.25,
+      "a": 7,
+      "f": 6
+    },
+    "􀆝\n\n\n\n􀋥Plain",
+    {
+      "a": 4,
+      "f": 7,
+      "fa": [
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    "M1\nF7\n\nZ\n􀋥Snake\n\n\n\n\nZ",
+    "M2\nF8\n\nX\n􀋥Xmas\n\n\n\n\nX",
+    "M3\nF9\n\nC\n􀋥Swirl\n\n\n\n\nC",
+    "<i class=\"smaller\">􀂒􀂓􀂒</i>\nF10\n\nV\n􀋥Rainbow\n\n\n\n\nV",
+    {
+      "fa": [
+        2,
+        1
+      ]
+    },
+    "≠\nF11\n\n\n􀋥Breathe\n\n\n\n\nB",
+    {
+      "fa": [
+        2,
+        1,
+        0,
+        1
+      ]
+    },
+    "–\nF12\n\n􀃊\n􀋥Knight\n\n\n\n\nN",
+    {
+      "fa": [
+        1,
+        1,
+        0,
+        1
+      ]
+    },
+    "􀊣\n􀆔0\n\n􀃌\n􀋥Grad.\n\n\n\n\nM",
+    "􀊥\n􀆔-\n<\n􀃎\n􀋥􀄂\n\n\n\n\n,",
+    "􀊧\n􀆔=\n>\n􀕴\n􀋥􀄄\n\n\n\n\n.",
+    "􀈻\n􀆔􀄤\n\n\n􀋥􀎒\n\n\n\n\n􀄤",
+    {
+      "fa": [
+        2,
+        2,
+        5,
+        2
+      ]
+    },
+    "|\n\\\n?\n􀄜\n􀋥Test\n\n\n\n\n/"
+  ],
+  [
+    {
+      "x": 1.25,
+      "a": 5,
+      "f": 6
+    },
+    "Control\n\n\n\n\n\n􀆍",
+    {
+      "a": 4,
+      "f": 7,
+      "fa": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        2,
+        0,
+        0,
+        6
+      ]
+    },
+    "<i class=\"smaller\">􀆊</i>􀆕\n<i class=\"smaller\">􀆊</i>􀆕\n\n\n\n\n􀆉\n\n\n􀆕",
+    {
+      "a": 5,
+      "f": 6
+    },
+    "Command\n\n\n\n\n\n􀆔",
+    {
+      "a": 4,
+      "f": 7,
+      "f2": 1
+    },
+    "\n<i class=\"pad\">􀃫</i>\n\n\n<i class=\"normal\">􀅯</i>\n\n\n\n\n<i class=\"fn\">􀗢</i>",
+    {
+      "c": "#999999",
+      "t": "#eeeeee",
+      "f": 3,
+      "fa": [
+        1
+      ],
+      "w": 2
+    },
+    "􀆔􀏃\n\n\n\n􀋥􀐓",
+    {
+      "f": 7,
+      "fa": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        9
+      ],
+      "w": 2
+    },
+    "􀄜\n\n\n􀃈\n􀋥􀐓\n\n\n\nReturn\n􀅇",
+    {
+      "c": "#eeeeee",
+      "t": "#000000"
+    },
+    "<i class=\"meta\">􀍱</i>\n\n\n\n<i class=\"normal\">􀅯</i>\n\n\n\n\n<i class=\"numbers\">􀃉</i>",
+    {
+      "fa": [
+        1,
+        1
+      ]
+    },
+    "􀄿\n􀆔􀄦\n\n\n􀋥􀎗\n\n\n\n\n􀄦",
+    "􀈽\n􀆔􀄥\n\n\n􀋥􀎑\n\n\n\n\n􀄥",
+    "􀅀\n􀆔􀄧\n\n\n􀋥􀎙\n\n\n\n\n􀄧"
+  ]
+]
