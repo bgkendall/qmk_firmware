@@ -1,0 +1,18 @@
+CONVERT_TO=promicro_rp2040
+
+WS2812_DRIVER = vendor
+
+
+VIA_ENABLE = yes
+VIAL_ENABLE = yes
+LTO_ENABLE = yes
+
+CAPS_WORD_ENABLE = yes
+COMMAND_ENABLE = no
+CONSOLE_ENABLE = yes
+MOUSEKEY_ENABLE = yes
+NKRO_ENABLE = yes
+
+SRC += bgk_reviung41.c
+
+VIAL_INSECURE = yes
