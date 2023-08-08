@@ -1,0 +1,67 @@
+{
+    "keyboard_name": "protoboard RP2040Zero"
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "board": "GENERIC_RP_RP2040",
+    "debounce": 5,
+    "diode_direction": "COL2ROW",
+    "features": {
+        "audio": false,
+        "backlight": false,
+        "bluetooth": false,
+        "bootmagic": false,
+        "bootmagic_lite": true,
+        "command": false,
+        "console": false,
+        "encoder": false,
+        "extrakey": false,
+        "lto": false,
+        "magic": false,
+        "midi": false,
+        "mousekey": false,
+        "music": false,
+        "nkro": false,
+        "rgblight": true,
+        "unicode": false
+    },
+    "matrix_pins": {
+        "direct": [ [ "GP12", "GP13", "GP14" ] ]
+    },
+    "ws2812": {
+        "driver": "vendor",
+        "pin": "GP16"
+    },
+    "rgblight": {
+        "led_count": 1,
+        "hue_steps": 4,
+        "saturation_steps": 17,
+        "brightness_steps": 17,
+        "max_brightness": 128,
+        "sleep": false,
+        "layers": {
+            "blink": true,
+            "enabled": true,
+            "max": 22,
+            "override_rgb": true
+        },
+        "animations": {
+            "breathing": true,
+            "christmas": true,
+            "rainbow_swirl": true,
+            "rgb_test": true
+        }
+    },
+    "usb": {
+        "pid": "0x0001",
+        "device_version": "1.0.0"
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label":"A", "matrix": [0,0], "y":0, "x":0},
+                {"label":"B", "matrix": [0,1], "y":0, "x":1},
+                {"label":"C", "matrix": [0,2], "y":0, "x":2}
+            ]
+        }
+    }
+}

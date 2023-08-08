@@ -1,0 +1,12 @@
+{
+    "keyboard": "handwired/bgkendall/protoboard_rpz",
+    "keymap": "default",
+    "layout": "LAYOUT",
+    "layers": [
+        [
+            "RGB_TOG",
+            "RGB_MOD",
+            "KC_CAPS"
+        ]
+    ]
+}
