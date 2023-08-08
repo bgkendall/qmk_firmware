@@ -1,0 +1,333 @@
+[
+  {
+    "backcolor": "#0C3A0C",
+    "name": "Gherkin",
+    "author": "u/bgkendall",
+    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 600;\n}\n\n.keylabel9, .keylabel10, .keylabel11 {\n    font-size: .5em !important;\n    margin-top: .025em;\n    font-weight: 200;\n}\n\ni.wmods {\n    font-size: .65em;\n    font-style: normal;\n    vertical-align: .4ex;\n}\n"
+  },
+  [
+    {
+      "t": "#ffffff",
+      "a": 6,
+      "f": 1,
+      "fa": [
+        4
+      ],
+      "w": 3,
+      "h": 0.5,
+      "d": true
+    },
+    "QWERTY"
+  ],
+  [
+    {
+      "y": -0.875,
+      "x": 10.25,
+      "a": 4,
+      "fa": [
+        4,
+        2
+      ],
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "\nKey:"
+  ],
+  [
+    {
+      "y": -0.625,
+      "c": "#eeeeee",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333",
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    "􀅂\n􀅂\n\"\nF1\n\n\n\n\n\nQ<i class=\"wmods\">􀪀􀅂</i>",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333"
+    },
+    "@\n􀆍􀅁\n\\\nF2\nWINDOWS\n\n\n\n\nW",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333"
+    },
+    "#\n􀄤\n=\nF3\n\n\n\n\n\nE",
+    "$\n􀆍􀅂\n,\nF4\n\n\n\n\n\nR",
+    "%\n􀄿\n`\nF5\n\n\n\n\n\nT",
+    "^\n􀈻\n?\nF6\n\n\n\n\n\nY",
+    "&\n􀀻\n_\nF7\n\n\n\n\n\nU",
+    "*\n􀁶\n|\nF8\n\n\n\n\n\nI",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333"
+    },
+    "(\n􀀽\n;\nF9\nEnc. 􀄾/􀑹\n\n\n\n\nO",
+    ")\n􀆗\n􀱆\nF10\nRESET\n\n\n\n\n􀆛<i class=\"wmods\">􀆞􀆗</i>",
+    {
+      "x": 0.25,
+      "c": "#888888",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#ffffff",
+      "p": "FLAT",
+      "w": 1.25,
+      "h": 1.25
+    },
+    "􀃌\n􀃒\n􀃎􀃐\n􀃔\n􀃖\n\n\n\n\nTap•Hold<br>Tap<i class=\"wmods\">􀪀w/mod</i>"
+  ],
+  [
+    {
+      "c": "#eeeeee",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333",
+      "p": "",
+      "a": 0
+    },
+    "1\n􀆍\n'\n“\n􀙇1\n\n\n\n\nA<i class=\"wmods\">􀪀</i>`",
+    "2\n􀄦\n/\n”\n􀙇2\n\n\n\n\nS",
+    "3\n􀄥\n.\n‘\n􀙇3\n\n\n\n\nD",
+    "4•􀆍\n􀄧\n[\n’\n􀙇4\n\n\n\n\nF•􀆍",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n#db6500\n\n\n\n#333333"
+    },
+    "5\n􀅀\n>\nEnc.\n􀙇5\n􀄾/􀑹\n\n\n\nG",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333",
+      "a": 4
+    },
+    "6\n􀈽\n-\n—\n\n\n\n\n\nH",
+    "7\n􀁺\n]\n–\n\n\n\n\n\nJ",
+    "8\n􀁸\n:\n…\n\n\n\n\n\nK",
+    "9\n􀁼\n<\n􀆍\n\n\n\n\n\nL",
+    "0•􀆍\n􀆍\n+\n􀆍\n\n\n\n\n\nP•􀆍"
+  ],
+  [
+    {
+      "y": -0.75,
+      "x": 10.25,
+      "c": "#cccccc",
+      "t": "#ffffff",
+      "a": 5,
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "􀀀 = Mouse"
+  ],
+  [
+    {
+      "y": -0.6000000000000001,
+      "x": 10.25,
+      "a": 4,
+      "f2": 2,
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "\nEncoder:"
+  ],
+  [
+    {
+      "y": -0.6499999999999999,
+      "c": "#eeeeee",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333",
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "􀆝\n􀱍•􀆝\n􀆝\n􀆝\n\n\n\n\n\nZ•􀆝",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333",
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "􀆕\n􀉈\n􀆕\n􀆕\nAVERAK\n\n\n\n\nX•􀆕",
+    "􀆔\n􀉁\n􀆔\n􀆔\nCOLEMAK\n\n\n\n\nC•􀆔",
+    "􀓃\n􀉃\n􀃔\n􀓃\n􀓃\n\n\n\n\nV•􀃌",
+    "/<i class=\"wmods\">􀆞</i>*\n􀓃\n{\n􀃖\n􀓃\n\n\n\n\n􀏃•􀃒",
+    "-<i class=\"wmods\">􀆞</i>+\n􀓃\n}\n􀃖\n􀓃\n\n\n\n\n􀅇•􀃒",
+    "􀃔\n􀀿\n􀓃\n􀓃\n􀓃\n\n\n\n\nB•􀃐",
+    ",<i class=\"wmods\">􀆞</i>?\n􀆔\n~\n􀆔\nBREATHE\n\n\n\n\nN•􀆔",
+    ".<i class=\"wmods\">􀆞</i>!\n􀆕\n-•􀆕\n􀆕\nMAC\n\n\n\n\nM•􀆕",
+    "􀥦\n􀆍􀄤\n􀊢\n􀆡\n􀇮 TOG.\n\n\n\n\n􀆧•􀆝",
+    {
+      "x": 0.25,
+      "p": "SA",
+      "w": 1.25
+    },
+    "􀆭\n􀱷\n􀊦\n􀊫\n􀇮 BRT.\n\n\n\n\n􀄦􀄧"
+  ],
+  [
+    {
+      "y": 0.5,
+      "t": "#ffffff",
+      "a": 6,
+      "fa": [
+        4
+      ],
+      "w": 3,
+      "h": 0.5,
+      "d": true
+    },
+    "Averak"
+  ],
+  [
+    {
+      "y": -0.5,
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333",
+      "a": 4,
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        2
+      ]
+    },
+    "􀅂\n􀅂\n\"\nF1\nQWERTY\n\n\n\n\nQ<i class=\"wmods\">􀪀􀅂</i>",
+    "@\n􀆍􀅁\n\\\nF2\nWINDOWS\n\n\n\n\nW",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333"
+    },
+    "#\n􀄤\n,\nF3\n\n\n\n\n\nR",
+    "$\n􀆍􀅂\n+\nF4\n\n\n\n\n\nP",
+    "%\n􀄿\n[\nF5\n\n\n\n\n\nF",
+    "^\n􀈻\n]\nF6\n\n\n\n\n\nJ",
+    "&\n􀀻\n?\nF7\n\n\n\n\n\nY",
+    "*\n􀁶\n;\nF8\n\n\n\n\n\nO",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333"
+    },
+    "(\n􀀽\n<\nF9\nEnc. 􀄾/􀑹\n\n\n\n\nL",
+    ")\n􀆛\n􀱆\nF10\nRESET\n\n\n\n\n􀆛<i class=\"wmods\">􀆞􀆗</i>",
+    {
+      "x": 0.25,
+      "c": "#cccccc",
+      "t": "#ffffff",
+      "p": "",
+      "w": 1.25,
+      "h": 1.35,
+      "d": true
+    },
+    "N/A w/ZMK: Mouse keys Win./Mac B/L breathe\nN/A w/QMK: Bluetooth"
+  ],
+  [
+    {
+      "c": "#eeeeee",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333",
+      "p": "SA",
+      "a": 0
+    },
+    "1\n􀆍\n'\n“\n􀙇1\n\n\n\n\nA<i class=\"wmods\">􀪀</i>`",
+    "2\n􀄦\n,\n”\n􀙇2\n\n\n\n\nS",
+    "3\n􀄥\n/\n‘\n􀙇3\n\n\n\n\nD",
+    "4•􀆍\n􀄧\n`\n’\n􀙇4\n\n\n\n\nT•􀆍",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n#db6500\n\n\n\n#333333"
+    },
+    "5\n􀅀\n>\nEnc.\n􀙇5\n􀄾/􀑹\n\n\n\nG",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333",
+      "a": 4
+    },
+    "6\n􀈽\n-\n—\nMAC\n\n\n\n\nM",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333"
+    },
+    "7\n􀁺\n~\n–\n\n\n\n\n\nN",
+    "8\n􀁸\n=\n…\n\n\n\n\n\nE",
+    "9\n􀁼\n|\n􀆍\n\n\n\n\n\nI",
+    "0•􀆍\n􀆍\n_\n􀆍\n\n\n\n\n\nU•􀆍"
+  ],
+  [
+    {
+      "y": -0.375,
+      "x": 10.25,
+      "c": "#cccccc",
+      "t": "#ffffff",
+      "f2": 2,
+      "w": 1.25,
+      "h": 0.5,
+      "d": true
+    },
+    "\nEncoder:"
+  ],
+  [
+    {
+      "y": -0.625,
+      "c": "#eeeeee",
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n\n\n\n\n\n#333333",
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "􀆝\n􀱍•􀆝\n􀆝\n􀆝\n\n\n\n\n\nZ•􀆝",
+    "􀆕\n􀉈\n􀆕\n􀆕\n\n\n\n\n\nX•􀆕",
+    {
+      "t": "#004022\n#0000bb\n#aa00aa\n#db6500\n#bb0000\n\n\n\n\n#333333",
+      "fa": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    "􀆔\n􀉁\n􀆔\n􀆔\nCOLEMAK\n\n\n\n\nC•􀆔",
+    "􀓃\n􀉃\n􀃔\n􀓃\n􀓃\n\n\n\n\nV•􀃌",
+    "/<i class=\"wmods\">􀆞</i>*\n􀓃\n{\n􀃖\n􀓃\n\n\n\n\n􀏃•􀃒",
+    "-<i class=\"wmods\">􀆞</i>+\n􀓃\n}\n􀃖\n􀓃\n\n\n\n\n􀅇•􀃒",
+    "􀃔\n􀀿\n􀓃\n􀓃\n􀓃\n\n\n\n\nH•􀃐",
+    ",<i class=\"wmods\">􀆞</i>?\n􀆔\n-\n􀆔\nBREATHE\n\n\n\n\nB•􀆔",
+    ".<i class=\"wmods\">􀆞</i>!\n􀆕\n:•􀆕\n􀆕\nMAC\n\n\n\n\nK•􀆕",
+    "􀥦\n􀆍􀄤\n􀊢\n􀆡\n􀇮 TOG.\n\n\n\n\n􀆧•􀆝",
+    {
+      "x": 0.25,
+      "w": 1.25
+    },
+    "􀆭\n􀱷\n􀊦\n􀊫\n􀇮 BRT.\n\n\n\n\n􀄦􀄧"
+  ]
+]
