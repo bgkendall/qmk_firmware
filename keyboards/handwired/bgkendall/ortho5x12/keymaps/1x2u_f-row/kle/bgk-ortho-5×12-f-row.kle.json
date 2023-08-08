@@ -1,0 +1,229 @@
+[
+  {
+    "name": "BGK Ortho 5×12 F-row",
+    "author": "Barnaby Kendall",
+    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 500;\n}\n\n.keylabels i {\n    font-style: normal;\n}\n\n.keylabels b {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 800;\n}\n\n.keylabels .textsize9 {\n    color: rgba(0,0,0,0) !important;\n}\n\n.keylabels .normal {\n    color: black !important;\n}\n\n.keylabel0, .fn {\n    color: FireBrick !important;\n}\n\n.keylabel6, .pad {\n    color: DarkBlue !important;\n}\n\n.keylabel10, .meta {\n    color: ForestGreen !important;\n}\n\n.keylabel8, .hold {\n    color: DimGray !important;\n}\n\n.keylabel9, .keylabel10, .keylabel11 {\n    font-size: 6px !important;\n    overflow: visible;\n}\n\n.larger {\n    font-size: 1.5em !important;\n    line-height: 100%;\n}"
+  },
+  [
+    {
+      "c": "#eeeeee",
+      "f": 7,
+      "fa": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        5,
+        9
+      ]
+    },
+    "􀆧\n􀆧\n\n\n\n\n\n\n\n􀆧\nEscape",
+    {
+      "f": 5,
+      "fa": [
+        1,
+        1
+      ]
+    },
+    "F1\n􀄼\n\n\n􀋥Plain\n\n\n\n\n􀆫",
+    "F2\n􀉈\n\n\n􀋥Breathe\n\n\n\n\n􀆭",
+    "F3\n􀉁\n\n\n􀋥Rainbow\n\n\n\n\n􀇴",
+    "F4\n􀉃\n\n\n􀋥Swirl\n\n\n\n\n􀊣",
+    "F5\n􀈧\n\n\n􀋥Snake\n\n\n\n\n􀊥",
+    "F6\n􀏎\n\n\n􀋥Knight\n\n\n\n\n􀊧",
+    "F7\n􀃤\n_\n\n􀋥Xmas\n\n\n\n\n\n-",
+    {
+      "f": 7,
+      "fa": [
+        1,
+        1,
+        5
+      ]
+    },
+    "F8\n􀃢\n+\n\n􀋥Grad.\n\n\n\n\n\n=",
+    "F9\n􀃠\n{\n\n\n\n\n\n\n\n[",
+    "F10\n􀃞\n}\n\n\n\n\n\n\n\n]",
+    {
+      "fa": [
+        1,
+        1,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9
+      ]
+    },
+    "􀆗\n􀆛\n\n\n\n\n\n\n\n􀆛\nBackspace"
+  ],
+  [
+    {
+      "fa": [
+        1,
+        1,
+        5
+      ]
+    },
+    "\n\n~\n\n\n\n\n\n\n\n`",
+    "F11\n\n!\n\n􀂓􀂒􀂒\n\n\n\n\n\n1",
+    "F12\n\n@\n\n􀂒􀂓􀂒\n\n\n\n\n\n2",
+    "F13<br>􀍳\n\n#\n\n􀂒􀂒􀂓\n\n\n\n\n\n3",
+    "F14<br>􀄎\n\n$\n\n\n\n\n\n\n\n4",
+    "F15<br>􀊛\n<\n%\n\n\n\n\n\n\n\n5",
+    "F16\n(\n^\n\n\n\n\n\n\n\n6",
+    "F17\n􀃖\n&\n\n􀇮􀖃\n\n\n\n\n\n7",
+    "F18\n􀃘\n*\n\n\n\n\n\n\n\n8",
+    "􀊊\n􀃚\n(\n\n\n\n\n\n\n\n9",
+    "􀊄\n􀃜\n)\n\n\n\n\n\n\n\n0",
+    "􀊌\n􀆗\n|\n\n\n\n\n\n\n\n\\"
+  ],
+  [
+    {
+      "fa": [
+        1,
+        1,
+        5,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9
+      ]
+    },
+    "􀄈\n􀅆\n\n\n\n\n\n\n\n􀅆\nTab",
+    "􀄿\n􀄿\n\n\n\n\n\n\n\nQ",
+    "􀄤\n􀄤\n\n\n􀚈\n\n\n\n\nW",
+    "􀅀\n􀅀\n\n\n<i class=\"larger\"></i>\n\n\n\n\nE",
+    "􀈻\n􀈻\n\n\nReset\n\n\n\n\nR",
+    "\n>\n\n\n\n\n\n\n\nT",
+    "\n)\n\n\n\n\n\n\n\nY",
+    "􀇮\n􀃐\n\n\n􀇮\n\n\n\n\nU",
+    "\n􀃒\n\n\n\n\n\n\n\nI",
+    {
+      "fa": [
+        4,
+        1
+      ]
+    },
+    "“\n􀑵\n\n\n􀋥􀎙\n\n\n\n\nO",
+    "”\n􀃜\n\n\n􀋥􀎒\n\n\n\n\nP",
+    {
+      "fa": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9
+      ]
+    },
+    "􀄜\n􀅇\n\n\n􀋥􀛮\n\n\n\n\n􀅇\nReturn"
+  ],
+  [
+    {
+      "fa": [
+        1,
+        1,
+        5,
+        2
+      ]
+    },
+    "􀆝\n􀆝\n\"\n<b>􀆝</b>\n\n\n\n\n\n\n'",
+    "􀄦\n􀄦\n\n\n\n\n\n\n\nA",
+    "􀄥\n􀄥\n\n\n\n\n\n\n\nS",
+    "􀄧\n􀄧\n\n\nDebug\n\n\n\n\nD",
+    "􀈽\n􀈽\n\n\n\n\n\n\n\nF",
+    "\n'\n\n\n\n\n\n\n\nG",
+    "\n:\n\n\n\n\n\n\n\nH",
+    "􀇭\n􀃊\n\n\n􀇭\n\n\n\n\nJ",
+    "\n􀃌\n\n\n\n\n\n\n\nK",
+    {
+      "fa": [
+        4,
+        1
+      ]
+    },
+    "‘\n􀃎\n\n\n􀋥􀎗\n\n\n\n\nL",
+    {
+      "fa": [
+        4,
+        1,
+        5
+      ]
+    },
+    "’\n􀄜\n:\n\n􀋥􀎑\n\n\n\n\n;",
+    {
+      "fa": [
+        1,
+        1,
+        5,
+        2
+      ]
+    },
+    "􀆝\n􀆝\n?\n<b>􀆝</b>\n􀋥􀛭\n\n\n\n\n\n/"
+  ],
+  [
+    {
+      "fa": [
+        1,
+        1,
+        5,
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        9
+      ]
+    },
+    "􀆍\n􀆍\n\n\n\n\n\n\n\n<i class=\"hold\">􀆍</i>\nControl",
+    "􀆕\n􀆕\n\n<b>􀆕</b>\n\n\n\n\n\nZ",
+    "􀆔\n􀆔\n\n<b>􀆔</b>\n\n\n\n\n\nX",
+    "􀂔􀎡\n􀇹􀎡\n\n\n\n\n\n\n\nC",
+    "<i class=\"meta\">􀍱􀐟</i>\n\n\n\n\n\n\n\n\nV",
+    {
+      "w": 2
+    },
+    "\n\n\n<i class=\"fn\">􀗢􀐟</i>\n\n\n\n\n\n\nSpace",
+    "􀇭􀐓\n􀃈\n\n\n􀇭􀐓\n\n\n\n\nB",
+    {
+      "fa": [
+        1,
+        1,
+        5,
+        1
+      ]
+    },
+    "􀃪􀎡\n\n\n<i class=\"pad\">􀇹􀐟</i>\n\n\n\n\n\nN",
+    "\n􀃈\n\n\n􀋥􀐓\n\n\n\n\nM",
+    {
+      "fa": [
+        1,
+        1,
+        5,
+        2
+      ]
+    },
+    "􀆔\n􀆔\n<\n<b>􀆔</b>\n􀋥􀓐\n\n\n\n\n\n,",
+    "􀆕\n􀕴\n>\n<b>􀆕</b>\n􀋥􀓎\n\n\n\n\n\n."
+  ]
+]
