@@ -1,0 +1,76 @@
+{
+    "keyboard_name": "Clearpad",
+    "bootloader": "caterina",
+    "debounce": 5,
+    "diode_direction": "COL2ROW",
+    "features": {
+        "audio": false,
+        "backlight": false,
+        "bluetooth": false,
+        "bootmagic": false,
+        "bootmagic_lite": true,
+        "command": false,
+        "console": false,
+        "encoder": false,
+        "extrakey": true,
+        "lto": true,
+        "magic": false,
+        "midi": false,
+        "mousekey": true,
+        "music": false,
+        "nkro": false,
+        "rgblight": true,
+        "unicode": false
+    },
+    "matrix_pins": {
+        "direct": [
+            [null, "F4"],
+            ["D0", "F5"],
+            [null, "F6"],
+            [null, "F7"],
+            [null, "B1"],
+            [null, null],
+            [null, "B2"],
+            [null, "B6"]
+        ]
+    },
+    "processor": "atmega32u4",
+    "usb": {
+        "device_ver": "0x0001",
+        "pid": "0x2320",
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label":"TOGUP", "matrix": [6, 1], "y":0, "x":3},
+                {"label":"TOGDN", "matrix": [7, 1], "y":1, "x":3},
+                {"label":"UP",    "matrix": [0, 1], "y":3, "x":1},
+                {"label":"LEFT",  "matrix": [1, 1], "y":4, "x":0},
+                {"label":"MID",   "matrix": [3, 1], "y":4, "x":1},
+                {"label":"RIGHT", "matrix": [2, 1], "y":4, "x":2},
+                {"label":"DOWN",  "matrix": [4, 1], "y":5, "x":1},
+                {"label":"RESET", "matrix": [1, 0], "y":5, "x":3}
+            ]
+        }
+    },
+    "rgblight": {
+        "led_count": 6,
+        "pin": "D3",
+        "hue_steps": 10,
+        "saturation_steps": 17,
+        "brightness_steps": 17,
+        "animations": {
+            "all": false,
+            "alternating": true,
+            "breathing": true,
+            "christmas": false,
+            "knight": true,
+            "rainbow_mood": true,
+            "rainbow_swirl": true,
+            "rgb_test": false,
+            "snake": true,
+            "static_gradient": true,
+            "twinkle": false
+        }
+    }
+}
