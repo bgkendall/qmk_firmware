@@ -1,0 +1,227 @@
+[
+  {
+    "backcolor": "#0C3A0C",
+    "name": "Gherkin Mnemonic Symbol Layer",
+    "author": "u/bgkendall",
+    "css": ".keylabels {\n    font-family: \"SF Pro\", sans-serif;\n    font-weight: 600;\n}\n\n.keylabel10 {\n    font-size: .5em !important;\n    margin-top: -0.05em !important;\n    font-weight: 200;\n}\n\n.keylabel10 div::first-letter {\n    font-weight: 600;\n}"
+  },
+  [
+    {
+      "t": "#ffffff",
+      "a": 6,
+      "f": 4,
+      "w": 3,
+      "h": 0.5,
+      "d": true
+    },
+    "QWERTY"
+  ],
+  [
+    {
+      "y": -0.5,
+      "c": "#eeeeee",
+      "t": "#000000\n\n#cc00000",
+      "p": "SA",
+      "a": 4
+    },
+    "\n\n\"\n\nQuote\n\n\n\n\nQ",
+    "\n\n\\\n\n<b>\\</b>/\\/\n\n\n\n\nW",
+    "\n\n=\n\nEquals\n\n\n\n\nE",
+    "\n\n,\n\nr≈ᒋ↺ᒍ≈,\n\n\n\n\nR",
+    "\n\n`\n\nTick\n\n\n\n\nT",
+    "\n\n?\n\n&nbsp;Why?&nbsp;\n\n\n\n\nY",
+    "\n\n_\n\nUnderscr.\n\n\n\n\nU",
+    "\n\n|\n\nI ≊ |\n\n\n\n\nI",
+    "\n\n;\n\no ≈ ⦁ = ½:\n\n\n\n\nO",
+    "\n\n&nbsp;\n\n\n\n\n\n\n􀆛"
+  ],
+  [
+    "\n\n'\n\nApostrph.\n\n\n\n\nA",
+    "\n\n/\n\nSlash\n\n\n\n\nS",
+    "\n\n.\n\nDot\n\n\n\n\nD",
+    "\n\n[\n\nF ≈ ⊏ ≈ [\n\n\n\n\nF",
+    "\n\n>\n\nGtr. than\n\n\n\n\nG",
+    "\n\n-\n\nHyphen\n\n\n\n\nH",
+    "\n\n]\n\nJ ≈ ⸥ ≈ ]\n\n\n\n\nJ",
+    "\n\n:\n\n<i>K</i>olon\n\n\n\n\nK",
+    "\n\n<\n\nLess than\n\n\n\n\nL",
+    "\n\n+\n\nPlus\n\n\n\n\nP"
+  ],
+  [
+    {
+      "fa": [
+        0,
+        0,
+        2
+      ]
+    },
+    "\n\n􀆝\n\n\n\n\n\n\nZ",
+    "\n\n􀆕\n\n\n\n\n\n\nX",
+    "\n\n􀆔\n\n\n\n\n\n\nC",
+    "\n\n􀗡\n\n\n\n\n\n\nV",
+    {
+      "f": 4
+    },
+    "\n\n{\n\n&nbsp;Next to }&nbsp;",
+    {
+      "f": 4
+    },
+    "\n\n}\n\n<b>􀅇</b> ≈ }\n\n\n\n\n􀅇",
+    {
+      "f": 4
+    },
+    "\n\n􀓃\n\n\n\n\n\n\nB",
+    {
+      "f": 4
+    },
+    "\n\n~\n\n&nbsp;<i>e<b>ñ</b>e</i>&nbsp;\n\n\n\n\nN",
+    {
+      "f": 4
+    },
+    "\n\n-\n\nMinus\n\n\n\n\nM",
+    {
+      "f": 4
+    },
+    "\n\n&nbsp;\n\n\n\n\n\n\n􀆧"
+  ],
+  [
+    {
+      "y": 0.5,
+      "t": "#ffffff",
+      "a": 6,
+      "w": 3,
+      "h": 0.5,
+      "d": true
+    },
+    "Colemak “Mod-FJ”"
+  ],
+  [
+    {
+      "y": -0.5,
+      "t": "#000000\n\n#cc00000",
+      "a": 4,
+      "f": 4
+    },
+    "\n\n\"\n\nQuote\n\n\n\n\nQ",
+    {
+      "f": 4
+    },
+    "\n\n\\\n\n<b>\\</b>/\\/\n\n\n\n\nW",
+    {
+      "f": 4
+    },
+    "\n\n.\n\nDot\n\n\n\n\nD",
+    {
+      "f": 4
+    },
+    "\n\n+\n\nPlus\n\n\n\n\nP",
+    {
+      "f": 4
+    },
+    "\n\n[\n\nF ≈ ⊏ ≈ [\n\n\n\n\nF",
+    {
+      "f": 4
+    },
+    "\n\n]\n\nJ ≈ ⸥ ≈ ]\n\n\n\n\nJ",
+    {
+      "f": 4
+    },
+    "\n\n<\n\nLess than\n\n\n\n\nL",
+    {
+      "f": 4
+    },
+    "\n\n_\n\nUnderscr.\n\n\n\n\nU",
+    {
+      "f": 4
+    },
+    "\n\n?\n\n&nbsp;Why?&nbsp;\n\n\n\n\nY",
+    {
+      "f": 4
+    },
+    "\n\n&nbsp;\n\n\n\n\n\n\n􀆛"
+  ],
+  [
+    {
+      "f": 4
+    },
+    "\n\n'\n\nApostrph.\n\n\n\n\nA",
+    {
+      "f": 4
+    },
+    "\n\n,\n\nr≈ᒋ↺ᒍ≈,\n\n\n\n\nR",
+    {
+      "f": 4
+    },
+    "\n\n/\n\nSlash\n\n\n\n\nS",
+    {
+      "f": 4
+    },
+    "\n\n`\n\nTick\n\n\n\n\nT",
+    {
+      "f": 4
+    },
+    "\n\n>\n\nGtr. than\n\n\n\n\nG",
+    {
+      "f": 4
+    },
+    "\n\n-\n\nMinus\n\n\n\n\nM",
+    {
+      "f": 4
+    },
+    "\n\n~\n\n&nbsp;<i>e<b>ñ</b>e</i>&nbsp;\n\n\n\n\nN",
+    {
+      "f": 4
+    },
+    "\n\n=\n\nEquals\n\n\n\n\nE",
+    {
+      "f": 4
+    },
+    "\n\n|\n\nI ≊ |\n\n\n\n\nI",
+    {
+      "f": 4
+    },
+    "\n\n;\n\no ≈ ⦁ = ½:\n\n\n\n\nO"
+  ],
+  [
+    {
+      "f": 4
+    },
+    "\n\n􀆝\n\n\n\n\n\n\nZ",
+    {
+      "f": 4
+    },
+    "\n\n􀆕\n\n\n\n\n\n\nX",
+    {
+      "f": 4
+    },
+    "\n\n􀆔\n\n\n\n\n\n\nC",
+    {
+      "f": 4
+    },
+    "\n\n􀗡\n\n\n\n\n\n\nV",
+    {
+      "f": 4
+    },
+    "\n\n{\n\n&nbsp;Next to }&nbsp;",
+    {
+      "f": 4
+    },
+    "\n\n}\n\n<b>􀅇</b> ≈ }\n\n\n\n\n􀅇",
+    {
+      "f": 4
+    },
+    "\n\n􀓃\n\n\n\n\n\n\nH",
+    {
+      "f": 4
+    },
+    "\n\n-\n\nBar\n\n\n\n\nB",
+    {
+      "f": 4
+    },
+    "\n\n:\n\n<i>K</i>olon\n\n\n\n\nK",
+    {
+      "f": 4
+    },
+    "\n\n&nbsp;\n\n\n\n\n\n\n􀆧"
+  ]
+]
