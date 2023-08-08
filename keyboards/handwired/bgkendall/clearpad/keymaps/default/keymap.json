@@ -1,0 +1,43 @@
+{
+    "keyboard": "handwired/bgkendall/clearpad",
+    "keymap": "default",
+    "layout": "LAYOUT",
+    "layers": [
+        [
+                                    "TO(1)",
+                                    "TO(0)",
+                        "KC_UP",
+            "KC_LEFT",  "KC_ENT",   "KC_RGHT",
+                        "KC_DOWN",
+            "RESET"
+        ],
+        [
+                                    "KC_TRNS",
+                                    "KC_TRNS",
+                        "KC_MS_U",
+            "KC_MS_L",  "KC_BTN1",  "KC_MS_R",
+                        "KC_MS_D",
+            "KC_TRNS"
+        ],
+        [
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS"
+        ],
+        [
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS",
+            "KC_TRNS"
+        ]
+    ]
+}
