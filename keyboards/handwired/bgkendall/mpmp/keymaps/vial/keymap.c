@@ -1,0 +1,20 @@
+// Copyright 2023 QMK
+// SPDX-License-Identifier: GPL-2.0-or-later
+
+#include QMK_KEYBOARD_H
+
+
+const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
+    [0] = LAYOUT(KC_P7, KC_P8, KC_P9, KC_ESC, KC_P4, KC_P5, KC_P6, KC_TRNS, KC_P1, KC_P2, KC_P3, KC_TRNS, KC_PDOT, KC_P0, KC_PENT, KC_NO),
+    [1 ... (DYNAMIC_KEYMAP_LAYER_COUNT - 1)] =
+          LAYOUT(KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_NO)
+};
+
+
+#ifdef ENCODER_MAP_ENABLE
+
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [0 ... DYNAMIC_KEYMAP_LAYER_COUNT-1] = { ENCODER_CCW_CW(KC_NO, KC_NO) }
+};
+
+#endif // ENCODER_MAP_ENABLE
