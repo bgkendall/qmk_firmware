@@ -14,7 +14,7 @@
         "bluetooth": false,
         "bootmagic": false,
         "bootmagic_lite": true,
-        "combo": false,
+        "combo": true,
         "command": false,
         "console": true,
         "encoder": true,
@@ -47,7 +47,7 @@
         "hue_steps": 4,
         "saturation_steps": 17,
         "brightness_steps": 17,
-        "max_brightness": 255,
+        "max_brightness": 128,
         "sleep": true,
         "animations": {
             "alternating": true,
@@ -82,8 +82,8 @@
         "max_power": 100
     },
     "matrix_pins": {
-        "rows": [ "GP26", "GP18", "GP20", "GP19", "GP10", "GP29" ],
-        "cols": [ "GP8",  "GP7",  "GP6",  "GP5",  "GP4",  "GP3"  ]
+        "rows": [ "GP26", "GP18", "GP20", "GP19", "GP10", "GP29", "NO_PIN" ],
+        "cols": [ "GP8",  "GP7",  "GP6",  "GP5",  "GP4",  "GP3" ]
     },
     "layouts": {
         "LAYOUT": {
