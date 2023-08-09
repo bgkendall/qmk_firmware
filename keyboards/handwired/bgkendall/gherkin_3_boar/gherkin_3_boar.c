@@ -152,7 +152,7 @@ void keyboard_post_init_kb(void)
     rgblight_disable();
 
     // Flash OK layer:
-    rgblight_blink_layer_repeat(RGBL_OK, 500, 6);
+    rgblight_blink_layer_repeat(RGBL_OK, 333, 3);
 
 #endif // RGBLIGHT_ENABLE
 
