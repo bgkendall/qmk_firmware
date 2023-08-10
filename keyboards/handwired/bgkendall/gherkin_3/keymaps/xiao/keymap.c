@@ -38,3 +38,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
       )
 
 };
+
+#ifdef ENCODER_MAP_ENABLE
+
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [0 ... DYNAMIC_KEYMAP_LAYER_COUNT - 1] = { ENCODER_CCW_CW(KC_LEFT, KC_RIGHT) }
+};
+
+#endif // ENCODER_MAP_ENABLE

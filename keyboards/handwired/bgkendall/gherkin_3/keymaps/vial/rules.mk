@@ -1,9 +1,0 @@
-VIA_ENABLE = yes
-VIAL_ENABLE = yes
-VIAL_ENCODERS_ENABLE = yes
-VIAL_INSECURE = yes
-
-# Reduce firmware size
-QMK_SETTINGS = no
-MOUSEKEY_ENABLE = no
-GRAVE_ESC_ENABLE = no

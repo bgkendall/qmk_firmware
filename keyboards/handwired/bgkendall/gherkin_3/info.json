@@ -1,0 +1,74 @@
+{
+    "processor": "RP2040",
+    "bootloader": "rp2040",
+    "board": "GENERIC_RP_RP2040",
+    "debounce": 5,
+    "diode_direction": "COL2ROW",
+    "build": {
+        "lto": true
+    },
+    "features": {
+        "audio": false,
+        "backlight": true,
+        "bluetooth": false,
+        "bootmagic": false,
+        "bootmagic_lite": true,
+        "combo": true,
+        "command": false,
+        "console": true,
+        "encoder": true,
+        "encoder_map": true,
+        "extrakey": true,
+        "magic": false,
+        "midi": false,
+        "mousekey": true,
+        "music": false,
+        "nkro": true,
+        "rgblight": true,
+        "unicode": false
+    },
+    "backlight": {
+        "driver": "software",
+        "levels": 5,
+        "breathing": false
+    },
+    "caps_word": {
+        "enabled": true,
+        "both_shifts_turns_on": true
+    },
+    "rgblight": {
+        "led_count": 1,
+        "hue_steps": 4,
+        "saturation_steps": 17,
+        "brightness_steps": 17,
+        "max_brightness": 128,
+        "sleep": true,
+        "animations": {
+            "alternating": true,
+            "breathing": true,
+            "christmas": true,
+            "knight": true,
+            "rainbow_mood": true,
+            "rainbow_swirl": true,
+            "rgb_test": true,
+            "snake": true,
+            "static_gradient": true,
+            "twinkle": true
+        },
+        "layers": {
+            "blink": true,
+            "enabled": true,
+            "max": 22,
+            "override_rgb": true
+        }
+    },
+    "ws2812": {
+        "driver": "vendor"
+    },
+    "tapping": {
+        "toggle": 3
+    },
+    "usb": {
+        "max_power": 100
+    }
+}
