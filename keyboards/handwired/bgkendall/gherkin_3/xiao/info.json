@@ -1,66 +1,15 @@
 {
     "keyboard_name": "Gherkin+3 (XIAO)",
-    "processor": "RP2040",
-    "bootloader": "rp2040",
-    "board": "GENERIC_RP_RP2040",
-    "debounce": 5,
-    "diode_direction": "COL2ROW",
-    "build": {
-        "lto": true
-    },
-    "features": {
-        "audio": false,
-        "backlight": true,
-        "bluetooth": false,
-        "bootmagic": false,
-        "bootmagic_lite": true,
-        "combo": true,
-        "command": false,
-        "console": true,
-        "encoder": false,
-        "extrakey": true,
-        "magic": false,
-        "midi": false,
-        "mousekey": true,
-        "music": false,
-        "nkro": true,
-        "rgblight": true,
-        "unicode": false
-    },
     "backlight": {
-        "pin": "GP2",
-        "breathing": false
+        "pin": "GP2"
     },
-    "caps_word": {
-        "enabled": true,
-        "both_shifts_turns_on": true
+    "encoder": {
+        "rotary": [
+            { "pin_a": "NO_PIN", "pin_b": "NO_PIN"}
+        ]
     },
-    "rgblight": {
-        "pin": "GP12",
-        "led_count": 1,
-        "hue_steps": 4,
-        "saturation_steps": 17,
-        "brightness_steps": 17,
-        "max_brightness": 255,
-        "sleep": true,
-        "animations": {
-            "alternating": true,
-            "breathing": true,
-            "christmas": true,
-            "knight": true,
-            "rainbow_mood": true,
-            "rainbow_swirl": true,
-            "rgb_test": true,
-            "snake": true,
-            "static_gradient": true,
-            "twinkle": true
-        },
-        "layers": {
-            "blink": true,
-            "enabled": true,
-            "max": 22,
-            "override_rgb": true
-        }
+    "ws2812": {
+        "pin": "GP12"
     },
     "indicators": {
         "caps_lock": "GP17",
@@ -68,14 +17,9 @@
         "scroll_lock": "GP25",
         "on_state": 0
     },
-    "tapping": {
-        "toggle": 3
-    },
     "usb": {
-        "vid": "0x4025",
-        "pid": "0x6060",
-        "device_version": "33.1.0",
-        "max_power": 100
+        "pid": "0x6063",
+        "device_version": "33.3.0"
     },
     "matrix_pins": {
         "rows": ["GP6", "GP27", "GP26", "GP1",                  "GP7",  "GP0",  "GP29", "GP28", "GP3", "GP4"],

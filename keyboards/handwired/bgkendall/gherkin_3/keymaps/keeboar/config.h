@@ -7,4 +7,6 @@
 #define VIAL_UNLOCK_COMBO_ROWS { 0, 1 } // Top left and right corners
 #define VIAL_UNLOCK_COMBO_COLS { 0, 3 }
 
-#define DYNAMIC_KEYMAP_LAYER_COUNT 8
+#ifndef KEYBOARD_handwired_bgkendall_gherkin_3_keeboar
+  #pragma warning("Incompatible keyboard and keymap")
+#endif

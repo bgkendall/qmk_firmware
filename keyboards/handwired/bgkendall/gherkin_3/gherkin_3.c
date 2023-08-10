@@ -1,23 +1,10 @@
-/*
-Copyright 2022 bgkendall
+#include QMK_KEYBOARD_H
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
+#ifdef CONSOLE_ENABLE
+# include <print.h>
+#endif
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-*/
-
-#include "gherkin_3.h"
-
-#include "users/bgkendall/bgk_keycodes.h"
+#include "users/bgkendall/bgk_keycommands.h"
 
 
 /*****************************************************************************
@@ -49,38 +36,10 @@ bool caps_word_press_user(uint16_t keycode)
     }
 }
 
-#endif // ‘CAPS_WORD_ENABLE
+#endif // CAPS_WORD_ENABLE
 
 
-#ifndef VIAL_ENABLE
-
-
-#include "manna-harbour_miryoku.h"
-
-
-/*****************************************************************************
- * ENCODER                                                                   *
- *****************************************************************************/
-
-#ifdef ENCODER_MAP_ENABLE
-
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [U_BASE]    = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT)  },f
-    [U_EXTRA]   = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT)  },
-    [U_TAP]     = { ENCODER_CCW_CW(KC_LEFT, KC_RGHT)  },
-    [U_BUTTON]  = { ENCODER_CCW_CW(LGUI(KC_MINS), LGUI(KC_EQL)) },
-    [U_NAV]     = { ENCODER_CCW_CW(KC_PGDN, KC_PGUP)  },
-    [U_MOUSE]   = { ENCODER_CCW_CW(KC_WH_L, KC_WH_R)  },
-    [U_MEDIA]   = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)  },
-    [U_NUM]     = { ENCODER_CCW_CW(KC_DOWN, KC_UP)    },
-    [U_SYM]     = { ENCODER_CCW_CW(KC_DOWN, KC_UP)    },
-    [U_FUN]     = { ENCODER_CCW_CW(KC_BRID, KC_BRIU)  }
-};
-
-#endif // ENCODER_MAP_ENABLE
-
-
-/*****************************************************************************
+/****************************************************************************
  * RGB                                                                       *
  *****************************************************************************/
 
@@ -88,46 +47,73 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 
 #include "users/bgkendall/bgk_rgb.h"
 
-enum RGB_ONLY_LAYERS
+
+enum RGB_LAYERS
 {
-    RGBL_CAPW = (U_FUN+1),
+    RGBL_A = 0,
+    RGBL_B,
+    RGBL_C,
+    RGBL_D,
+    RGBL_E,
+    RGBL_F,
+    RGBL_G,
+    RGBL_H,
+    RGBL_I,
+    RGBL_J,
+    RGBL_K,
+    RGBL_L,
+    RGBL_M,
+    RGBL_N,
+    RGBL_O,
+    RGBL_P,
+    RGBL_Q,
+    RGBL_R,
+    RGBL_S,
+    RGBL_CAPW,
     RGBL_CAPL,
     RGBL_OK
 };
 
-
-const rgblight_segment_t* const PROGMEM bgk_gherkinpp_rgb_layers[] = RGBLIGHT_LAYERS_LIST
+const rgblight_segment_t* const PROGMEM bgk_rgb_layers[] = RGBLIGHT_LAYERS_LIST
 (
-    [U_BASE]    = bgkrgb_white_layer,
-    [U_EXTRA]   = bgkrgb_goldenrod_layer,
-    [U_TAP]     = bgkrgb_red_layer,
-    [U_BUTTON]  = bgkrgb_purple_layer,
-    [U_NAV]     = bgkrgb_cyan_layer,
-    [U_MOUSE]   = bgkrgb_yellow_layer,
-    [U_MEDIA]   = bgkrgb_magenta_layer,
-    [U_NUM]     = bgkrgb_blue_layer,
-    [U_SYM]     = bgkrgb_green_layer,
-    [U_FUN]     = bgkrgb_orangered_layer,
+    [RGBL_F] = bgkrgb_white_layer,
+    [RGBL_R] = bgkrgb_red_layer,
+    [RGBL_K] = bgkrgb_coral_layer,
+    [RGBL_J] = bgkrgb_orangered_layer,
+    [RGBL_O] = bgkrgb_orange_layer,
+    [RGBL_N] = bgkrgb_goldenrod_layer,
+    [RGBL_D] = bgkrgb_gold_layer,
+    [RGBL_L] = bgkrgb_yellow_layer,
+    [RGBL_H] = bgkrgb_chartreuse_layer,
+    [RGBL_G] = bgkrgb_green_layer,
+    [RGBL_S] = bgkrgb_springgreen_layer,
+    [RGBL_Q] = bgkrgb_turquoise_layer,
+    [RGBL_E] = bgkrgb_teal_layer,
+    [RGBL_C] = bgkrgb_cyan_layer,
+    [RGBL_A] = bgkrgb_azure_layer,
+    [RGBL_B] = bgkrgb_blue_layer,
+    [RGBL_I] = bgkrgb_purple_layer,
+    [RGBL_M] = bgkrgb_magenta_layer,
+    [RGBL_P] = bgkrgb_pink_layer,
+
     [RGBL_CAPW] = bgkrgb_vividpink_layer,
     [RGBL_CAPL] = bgkrgb_red_layer,
     [RGBL_OK]   = bgkrgb_green_layer
 );
 
-layer_state_t default_layer_state_set_kb(layer_state_t state)
+uint8_t get_rgb_layer(layer_state_t state)
 {
-    rgblight_blink_layer(get_highest_layer(state), BGKRGB_BLINK_TIME);
-
-    return default_layer_state_set_user(state);
+    return (uint8_t)(keymap_key_to_keycode(get_highest_layer(state), (keypos_t)RGBLIGHT_LAYER_KEY) - KC_A);
 }
 
 layer_state_t layer_state_set_kb(layer_state_t state)
 {
-    bgkrgb_set_from_layers(state, U_BUTTON, U_FUN);
+    bgkrgb_set_all_layers(get_rgb_layer(state), RGBL_A, RGBL_S);
 
     return layer_state_set_user(state);
 }
 
-bool led_update_user(led_t led_state)
+bool led_update_kb(led_t led_state)
 {
     rgblight_set_layer_state(RGBL_CAPL, led_state.caps_lock);
 
@@ -142,266 +128,32 @@ void caps_word_set_user(bool active)
 #endif // RGBLIGHT_ENABLE
 
 
-/*****************************************************************************
- * COMBOS                                                                    *
- *****************************************************************************/
-
-#ifdef COMBO_ENABLE
-
-const uint16_t PROGMEM combo_z_esc[] = {KC_Z, KC_ESC, COMBO_END};
-
-/*
-// Adjacent keys
-const uint16_t PROGMEM combo_1[] = {KC_Q, KC_W,     COMBO_END};
-const uint16_t PROGMEM combo_2[] = {KC_W, KC_R,     COMBO_END};
-const uint16_t PROGMEM combo_3[] = {KC_R, KC_P,     COMBO_END};
-const uint16_t PROGMEM combo_4[] = {KC_P, KC_F,     COMBO_END};
-const uint16_t PROGMEM combo_5[] = {KC_F, KC_G,     COMBO_END};
-const uint16_t PROGMEM combo_6[] = {KC_M, KC_J,     COMBO_END};
-const uint16_t PROGMEM combo_7[] = {KC_J, KC_Y,     COMBO_END};
-const uint16_t PROGMEM combo_8[] = {KC_Y, KC_O,     COMBO_END};
-const uint16_t PROGMEM combo_9[] = {KC_O, KC_L,     COMBO_END};
-const uint16_t PROGMEM combo_0[] = {KC_L, TD(QUOT), COMBO_END};
-*/
-// Surrounding keys
-const uint16_t PROGMEM combo_1[] = {LCTL_T(KC_A),       KC_W,  COMBO_END};
-const uint16_t PROGMEM combo_2[] = {       KC_Q,        KC_R,  COMBO_END};
-const uint16_t PROGMEM combo_3[] = {       KC_W,        KC_P,  COMBO_END};
-const uint16_t PROGMEM combo_4[] = {       KC_R,        KC_F,  COMBO_END};
-const uint16_t PROGMEM combo_5[] = {       KC_P,        KC_J,  COMBO_END};
-const uint16_t PROGMEM combo_6[] = {       KC_F,        KC_Y,  COMBO_END};
-const uint16_t PROGMEM combo_7[] = {       KC_J,        KC_O,  COMBO_END};
-const uint16_t PROGMEM combo_8[] = {       KC_Y,        KC_L,  COMBO_END};
-const uint16_t PROGMEM combo_9[] = {       KC_O,     TD(QUOT), COMBO_END};
-const uint16_t PROGMEM combo_0[] = {       KC_L, LCTL_T(KC_U), COMBO_END};
-
-combo_t key_combos[COMBO_COUNT] = {
-
-    // Escape from Tap layer
-    COMBO(combo_z_esc,  DF(0)),
-
-    // Numbers
-    COMBO(combo_1, KC_1),
-    COMBO(combo_2, KC_2),
-    COMBO(combo_3, KC_3),
-    COMBO(combo_4, KC_4),
-    COMBO(combo_5, KC_5),
-    COMBO(combo_6, KC_6),
-    COMBO(combo_7, KC_7),
-    COMBO(combo_8, KC_8),
-    COMBO(combo_9, KC_9),
-    COMBO(combo_0, KC_0)
-};
-
-#endif // COMBO_ENABLE
-
-
-/*****************************************************************************
- * TAP DANCES                                                                *
- *****************************************************************************/
-
-#ifdef TAP_DANCE_ENABLE
-
-qk_tap_dance_action_t tap_dance_actions[] =
-{
-    [QUOT] = ACTION_TAP_DANCE_DOUBLE(KC_QUOT, KC_GRAVE)
-};
-
-#endif // TAP_DANCE_ENABLE
-
-
-/*****************************************************************************
- * KEY OVERRIDES                                                             *
- *****************************************************************************/
-
-#ifdef KEY_OVERRIDE_ENABLE
-
-// Use with suppressed_mods to clear the modifiers
-// BEFORE the replacement key is sent.
-bool flush_modifiers(bool key_down, void* context)
-{
-    send_keyboard_report();
-    return true;
-}
-
-const key_override_t override_cmd_grave = {
-    .trigger            = LT(U_MOUSE,KC_MINS),
-    .trigger_mods       = MOD_MASK_GUI,
-    .negative_mod_mask  = MOD_BIT(KC_LALT),
-    .layers             = ~0,
-    .suppressed_mods    = 0,
-    .replacement        = KC_GRAVE,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_alt_backtab = {
-    .trigger            = LT(U_MOUSE,KC_MINS),
-    .trigger_mods       = MOD_BIT(KC_LALT),
-    .negative_mod_mask  = MOD_MASK_GUI,
-    .layers             = ~0,
-    .suppressed_mods    = 0,
-    .replacement        = S(KC_TAB),
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_backspace_delete = {
-    .trigger            = LT(U_FUN,KC_BSPC),
-    .trigger_mods       = MOD_MASK_SHIFT,
-    .layers             = ~0,
-    .suppressed_mods    = MOD_MASK_SHIFT,
-    .custom_action      = flush_modifiers,
-    .replacement        = KC_DEL,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_escape_tap = {
-    .trigger            = KC_ESC,
-    .trigger_mods       = 0,
-    .layers             = (1 << U_TAP),
-    .suppressed_mods    = 0,
-    .replacement        = DF(0),
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_comma_semi = {
-    .trigger            = KC_COMM,
-    .trigger_mods       = MOD_MASK_SHIFT,
-    .negative_mod_mask  = MOD_MASK_CTRL | MOD_BIT(KC_LALT),
-    .layers             = ~0,
-    .suppressed_mods    = MOD_MASK_SHIFT,
-    .custom_action      = flush_modifiers,
-    .replacement        = KC_SCLN,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_dot_colon = {
-    .trigger            = KC_DOT,
-    .trigger_mods       = MOD_MASK_SHIFT,
-    .negative_mod_mask  = MOD_MASK_CTRL | MOD_BIT(KC_LALT),
-    .layers             = ~0,
-    .suppressed_mods    = 0,
-    .replacement        = KC_COLN,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_comma_paren = {
-    .trigger            = KC_COMM,
-    .trigger_mods       = MOD_MASK_CTRL,
-    .negative_mod_mask  = MOD_MASK_SHIFT | MOD_BIT(KC_LALT),
-    .layers             = ~0,
-    .suppressed_mods    = MOD_MASK_CTRL,
-    .custom_action      = flush_modifiers,
-    .replacement        = KC_LPRN,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_dot_paren = {
-    .trigger            = KC_DOT,
-    .trigger_mods       = MOD_MASK_CTRL,
-    .negative_mod_mask  = MOD_MASK_SHIFT | MOD_BIT(KC_LALT),
-    .layers             = ~0,
-    .suppressed_mods    = MOD_MASK_CTRL,
-    .custom_action      = flush_modifiers,
-    .replacement        = KC_RPRN,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_comma_angle = {
-    .trigger            = KC_COMM,
-    .trigger_mods       = MOD_BIT(KC_LALT),
-    .negative_mod_mask  = MOD_MASK_SHIFT | MOD_MASK_CTRL,
-    .layers             = ~0,
-    .suppressed_mods    = MOD_BIT(KC_LALT),
-    .custom_action      = flush_modifiers,
-    .replacement        = KC_LT,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_dot_angle = {
-    .trigger            = KC_DOT,
-    .trigger_mods       = MOD_BIT(KC_LALT),
-    .negative_mod_mask  = MOD_MASK_SHIFT | MOD_MASK_CTRL,
-    .layers             = ~0,
-    .suppressed_mods    = MOD_BIT(KC_LALT),
-    .custom_action      = flush_modifiers,
-    .replacement        = KC_GT,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_comma_brace = {
-    .trigger            = KC_COMM,
-    .trigger_mods       = MOD_MASK_CTRL | MOD_BIT(KC_LALT),
-    .layers             = ~0,
-    .suppressed_mods    = MOD_MASK_CTRL | MOD_BIT(KC_LALT),
-    .custom_action      = flush_modifiers,
-    .replacement        = KC_LBRC,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-const key_override_t override_dot_brace = {
-    .trigger            = KC_DOT,
-    .trigger_mods       = MOD_MASK_CTRL | MOD_BIT(KC_LALT),
-    .layers             = ~0,
-    .suppressed_mods    = MOD_MASK_CTRL | MOD_BIT(KC_LALT),
-    .custom_action      = flush_modifiers,
-    .replacement        = KC_RBRC,
-    .options            = ko_options_default,
-    .enabled            = NULL
-};
-
-// This globally defines all key overrides to be used
-const key_override_t** key_overrides = (const key_override_t *[])
-{
-    &override_cmd_grave,
-    &override_alt_backtab,
-    &override_backspace_delete,
-    &override_escape_tap,
-    &override_comma_semi,
-    &override_dot_colon,
-    &override_comma_paren,
-    &override_dot_paren,
-    &override_comma_angle,
-    &override_dot_angle,
-    &override_comma_brace,
-    &override_dot_brace,
-    NULL // Terminate the array of overrides
-};
-
-#endif // KEY_OVERRIDE_ENABLE
-
-
-/*****************************************************************************
- * KEYBOARD INIT                                                             *
- *****************************************************************************/
-
-void keyboard_post_init_user(void)
+void keyboard_post_init_kb(void)
 {
 #ifdef CONSOLE_ENABLE
     // Enable/disable debugging:
     debug_enable = true;
-    debug_matrix = true;
-    debug_keyboard = true;
+    debug_matrix = false;
 #endif
 
-#ifdef BACKLIGHT_ENABLE
-
-    // Turn off lighting:
-    backlight_disable();
-
-#endif // BACKLIGHT_ENABLE
 
 #ifdef RGBLIGHT_ENABLE
 
-    rgblight_disable();
+# ifdef RGBLIGHT_POWER_PIN
+    setPinOutput(RGBLIGHT_POWER_PIN);
+    writePinHigh(RGBLIGHT_POWER_PIN);
+    // TODO: Only enable the pin when the light is needed?
+# endif
 
     // Enable the LED layers:
-    rgblight_layers = bgk_gherkinpp_rgb_layers;
+    rgblight_layers = bgk_rgb_layers;
+
+    // Turn off lighting:
+    rgblight_disable();
 
     // Flash OK layer:
-    rgblight_blink_layer(RGBL_OK, BGKRGB_BLINK_TIME);
+    rgblight_blink_layer_repeat(RGBL_OK, 333, 3);
 
 #endif // RGBLIGHT_ENABLE
+
 }
-
-
-#endif // ¬VIAL_ENABLE
