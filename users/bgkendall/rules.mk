@@ -10,9 +10,8 @@ endif
 
 ifeq ($(strip $(RGB_STATUS_WS2812_ENABLE)), yes)
 
-    SRC += bgk_status_ws2812.c
-    WS2812_DRIVER_REQUIRED = yes
-	CFLAGS += -DRGB_STATUS_WS2812_ENABLE
+    SRC += bgk_status_ws2812.c bgk_ws2812_driver.c
+    CFLAGS += -DRGB_STATUS_WS2812_ENABLE
 
 endif
 
