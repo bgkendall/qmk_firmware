@@ -20,7 +20,8 @@ bool caps_word_press_user(uint16_t keycode)
         // Keycodes that continue Caps Word, with shift applied:
         case KC_A ... KC_Z:
         case KC_MINS:
-        case QK_TAP_DANCE ... QK_TAP_DANCE_MAX:
+        // Tap dances 0-9 will cancel Caps Word, 10 and above will be shifted
+        case (QK_TAP_DANCE + 10)... QK_TAP_DANCE_MAX:
             add_weak_mods(MOD_BIT(KC_LSFT));  // Apply shift to next key
             return true;
 
