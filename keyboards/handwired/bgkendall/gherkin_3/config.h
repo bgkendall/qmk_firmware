@@ -5,3 +5,7 @@
 
 #define RP2040_BOOTLOADER_DOUBLE_TAP_RESET
 #define DYNAMIC_KEYMAP_LAYER_COUNT 8
+
+// #ifdef NO_DEBUG
+// #   undef NO_DEBUG
+// #endif
