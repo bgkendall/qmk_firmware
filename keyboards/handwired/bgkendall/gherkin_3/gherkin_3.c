@@ -93,6 +93,7 @@ printf(", key: %i\n", rgb_layer_key);
 #ifdef RGB_MATRIX_ENABLE
 
 #include "color.h"
+#include "lib/lib8tion/lib8tion.h"
 #include "users/bgkendall/bgk_rgb.h"
 
 const HSV bgk_hsv_layers[] = {
@@ -120,7 +121,7 @@ const HSV bgk_hsv_layers[] = {
 
     [RGBL_CAPW] = { HSV_VIVIDPINK },
     [RGBL_CAPL] = { HSV_RED },
-    [RGBL_OK]   = { HSV_GREEN }
+    [RGBL_OK]   = { 85, 255, 100 }
 };
 
 bool rgb_matrix_indicators_kb(void)
@@ -130,9 +131,50 @@ bool rgb_matrix_indicators_kb(void)
         return false;
     }
 
+    static bool powering_up = true;
+
     uint8_t rgb_layer = RGBL_OFF;
 
-    if (host_keyboard_led_state().caps_lock)
+    if (powering_up)
+    {
+        static bool reached_max = false;
+        static bool reached_min = false;
+        static uint8_t old_val = 0;
+
+        if (!old_val)
+        {
+            rgb_layer = RGBL_OK;
+            old_val = 1;
+        }
+        else if (reached_min)
+        {
+            rgb_layer = RGBL_OFF;
+            powering_up = false;
+        }
+        else
+        {
+            HSV hsv  = rgb_matrix_config.hsv;
+
+            uint16_t time = scale16by8(g_rgb_timer, rgb_matrix_config.speed / 8);
+            hsv.v = scale8(abs8(sin8(time) - 128) * 2, hsv.v);
+            if (hsv.v > old_val)
+            {
+                if (reached_max)
+                {
+                    reached_min = true;
+                }
+            }
+            else if (!reached_max)
+            {
+                reached_max = true;
+            }
+            old_val = hsv.v;
+            rgb_matrix_sethsv_noeeprom(hsv.h, hsv.s, hsv.v);
+
+            return true;
+        }
+    }
+    else if (host_keyboard_led_state().caps_lock)
     {
         rgb_layer = RGBL_CAPL;
     }
@@ -221,13 +263,6 @@ void keyboard_post_init_kb(void)
 #endif
 
 #ifdef RGB_MATRIX_ENABLE
-
-# ifdef RGBLIGHT_POWER_PIN
-    setPinOutput(RGBLIGHT_POWER_PIN);
-    writePinHigh(RGBLIGHT_POWER_PIN);
-    // TODO: Only enable the pin when the light is needed?
-# endif
-
     rgb_matrix_enable_noeeprom();
 #endif
 
