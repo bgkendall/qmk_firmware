@@ -8,6 +8,15 @@
             { "pin_a": "NO_PIN", "pin_b": "NO_PIN"}
         ]
     },
+    "rgblight": {
+        "led_count": 1,
+        "layers": {
+            "enabled": true,
+            "blink": true,
+            "max": 23,
+            "override_rgb": true
+        }
+    },
     "ws2812": {
         "pin": "GP12"
     },
