@@ -1,1 +1,3 @@
 USER_NAME := bgkendall
+
+RGB_STATUS_WS2812_ENABLE = yes
