@@ -1,10 +1,9 @@
 // © 2023 bgkendall (@bgkendall)
 // SPDX-License-Identifier: GPL-2.0-or-later
 
-#include "bgk_status_ws2812.h"
+#include "bgk_ws2812_driver.h"
 #include "color.h"
 #include "rgb_matrix.h"
-#include "ws2812.h"
 
 
 led_config_t g_led_config =
@@ -17,11 +16,17 @@ led_config_t g_led_config =
 
 LED_TYPE bgk_ws2812_array[RGB_MATRIX_LED_COUNT];
 
-static void bgk_ws2812_init(void) {}
+static void bgk_ws2812_init(void)
+{
+#ifdef RGB_STATUS_WS2812_POWER_PIN
+    setPinOutput(RGB_STATUS_WS2812_POWER_PIN);
+    writePinHigh(RGB_STATUS_WS2812_POWER_PIN);
+#endif
+}
 
 static void bgk_ws2812_flush(void)
 {
-    ws2812_setleds(bgk_ws2812_array, RGB_MATRIX_LED_COUNT);
+    bgk_status_ws2812_set_leds(bgk_ws2812_array, RGB_MATRIX_LED_COUNT);
 }
 
 static inline void bgk_ws2812_set_led(int i, uint8_t r, uint8_t g, uint8_t b)
