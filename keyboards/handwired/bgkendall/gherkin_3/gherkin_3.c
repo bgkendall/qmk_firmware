@@ -43,7 +43,7 @@ bool caps_word_press_user(uint16_t keycode)
  * RGB                                                                       *
  *****************************************************************************/
 
-enum RGBS
+enum RGB_LAYERS
 {
     RGBL_OFF = 0,
     RGBL_A,
@@ -94,7 +94,7 @@ printf(", key: %i\n", rgb_layer_key);
 #include "color.h"
 #include "users/bgkendall/bgk_rgb.h"
 
-const HSV bgk_rgb_layers[] = {
+const HSV bgk_hsv_layers[] = {
     [RGBL_OFF] = { HSV_BLACK },
 
     [RGBL_F] = { HSV_WHITE },
@@ -144,18 +144,20 @@ bool rgb_matrix_indicators_kb(void)
         rgb_layer = get_rgb_layer(layer_state);
     }
 
-    rgb_matrix_sethsv_noeeprom(bgk_rgb_layers[rgb_layer].h,
-                               bgk_rgb_layers[rgb_layer].s,
-                               bgk_rgb_layers[rgb_layer].v);
+    rgb_matrix_sethsv_noeeprom(bgk_hsv_layers[rgb_layer].h,
+                               bgk_hsv_layers[rgb_layer].s,
+                               bgk_hsv_layers[rgb_layer].v);
 
     return true;
 }
 
-#elifdef RGBLIGHT_ENABLE
+#endif // RGB_MATRIX_ENABLE
+
+#if defined(RGBLIGHT_ENABLE) && defined(RGBLIGHT_LAYERS)
 
 #include "users/bgkendall/bgk_rgb.h"
 
-const rgblight_segment_t* const PROGMEM bgk_rgb_layers[] = RGBLIGHTS_LIST
+const rgblight_segment_t* const PROGMEM bgk_rgb_layers[] = RGBLIGHT_LAYERS_LIST
 (
     [RGBL_OFF] = bgkrgb_black_layer,
 
@@ -204,7 +206,7 @@ void caps_word_set_user(bool active)
     rgblight_set_layer_state(RGBL_CAPW, active);
 }
 
-#endif // RGB_MATRIX_ENABLE / RGBLIGHT_ENABLE
+#endif // RGBLIGHT_ENABLE + RGBLIGHT_LAYERS
 
 
 void keyboard_post_init_kb(void)
@@ -236,14 +238,17 @@ void keyboard_post_init_kb(void)
     // TODO: Only enable the pin when the light is needed?
 # endif
 
-    // Enable the LED layers:
-    rgblight_layers = bgk_rgb_layers;
-
     // Turn off lighting:
     rgblight_disable();
 
+# ifdef RGBLIGHT_LAYERS
+    // Enable the LED layers:
+    rgblight_layers = bgk_rgb_layers;
+
     // Flash OK layer:
     rgblight_blink_layer_repeat(RGBL_OK, 333, 3);
+
+# endif
 
 #endif // RGBLIGHT_ENABLE
 

@@ -11,12 +11,15 @@
             { "pin_a": "GP1", "pin_b": "GP2"}
         ]
     },
+    "rgblight": {
+        "led_count": 5
+    },
     "rgb_matrix": {
         "driver": "custom",
         "max_brightness": 128
     },
     "ws2812": {
-        "pin": "GP27"
+        "pin": "GP12"
     },
     "usb": {
         "pid": "0x6062",

@@ -155,7 +155,8 @@ __always_inline static uint32_t rgbw8888_to_u32(uint8_t red, uint8_t green, uint
 #endif
 }
 
-static void ws2812_dma_callback(void* p, uint32_t ct) {
+// BGK: Prepended bgk_status_ to function name and update calls:
+static void bgk_status_ws2812_dma_callback(void* p, uint32_t ct) {
     // We assume that there is at least one frame left in the OSR even if the TX
     // FIFO is already empty.
     rtcnt_t time_to_completion = (pio_sm_get_tx_fifo_level(pio, STATE_MACHINE) + 1) * MAX(WS2812_T1H + WS2812_T1L, WS2812_T0H + WS2812_T0L);
@@ -176,7 +177,8 @@ static void ws2812_dma_callback(void* p, uint32_t ct) {
     osalSysUnlockFromISR();
 }
 
-bool ws2812_init(void) {
+// BGK: Prepended bgk_status_ to function name and update calls:
+bool bgk_status_ws2812_init(void) {
     uint pio_idx = pio_get_index(pio);
     /* Get PIOx peripheral out of reset state. */
     hal_lld_peripheral_unreset(pio_idx == 0 ? RESETS_ALLREG_PIO0 : RESETS_ALLREG_PIO1);
@@ -236,7 +238,7 @@ bool ws2812_init(void) {
     pio_sm_init(pio, STATE_MACHINE, offset, &config);
     pio_sm_set_enabled(pio, STATE_MACHINE, true);
 
-    WS2812_DMA_CHANNEL = dmaChannelAlloc(RP_DMA_CHANNEL_ID_ANY, RP_DMA_PRIORITY_WS2812, (rp_dmaisr_t)ws2812_dma_callback, NULL);
+    WS2812_DMA_CHANNEL = dmaChannelAlloc(RP_DMA_CHANNEL_ID_ANY, RP_DMA_PRIORITY_WS2812, (rp_dmaisr_t)bgk_status_ws2812_dma_callback, NULL);
     dmaChannelEnableInterruptX(WS2812_DMA_CHANNEL);
     dmaChannelSetDestinationX(WS2812_DMA_CHANNEL, (uint32_t)&pio->txf[STATE_MACHINE]);
 
@@ -250,7 +252,8 @@ bool ws2812_init(void) {
     return true;
 }
 
-static inline void sync_ws2812_transfer(void) {
+// BGK: Prepended bgk_status_ to function name and update calls:
+static inline void bgk_status_sync_ws2812_transfer(void) {
     if (chSemWaitTimeout(&TRANSFER_COUNTER, TIME_MS2I(WS2812_STATUS_LED_COUNT)) == MSG_TIMEOUT) {
         // Abort the synchronization if we have to wait longer than the total
         // count of LEDs in milliseconds. This is safely much longer than it
@@ -272,10 +275,10 @@ static inline void sync_ws2812_transfer(void) {
 void bgk_status_ws2812_set_leds(LED_TYPE* ledarray, uint16_t leds) {
     static bool is_initialized = false;
     if (unlikely(!is_initialized)) {
-        is_initialized = ws2812_init();
+        is_initialized = bgk_status_ws2812_init();
     }
 
-    sync_ws2812_transfer();
+   bgk_status_sync_ws2812_transfer();
 
     for (int i = 0; i < leds; i++) {
 #if defined(RGBW)
