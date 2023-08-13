@@ -8,7 +8,10 @@
 
 #pragma once
 
-#ifdef RGBLIGHT_LAYERS
+#define HSV_VIVIDPINK           0, 224, 255
+#define HSV_ORANGERED           9, 255, 255
+
+#if defined(RGBLIGHT_ENABLE) && defined(RGBLIGHT_LAYERS)
 
 #include "quantum.h"
 
@@ -32,9 +35,6 @@
 #define HSV_SAFARI              BGKRGB_HSV_MAC_TO_QMK(193, 93, 93)
 #define HSV_TOGGL               BGKRGB_HSV_MAC_TO_QMK(307, 54, 88)
 #define HSV_TOGGLE_TOGGL        BGKRGB_HSV_MAC_TO_QMK(358, 94, 86)
-
-#define HSV_VIVIDPINK           0, 224, 255
-#define HSV_ORANGERED           9, 255, 255
 
 
 #define BGKRGB_ALL(c) RGBLIGHT_LAYER_SEGMENTS( {0, RGBLED_NUM, c} )
@@ -121,4 +121,4 @@ void bgkrgb_blink_layer(uint8_t blink_layer, uint8_t lowest_layer, uint8_t highe
 void bgkrgb_blink_highest_layer(layer_state_t state, uint8_t lowest_layer, uint8_t highest_layer);
 
 
-#endif /* RGB layers enabled */
+#endif /* RGB light and layers enabled */
