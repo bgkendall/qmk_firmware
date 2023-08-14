@@ -1,4 +1,4 @@
-#include "xiao.h"
+#include "quantum.h"
 
 const matrix_row_t matrix_mask[] = {
     0b0000000000111111,
