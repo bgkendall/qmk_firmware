@@ -1,7 +1,7 @@
 {
     "keyboard_name": "Gherkin+3 (Boar)",
     "features": {
-        "rgb_matrix": true
+        "rgblight": true
     },
     "backlight": {
         "pin": "GP9"

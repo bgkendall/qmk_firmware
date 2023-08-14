@@ -24,7 +24,7 @@
         "mousekey": true,
         "music": false,
         "nkro": true,
-        "rgblight": true,
+        "rgb_matrix": true,
         "unicode": false
     },
     "backlight": {
