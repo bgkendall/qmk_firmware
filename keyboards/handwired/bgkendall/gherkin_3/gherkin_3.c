@@ -135,7 +135,7 @@ bool rgb_matrix_indicators_kb(void)
 
     uint8_t rgb_layer = RGBL_OFF;
 
-    if (powering_up)
+    if (unlikely(powering_up))
     {
         HSV hsv = rgb_matrix_config.hsv;
 
