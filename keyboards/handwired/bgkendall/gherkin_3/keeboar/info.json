@@ -16,7 +16,8 @@
     },
     "rgb_matrix": {
         "driver": "custom",
-        "max_brightness": 128
+        "max_brightness": 128,
+        "layout": [ { "flags": 8, "x": 112, "y": 16 } ]
     },
     "ws2812": {
         "pin": "GP12"

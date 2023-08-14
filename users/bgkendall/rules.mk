@@ -8,10 +8,10 @@ ifeq ($(strip $(RGBLIGHT_ENABLE)), yes)
     SRC += bgk_rgb.c
 endif
 
-ifeq ($(strip $(RGB_STATUS_WS2812_ENABLE)), yes)
+ifeq ($(strip $(BGK_CUSTOM_WS2812_ENABLE)), yes)
 
-    SRC += bgk_status_ws2812.c bgk_ws2812_driver.c
-    CFLAGS += -DRGB_STATUS_WS2812_ENABLE -DRGB_MATRIX_DISABLE_KEYCODES
+    SRC += bgk_ws2812_driver_init.c bgk_ws2812_driver.c
+    CFLAGS += -DBGK_CUSTOM_WS2812_ENABLE -DRGB_MATRIX_DISABLE_KEYCODES
 
 endif
 
