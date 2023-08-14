@@ -252,6 +252,67 @@ void caps_word_set_user(bool active)
 #endif // RGBLIGHT_ENABLE + RGBLIGHT_LAYERS
 
 
+enum VIAL_JSON_CUSTOM_KEYCODES
+{
+    CK_000 = QK_KB_0,
+    CK_PP1,
+    CK_PP2,
+    CK_BGK,
+    CK_APPB,
+    CK_APPF,
+    CK_TIMES,
+    CK_LOCK,
+    CK_ELEFT,
+    CK_ERIGHT,
+    CK_EDOWN,
+    CK_EUP,
+    CK_EFLIP
+};
+
+bool process_record_keymap(uint16_t keycode, keyrecord_t* record)
+{
+    bool process = true;
+
+    if (process && record->event.pressed)
+    {
+        static bool cursor_vertical = false;
+
+        switch (keycode)
+        {
+            case CK_EFLIP:
+                // Flip encoder cursor orientation:
+                cursor_vertical = !cursor_vertical;
+                process = false;
+                break;
+            case CK_ELEFT:
+                // Encoder cursor left (down if flipped):
+                tap_code16(cursor_vertical ? KC_DOWN : KC_LEFT);
+                process = false;
+                break;
+            case CK_ERIGHT:
+                // Encoder cursor right (up if flipped):
+                tap_code16(cursor_vertical ? KC_UP : KC_RIGHT);
+                process = false;
+                break;
+            case CK_EDOWN:
+                // Encoder cursor down (left if flipped):
+                tap_code16(cursor_vertical ? KC_LEFT : KC_DOWN);
+                process = false;
+                break;
+            case CK_EUP:
+                // Encoder cursor up (right if flipped):
+                tap_code16(cursor_vertical ? KC_RIGHT : KC_UP);
+                process = false;
+                break;
+            default:
+                break;
+        }
+    }
+
+    return process;
+}
+
+
 void keyboard_post_init_kb(void)
 {
 #ifdef CONSOLE_ENABLE
