@@ -66,9 +66,9 @@ enum RGB_LAYERS
     RGBL_Q,
     RGBL_R,
     RGBL_S,
-    RGBL_CAPW,
-    RGBL_CAPL,
-    RGBL_OK
+    RGBL_CAPSWORD,
+    RGBL_CAPSLOCK,
+    RGBL_POWERON
  };
 
 uint8_t get_rgb_layer(layer_state_t state)
@@ -117,10 +117,12 @@ const HSV bgk_hsv_layers[] = {
     [RGBL_M] = { HSV_MAGENTA },
     [RGBL_P] = { HSV_PINK },
 
-    [RGBL_CAPW] = { HSV_VIVIDPINK },
-    [RGBL_CAPL] = { HSV_RED },
-    [RGBL_OK]   = { 85, 255, 100 }
+    [RGBL_CAPSWORD] = { HSV_VIVIDPINK },
+    [RGBL_CAPSLOCK] = { HSV_RED },
+    [RGBL_POWERON]  = { HSV_GREEN }
 };
+
+#define POWER_UP_HUE_STEP (1 << 1)
 
 bool rgb_matrix_indicators_kb(void)
 {
@@ -135,38 +137,15 @@ bool rgb_matrix_indicators_kb(void)
 
     if (powering_up)
     {
-        static bool reached_max = false;
-        static bool reached_min = false;
-        static uint8_t old_val = 0;
+        HSV hsv = rgb_matrix_config.hsv;
 
-        if (!old_val)
+        if (((hsv.h + POWER_UP_HUE_STEP) % 256) == bgk_hsv_layers[RGBL_POWERON].h)
         {
-            rgb_layer = RGBL_OK;
-            old_val = 1;
-        }
-        else if (reached_min)
-        {
-            rgb_layer = RGBL_OFF;
             powering_up = false;
         }
         else
         {
-            HSV hsv  = rgb_matrix_config.hsv;
-
-            uint16_t time = scale16by8(g_rgb_timer, rgb_matrix_config.speed / 8);
-            hsv.v = scale8(abs8(sin8(time) - 128) * 2, hsv.v);
-            if (hsv.v > old_val)
-            {
-                if (reached_max)
-                {
-                    reached_min = true;
-                }
-            }
-            else if (!reached_max)
-            {
-                reached_max = true;
-            }
-            old_val = hsv.v;
+            hsv.h += POWER_UP_HUE_STEP;
             rgb_matrix_sethsv_noeeprom(hsv.h, hsv.s, hsv.v);
 
             return true;
@@ -174,11 +153,11 @@ bool rgb_matrix_indicators_kb(void)
     }
     else if (host_keyboard_led_state().caps_lock)
     {
-        rgb_layer = RGBL_CAPL;
+        rgb_layer = RGBL_CAPSLOCK;
     }
     else if (is_caps_word_on())
     {
-        rgb_layer = RGBL_CAPW;
+        rgb_layer = RGBL_CAPSWORD;
     }
     else
     {
@@ -268,6 +247,9 @@ void keyboard_post_init_kb(void)
 
 #ifdef RGB_MATRIX_ENABLE
     rgb_matrix_enable_noeeprom();
+    rgb_matrix_sethsv_noeeprom(bgk_hsv_layers[RGBL_POWERON].h,
+                               bgk_hsv_layers[RGBL_POWERON].s,
+                               bgk_hsv_layers[RGBL_POWERON].v);
 #endif
 
 # ifdef WS2812_POWER_PIN
