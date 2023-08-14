@@ -59,16 +59,12 @@
 #    define WS2812_TRST_US 280
 #endif
 
-// BGK: Deactivated - count is always one
+// BGK: Deactivated RGBLED_NUM
 // #if defined(RGBLED_NUM)
 // #    define WS2812_LED_COUNT RGBLED_NUM
-// #elif defined(RGB_MATRIX_LED_COUNT)
-// #    define WS2812_LED_COUNT RGB_MATRIX_LED_COUNT
-// #endif
-#if defined(RGB_MATRIX_LED_COUNT) && RGB_MATRIX_LED_COUNT != 1
-#    pragma error("Only one status WS2812 supported")
+#if defined(RGB_MATRIX_LED_COUNT)
+#    define BGK_WS2812_LED_COUNT RGB_MATRIX_LED_COUNT
 #endif
-#define WS2812_STATUS_LED_COUNT 1
 
 
 /* User Interface
@@ -82,6 +78,6 @@
  *         - Send out the LED data
  *         - Wait 50us to reset the LEDs
  *
- * BGK: Renamed function to bgk_status_ws2812_set_leds from ws2812_setleds
+ * BGK: Renamed function to bgk_ws2812_set_leds from ws2812_setleds
  */
-void bgk_status_ws2812_set_leds(LED_TYPE* ledarray, uint16_t number_of_leds);
+void bgk_ws2812_set_leds(LED_TYPE* ledarray, uint16_t number_of_leds);

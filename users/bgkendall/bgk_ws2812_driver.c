@@ -134,7 +134,7 @@ static const pio_program_t ws2812_program = {
     .origin       = -1,
 };
 
-static uint32_t                WS2812_BUFFER[WS2812_STATUS_LED_COUNT];
+static uint32_t                WS2812_BUFFER[BGK_WS2812_LED_COUNT];
 static const rp_dma_channel_t* WS2812_DMA_CHANNEL;
 static uint32_t                RP_DMA_MODE_WS2812;
 static int                     STATE_MACHINE = -1;
@@ -155,8 +155,8 @@ __always_inline static uint32_t rgbw8888_to_u32(uint8_t red, uint8_t green, uint
 #endif
 }
 
-// BGK: Prepended bgk_status_ to function name and update calls:
-static void bgk_status_ws2812_dma_callback(void* p, uint32_t ct) {
+// BGK: Prepended bgk_ to function name and updated calls:
+static void bgk_ws2812_dma_callback(void* p, uint32_t ct) {
     // We assume that there is at least one frame left in the OSR even if the TX
     // FIFO is already empty.
     rtcnt_t time_to_completion = (pio_sm_get_tx_fifo_level(pio, STATE_MACHINE) + 1) * MAX(WS2812_T1H + WS2812_T1L, WS2812_T0H + WS2812_T0L);
@@ -177,8 +177,8 @@ static void bgk_status_ws2812_dma_callback(void* p, uint32_t ct) {
     osalSysUnlockFromISR();
 }
 
-// BGK: Prepended bgk_status_ to function name and update calls:
-bool bgk_status_ws2812_init(void) {
+// BGK: Prepended bgk_ to function name and updated calls:
+bool bgk_ws2812_init(void) {
     uint pio_idx = pio_get_index(pio);
     /* Get PIOx peripheral out of reset state. */
     hal_lld_peripheral_unreset(pio_idx == 0 ? RESETS_ALLREG_PIO0 : RESETS_ALLREG_PIO1);
@@ -192,8 +192,8 @@ bool bgk_status_ws2812_init(void) {
                             (pio_idx == 0 ? PAL_MODE_ALTERNATE_PIO0 : PAL_MODE_ALTERNATE_PIO1);
     // clang-format on
 
-    // BGK: Use RGB_STATUS_WS2812_DI_PIN instead of WS2812_DI_PIN:
-    palSetLineMode(RGB_STATUS_WS2812_DI_PIN, rgb_pin_mode);
+    // BGK: Use BGK_CUSTOM_WS2812_DI_PIN instead of WS2812_DI_PIN:
+    palSetLineMode(BGK_CUSTOM_WS2812_DI_PIN, rgb_pin_mode);
 
     STATE_MACHINE = pio_claim_unused_sm(pio, true);
     if (STATE_MACHINE < 0) {
@@ -203,11 +203,11 @@ bool bgk_status_ws2812_init(void) {
 
     uint offset = pio_add_program(pio, &ws2812_program);
 
-    pio_sm_set_consecutive_pindirs(pio, STATE_MACHINE, RGB_STATUS_WS2812_DI_PIN, 1, true);
+    pio_sm_set_consecutive_pindirs(pio, STATE_MACHINE, BGK_CUSTOM_WS2812_DI_PIN, 1, true);
 
     pio_sm_config config = pio_get_default_sm_config();
     sm_config_set_wrap(&config, offset + WS2812_WRAP_TARGET, offset + WS2812_WRAP);
-    sm_config_set_sideset_pins(&config, RGB_STATUS_WS2812_DI_PIN);
+    sm_config_set_sideset_pins(&config, BGK_CUSTOM_WS2812_DI_PIN);
     sm_config_set_fifo_join(&config, PIO_FIFO_JOIN_TX);
 
 #if defined(WS2812_EXTERNAL_PULLUP)
@@ -238,7 +238,7 @@ bool bgk_status_ws2812_init(void) {
     pio_sm_init(pio, STATE_MACHINE, offset, &config);
     pio_sm_set_enabled(pio, STATE_MACHINE, true);
 
-    WS2812_DMA_CHANNEL = dmaChannelAlloc(RP_DMA_CHANNEL_ID_ANY, RP_DMA_PRIORITY_WS2812, (rp_dmaisr_t)bgk_status_ws2812_dma_callback, NULL);
+    WS2812_DMA_CHANNEL = dmaChannelAlloc(RP_DMA_CHANNEL_ID_ANY, RP_DMA_PRIORITY_WS2812, (rp_dmaisr_t)bgk_ws2812_dma_callback, NULL);
     dmaChannelEnableInterruptX(WS2812_DMA_CHANNEL);
     dmaChannelSetDestinationX(WS2812_DMA_CHANNEL, (uint32_t)&pio->txf[STATE_MACHINE]);
 
@@ -252,9 +252,9 @@ bool bgk_status_ws2812_init(void) {
     return true;
 }
 
-// BGK: Prepended bgk_status_ to function name and update calls:
-static inline void bgk_status_sync_ws2812_transfer(void) {
-    if (chSemWaitTimeout(&TRANSFER_COUNTER, TIME_MS2I(WS2812_STATUS_LED_COUNT)) == MSG_TIMEOUT) {
+// BGK: Prepended bgk_ to function name and updated calls:
+static inline void bgk_sync_ws2812_transfer(void) {
+    if (chSemWaitTimeout(&TRANSFER_COUNTER, TIME_MS2I(BGK_WS2812_LED_COUNT)) == MSG_TIMEOUT) {
         // Abort the synchronization if we have to wait longer than the total
         // count of LEDs in milliseconds. This is safely much longer than it
         // would take to push all the data out.
@@ -271,14 +271,14 @@ static inline void bgk_status_sync_ws2812_transfer(void) {
     busy_wait_until(LAST_TRANSFER);
 }
 
-// BGK: Renamed function to bgk_status_ws2812_set_leds from ws2812_setleds:
-void bgk_status_ws2812_set_leds(LED_TYPE* ledarray, uint16_t leds) {
+// BGK: Renamed function to bgk_ws2812_set_leds from ws2812_setleds:
+void bgk_ws2812_set_leds(LED_TYPE* ledarray, uint16_t leds) {
     static bool is_initialized = false;
     if (unlikely(!is_initialized)) {
-        is_initialized = bgk_status_ws2812_init();
+        is_initialized = bgk_ws2812_init();
     }
 
-   bgk_status_sync_ws2812_transfer();
+    bgk_sync_ws2812_transfer();
 
     for (int i = 0; i < leds; i++) {
 #if defined(RGBW)
