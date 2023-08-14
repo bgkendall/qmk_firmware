@@ -77,8 +77,6 @@ uint8_t get_rgb_layer(layer_state_t state)
 #ifdef RGBLIGHT_LAYER_KEY
     uint16_t rgb_layer_key = keymap_key_to_keycode(get_highest_layer(state),
                                                    (keypos_t)RGBLIGHT_LAYER_KEY);
-printf("State: %i", state);
-printf(", key: %i\n", rgb_layer_key);
 
     if (rgb_layer_key >= KC_A && rgb_layer_key <= KC_S)
     {
