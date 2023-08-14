@@ -256,4 +256,9 @@ void keyboard_post_init_kb(void)
     setPinOutput(WS2812_POWER_PIN);
     writePinHigh(WS2812_POWER_PIN);
 # endif
+
+#ifdef RGBLIGHT_ENABLE
+    // Turn off lighting:
+    rgblight_disable();
+# endif
 }
