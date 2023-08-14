@@ -12,15 +12,31 @@
         ]
     },
     "rgblight": {
-        "led_count": 5
+        "led_count": 5,
+        "hue_steps": 4,
+        "saturation_steps": 17,
+        "brightness_steps": 17,
+        "sleep": true,
+        "animations": {
+            "alternating": true,
+            "breathing": true,
+            "christmas": true,
+            "knight": true,
+            "rainbow_mood": true,
+            "rainbow_swirl": true,
+            "rgb_test": true,
+            "snake": true,
+            "static_gradient": true,
+            "twinkle": true
+        }
+    },
+    "ws2812": {
+        "pin": "GP12"
     },
     "rgb_matrix": {
         "driver": "custom",
         "max_brightness": 128,
         "layout": [ { "flags": 8, "x": 112, "y": 16 } ]
-    },
-    "ws2812": {
-        "pin": "GP12"
     },
     "usb": {
         "pid": "0x6062",
