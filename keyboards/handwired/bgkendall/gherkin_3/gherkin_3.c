@@ -327,13 +327,14 @@ void keyboard_post_init_kb(void)
     rgb_matrix_enable_noeeprom();
 #endif
 
-#ifdef RGBLIGHT_ENABLE
-
-# ifdef RGBLIGHT_POWER_PIN
-    setPinOutput(RGBLIGHT_POWER_PIN);
-    writePinHigh(RGBLIGHT_POWER_PIN);
+# ifdef WS2812_POWER_PIN
+    setPinOutput(WS2812_POWER_PIN);
+    writePinHigh(WS2812_POWER_PIN);
     // TODO: Only enable the pin when the light is needed?
 # endif
+
+#ifdef RGBLIGHT_ENABLE
+
 
     // Turn off lighting:
     rgblight_disable();

@@ -4,5 +4,7 @@
 #pragma once
 
 #define MATRIX_MASKED
-#define RGBLIGHT_POWER_PIN  GP11
-#define RGBLIGHT_LAYER_KEY  {3,3}
+
+#define RGB_MATRIX_LED_COUNT    1
+#define RGBLIGHT_LAYER_KEY      {3,3}
+#define WS2812_POWER_PIN        GP11
