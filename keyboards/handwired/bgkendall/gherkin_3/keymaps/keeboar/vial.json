@@ -5,67 +5,57 @@
   "lighting": "qmk_backlight_rgblight",
   "customKeycodes": [
     {
-      "name": "CK_000",
+      "name": "BK_000",
       "title": "000",
       "shortName": "000"
     },
     {
-      "name": "CK_PP1",
-      "title": "PP1",
-      "shortName": "PP1"
-    },
-    {
-      "name": "CK_PP2",
-      "title": "PP2",
-      "shortname": "PP2"
-    },
-    {
-      "name": "CK_BGK",
+      "name": "BK_BGK",
       "title": "Barnaby",
       "shortName": "BGK"
     },
     {
-      "name": "CK_APPB",
+      "name": "BK_APP_BACKWARD",
       "title": "Previous Application/Previous Window",
       "shortName": "App\nBack"
     },
     {
-      "name": "CK_APPF",
+      "name": "BK_APP_FORWARD",
       "title": "Next Application",
       "shortName": "App\nFwd"
     },
     {
-      "name": "CK_TIMES",
+      "name": "BK_TIMES",
       "title": "Multiplication Sign",
       "shortName": "×"
     },
     {
-      "name": "CK_LOCK",
+      "name": "BK_LOCK",
       "title": "Lock this layer",
       "shortName": "Layer\nLock"
     },
     {
-      "name": "CK_ELEFT",
+      "name": "BK_ELEFT",
       "title": "Encoder Cursor Left",
       "shortName": "Enc.\nLeft"
     },
     {
-      "name": "CK_ERIGHT",
+      "name": "BK_ERIGHT",
       "title": "Encoder Cursor Right",
       "shortName": "Enc.\nRight"
     },
     {
-      "name": "CK_EDOWN",
+      "name": "BK_EDOWN",
       "title": "Encoder Cursor Down",
       "shortName": "Enc.\nDown"
     },
     {
-      "name": "CK_EUP",
+      "name": "BK_EUP",
       "title": "Encoder Cursor Up",
       "shortName": "Enc.\nUp"
     },
     {
-      "name": "CK_EFLIP",
+      "name": "BK_EFLIP",
       "title": "Encoder Cursor Direction Flip",
       "shortName": "Enc.\nFlip"
     }

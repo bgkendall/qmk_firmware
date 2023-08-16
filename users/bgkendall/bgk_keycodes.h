@@ -46,13 +46,16 @@ enum BGK_CUSTOM_KEYCODES
 #else
     BK_000 = SAFE_RANGE,
 #endif
-    BK_M1,
-    BK_M2,
-    BK_M3,
-    BK_CMDTAB_BACKWARD,     // USER04
-    BK_CMDTAB_FORWARD,
+    BK_BGK,
+    BK_APP_BACKWARD,
+    BK_APP_FORWARD,
     BK_TIMES,
     BK_LOCK,
+    BK_ELEFT,
+    BK_ERIGHT,
+    BK_EDOWN,
+    BK_EUP,
+    BK_EFLIP,
     KB_SAFE_RANGE
 };
 
