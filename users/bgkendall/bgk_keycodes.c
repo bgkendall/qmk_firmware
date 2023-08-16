@@ -29,25 +29,15 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
 
     if (process)
     {
+        static bool cursor_vertical = false;
+
         const uint8_t modifiers = get_mods();
 
         if (record->event.pressed)
         {
             switch (keycode)
             {
-                case BK_M1:
-                {
-                    SEND_STRING(TEXT_STRING_1 "\n");
-                    process = false;
-                    break;
-                }
-                case BK_M2:
-                {
-                    SEND_STRING(TEXT_STRING_2 "\n");
-                    process = false;
-                    break;
-                }
-                case BK_M3:
+                case BK_BGK:
                 {
                     clear_mods();
 #ifndef NO_ACTION_ONESHOT
@@ -57,56 +47,36 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
 
                     if (modifiers & MOD_MASK_GUI)
                     {
-#ifdef VIA_ENABLE
-                        dynamic_keymap_macro_send(BGK_MACRO_COUNT-1);
-#else
                         SEND_STRING(TEXT_STRING_3g);
-#endif
                     }
                     else if (modifiers & MOD_MASK_ALT)
                     {
-#ifdef VIA_ENABLE
-                        dynamic_keymap_macro_send(BGK_MACRO_COUNT-2);
-#else
                         SEND_STRING(TEXT_STRING_3a);
-#endif
                     }
                     else if (modifiers & MOD_MASK_SHIFT)
                     {
-#ifdef VIA_ENABLE
-                        dynamic_keymap_macro_send(BGK_MACRO_COUNT-3);
-#else
                         SEND_STRING(TEXT_STRING_3s);
-#endif
                     }
                     else if (modifiers & MOD_MASK_CTRL)
                     {
-#ifdef VIA_ENABLE
-                        dynamic_keymap_macro_send(BGK_MACRO_COUNT-4);
-#else
                         SEND_STRING(TEXT_STRING_3c);
-#endif
                     }
                     else
                     {
-#ifdef VIA_ENABLE
-                        dynamic_keymap_macro_send(BGK_MACRO_COUNT-5);
-#else
                         SEND_STRING(TEXT_STRING_3);
-#endif
                     }
                     set_mods(modifiers);
                     process = false;
                     break;
                 }
-                case BK_CMDTAB_FORWARD:
-                {
-                    process = bgkey_register_forward_command_tab();
-                    break;
-                }
-                case BK_CMDTAB_BACKWARD:
+                case BK_APP_BACKWARD:
                 {
                     process = bgkey_register_backward_command_tab();
+                    break;
+                }
+                case BK_APP_FORWARD:
+                {
+                    process = bgkey_register_forward_command_tab();
                     break;
                 }
                 case BK_TIMES:
@@ -139,6 +109,31 @@ bool process_record_user(uint16_t keycode, keyrecord_t* record)
                     process = false;
                     break;
                 }
+                case BK_ELEFT:
+                    // Encoder cursor left (down if flipped):
+                    tap_code16(cursor_vertical ? KC_DOWN : KC_LEFT);
+                    process = false;
+                    break;
+                case BK_ERIGHT:
+                    // Encoder cursor right (up if flipped):
+                    tap_code16(cursor_vertical ? KC_UP : KC_RIGHT);
+                    process = false;
+                    break;
+                case BK_EDOWN:
+                    // Encoder cursor down (left if flipped):
+                    tap_code16(cursor_vertical ? KC_LEFT : KC_DOWN);
+                    process = false;
+                    break;
+                case BK_EUP:
+                    // Encoder cursor up (right if flipped):
+                    tap_code16(cursor_vertical ? KC_RIGHT : KC_UP);
+                    process = false;
+                    break;
+                case BK_EFLIP:
+                    // Flip encoder cursor orientation:
+                    cursor_vertical = !cursor_vertical;
+                    process = false;
+                    break;
                 default:
                     break;
             }
