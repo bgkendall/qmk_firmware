@@ -1,0 +1,63 @@
+{
+    "keyboard_name": "Undermountain",
+    "processor": "atmega32u4",
+    "bootloader": "atmel-dfu",
+    "diode_direction": "COL2ROW",
+    "features": {
+        "audio": false,
+        "backlight": true,
+        "bluetooth": false,
+        "bootmagic": false,
+        "bootmagic_lite": true,
+        "command": false,
+        "console": false,
+        "encoder": true,
+        "encoder_map": true,
+        "extrakey": true,
+        "lto": true,
+        "magic": false,
+        "midi": false,
+        "mousekey": false,
+        "music": false,
+        "nkro": false,
+        "rgblight": false,
+        "unicode": false
+    },
+    "matrix_pins": {
+        "direct": [
+            ["D4", "E6", "B4"],
+            ["F4", "F5", "F6"]
+        ]
+    },
+    "backlight": {
+        "pin": "B6"
+        "levels": 5,
+        "breathing": true
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "D1", "pin_b": "D0"},
+            { "pin_a": "C6", "pin_b": "D7"}
+        ]
+    },
+    "indicators": {
+        "caps_lock": "B2",
+        "on_state": 0
+    },
+    "usb": {
+        "pid": "0x554D",
+        "device_version": "1.0.0",
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"matrix": [0, 0], "y":0,   "x":0},
+                {"matrix": [0, 1], "y":0,   "x":1},
+                {"matrix": [0, 2], "y":0,   "x":2},
+                {"matrix": [1, 0], "y":1.5, "x":0},
+                {"matrix": [1, 1], "y":1.5, "x":1},
+                {"matrix": [1, 2], "y":1.5, "x":2}
+            ]
+        }
+    }
+}
