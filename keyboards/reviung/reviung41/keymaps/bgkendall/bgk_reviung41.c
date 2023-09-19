@@ -324,7 +324,7 @@ bool process_record_keymap(int16_t keycode, keyrecord_t* record)
     bool process = true;
 
     process &= process_programmable_key(keycode, record);
-    process &= override_dotcolon(keycode, record);
+    // process &= override_dotcolon(keycode, record);
 
     return process;
 }
