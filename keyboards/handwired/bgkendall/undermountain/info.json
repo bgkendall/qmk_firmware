@@ -30,7 +30,7 @@
         ]
     },
     "backlight": {
-        "pin": "B6"
+        "pin": "B6",
         "levels": 5,
         "breathing": true
     },
