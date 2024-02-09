@@ -1,8 +1,5 @@
 #include QMK_KEYBOARD_H
 
-#include "bgk_rgb.h"
-#include "bgk_encoder.h"
-
 enum LAYERS
 {
     KL_DEFAULT = 0,
@@ -19,10 +16,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
 {
     [KL_DEFAULT ... KL_DEFAULT_COPY] = LAYOUT
     (
-        KC_5,               KC_6,
+        KC_1,               KC_2,
         KC_3,               KC_4,
-        TO(KL_RGB),         KC_2,
-        MO(KL_FUNC)
+        KC_5,               KC_6,
+        KC_X
     ),
 
     [KL_FUNC ... KL_FUNC_LOCK] = LAYOUT
@@ -54,51 +51,59 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] =
         XXXXXXX,            XXXXXXX,
         XXXXXXX,            XXXXXXX,
         TO(KL_DEFAULT),     XXXXXXX,
-        RESET
+        QK_BOOT
 	)
 };
 
-const uint16_t PROGMEM encodermaps[][1][2] =
-{
-    [KL_DEFAULT]    = { { KC_PGUP,  KC_PGDN } },
-    [KL_RGB]        = { { RGB_VAI,  RGB_VAD } },
-    [KL_BACKLIGHT]  = { { BL_INC,   BL_DEC  } },
-    [KL_RESET]      = { { KC_BRIU,  KC_BRID } }
+#ifdef ENCODER_MAP_ENABLE
+
+const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
+    [0 ... KL_RESET] = { ENCODER_CCW_CW(KC_VOLD,  KC_VOLU) }
 };
 
-const rgblight_segment_t* const PROGMEM prototype_rgb_layers[] = RGBLIGHT_LAYERS_LIST
-(
-    [KL_DEFAULT]        = bgkrgb_red_indicator_layer,
-    [KL_FUNC]           = bgkrgb_orange_indicator_layer,
-    [KL_FUNC_LOCK]      = bgkrgb_yellow_indicator_layer,
-    [KL_DEFAULT_COPY]   = bgkrgb_purple_indicator_layer,
-    [KL_RGB]            = bgkrgb_green_indicator_layer,
-    [KL_BACKLIGHT]      = bgkrgb_blue_indicator_layer,
-    [KL_RESET]          = bgkrgb_orangered_layer,
-    [RGB_LAYER_OK]      = bgkrgb_green_layer
-);
+#endif // ENCODER_MAP_ENABLE
+
+// const rgblight_segment_t* const PROGMEM prototype_rgb_layers[] = RGBLIGHT_LAYERS_LIST
+// (
+//     [KL_DEFAULT]        = bgkrgb_red_indicator_layer,
+//     [KL_FUNC]           = bgkrgb_orange_indicator_layer,
+//     [KL_FUNC_LOCK]      = bgkrgb_yellow_indicator_layer,
+//     [KL_DEFAULT_COPY]   = bgkrgb_purple_indicator_layer,
+//     [KL_RGB]            = bgkrgb_green_indicator_layer,
+//     [KL_BACKLIGHT]      = bgkrgb_blue_indicator_layer,
+//     [KL_RESET]          = bgkrgb_orangered_layer,
+//     [RGB_LAYER_OK]      = bgkrgb_green_layer
+// );
 
 void keyboard_post_init_user(void)
 {
+#ifdef CONSOLE_ENABLE
+    // Enable/disable debugging:
+    debug_enable = true;
+    debug_matrix = true;
+    debug_keyboard = true;
+    debug_mouse = false;
+#endif
+
     // Turn off lighting:
     backlight_disable();
     rgblight_disable();
 
     // Enable the LED layers:
-    rgblight_layers = prototype_rgb_layers;
+    // rgblight_layers = prototype_rgb_layers;
 
     // Flash OK layer:
-    rgblight_blink_layer(RGB_LAYER_OK, 1000);
+    // rgblight_blink_layer(RGB_LAYER_OK, 1000);
 }
 
 layer_state_t layer_state_set_user(layer_state_t state)
 {
-    bgkrgb_set_from_highest_layer(state, KL_DEFAULT+1, KL_RESET);
-
-    if (get_highest_layer(state) == KL_DEFAULT)
-    {
-        rgblight_blink_layer(KL_DEFAULT, 333);
-    }
+//     bgkrgb_set_from_highest_layer(state, KL_DEFAULT+1, KL_RESET);
+//
+//     if (get_highest_layer(state) == KL_DEFAULT)
+//     {
+//         rgblight_blink_layer(KL_DEFAULT, 333);
+//     }
 
     return state;
 }

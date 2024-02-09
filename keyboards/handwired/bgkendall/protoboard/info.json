@@ -1,0 +1,81 @@
+{
+    "keyboard_name": "Protoboard (Micro)",
+    "processor": "atmega32u4",
+    "bootloader": "caterina",
+    "features": {
+        "audio": false,
+        "backlight": true,
+        "bluetooth": false,
+        "bootmagic": false,
+        "bootmagic_lite": true,
+        "combo": false,
+        "command": false,
+        "console": true,
+        "encoder": true,
+        "encoder_map": true,
+        "extrakey": true,
+        "magic": false,
+        "midi": false,
+        "mousekey": true,
+        "music": false,
+        "nkro": false,
+        "rgblight": true,
+        "unicode": false
+    },
+    "backlight": {
+        "pin": "B6",
+        "levels": 16,
+        "breathing": true
+    },
+    "build": {
+        "lto": true
+    },
+    "encoder": {
+        "rotary": [
+            { "pin_a": "F6", "pin_b": "F7"}
+        ]
+    },
+    "rgblight": {
+        "led_count": 6,
+        "hue_steps": 2,
+        "saturation_steps": 17,
+        "brightness_steps": 17,
+        "animations": {
+            "alternating": true,
+            "breathing": true,
+            "christmas": false,
+            "knight": true,
+            "rainbow_mood": true,
+            "rainbow_swirl": true,
+            "rgb_test": true,
+            "snake": true,
+            "static_gradient": true,
+            "twinkle": true
+        }
+    },
+    "ws2812": {
+        "pin": "D7"
+    },
+    "usb": {
+        "pid": "0x0001",
+        "device_version": "1.0.0"
+    },
+    "diode_direction": "COL2ROW",
+    "matrix_pins": {
+        "rows": ["F6", "F7", "B3", "B5"],
+        "cols": ["B2", "B1", "B4"]
+    },
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                {"label":"1", "matrix": [0, 0], "y":0, "x":0},
+                {"label":"2", "matrix": [0, 1], "y":0, "x":1},
+                {"label":"3", "matrix": [1, 0], "y":1, "x":0},
+                {"label":"4", "matrix": [1, 1], "y":1, "x":1},
+                {"label":"5", "matrix": [2, 0], "y":2, "x":0},
+                {"label":"6", "matrix": [2, 1], "y":2, "x":1},
+                {"label":"7", "matrix": [3, 2], "y":3, "x":0.5}
+            ]
+        }
+    }
+}
