@@ -18,6 +18,11 @@
 *.lst
 *.map
 *.o
+*.a
+*.so
+*.dylib
+*.dll
+*.la
 *.stackdump
 *.sym
 
@@ -95,6 +100,7 @@ secrets.tar
 # Python things
 __pycache__
 .python-version
+.venv
 
 # Prerequisites for updating ChibiOS
 /util/fmpp*
@@ -109,3 +115,4 @@ compile_commands.json
 
 # VIA(L) json files that don't belong in QMK repo
 #via*.json
+#/keyboards/**/keymaps/vial/*
