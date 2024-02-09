@@ -35,4 +35,3 @@
 #define WS2812_TRST_US 80
 
 #undef NO_DEBUG
-#define DEBUG_KEY_OVERRIDE
