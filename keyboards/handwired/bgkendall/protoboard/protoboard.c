@@ -1,1 +1,1 @@
-#include "protoboard.h"
+#include QMK_KEYBOARD_H
