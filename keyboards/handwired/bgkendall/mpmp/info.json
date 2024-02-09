@@ -1,5 +1,6 @@
 {
     "keyboard_name": "Madame Pearls Macro Pad",
+    "processor": "atmega32u4",
     "bootloader": "caterina",
     "debounce": 5,
     "diode_direction": "COL2ROW",
@@ -30,14 +31,12 @@
         "rows": ["F7", "D7", "E6", "B4", "B5"],
         "cols": ["B1", "D1", "C6", "D4"]
     },
-    "processor": "atmega32u4",
     "encoder": {
         "rotary": [
             { "pin_a": "D3", "pin_b": "D2"}
         ]
     },
     "rgblight": {
-        "pin": "F4",
         "led_count": 12,
         "hue_steps": 4,
         "saturation_steps": 17,
@@ -63,11 +62,14 @@
             "override_rgb": true
         }
     },
+    "ws2812": {
+        "pin": "F4"
+    },
     "tapping": {
         "toggle": 3
     },
     "usb": {
-        "device_ver": "0x0001",
+        "device_version": "1.0.1",
         "pid": "0x4D50",
         "max_power": 100
     },
