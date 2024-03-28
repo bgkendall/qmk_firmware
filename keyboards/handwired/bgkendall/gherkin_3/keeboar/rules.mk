@@ -1,3 +1,1 @@
-USER_NAME := bgkendall
-
 BGK_CUSTOM_WS2812_ENABLE = yes

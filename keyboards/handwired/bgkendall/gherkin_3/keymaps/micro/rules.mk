@@ -11,6 +11,8 @@ ifneq (,$(findstring vial,$(CURDIR)))
     GRAVE_ESC_ENABLE = no
     QMK_SETTINGS = no
     CONSOLE_ENABLE = no
+    SPACE_CADET_ENABLE = no
+    MOUSEKEY_ENABLE = no
 
 else
 
