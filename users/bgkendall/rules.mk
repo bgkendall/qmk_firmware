@@ -15,5 +15,9 @@ ifeq ($(strip $(BGK_CUSTOM_WS2812_ENABLE)), yes)
 
 endif
 
+ifeq ($(strip $(BGK_SHIFTED_MOD_TAP_ENABLE)), yes)
+	SRC += bgk_shifted_mod_tap.c
+endif
+
 
 SRC += bgk_keycommands.c bgk_keycodes.c

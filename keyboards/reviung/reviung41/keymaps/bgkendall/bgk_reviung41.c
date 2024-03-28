@@ -10,6 +10,8 @@
 #ifdef RGBLIGHT_ENABLE
 
 #include "users/bgkendall/bgk_rgb.h"
+#include "users/bgkendall/bgk_shifted_mod_tap.h"
+
 
 // enum RGB_LAYERS
 // {
@@ -320,54 +322,13 @@ bool process_programmable_key(int16_t keycode, keyrecord_t* record)
     return process;
 }
 
-#define BK_SHIFT_NUM_START KC_KP_EQUAL_AS400
-#define BK_SHIFT_SYM_START (BK_SHIFT_NUM_START + 10)
-
-bool process_shifted_mod_tap(int16_t keycode, keyrecord_t* record)
-{
-    bool process = true;
-
-    if ((IS_QK_MOD_TAP(keycode) || IS_QK_LAYER_TAP(keycode)) &&
-        record->tap.count > 0)
-    {
-        const int16_t base_keycode = keycode & QK_BASIC_MAX;
-
-        if (base_keycode >= BK_SHIFT_NUM_START && base_keycode < (BK_SHIFT_NUM_START+10))
-        {
-            if (record->event.pressed)
-            {
-                register_code16(S((base_keycode - BK_SHIFT_NUM_START) + KC_1));
-            }
-            else
-            {
-                unregister_code16(S((base_keycode - BK_SHIFT_NUM_START) + KC_1));
-            }
-            process = false;
-        }
-        else if (base_keycode >= BK_SHIFT_SYM_START && base_keycode < (BK_SHIFT_SYM_START+12))
-        {
-            if (record->event.pressed)
-            {
-                register_code16(S((base_keycode - BK_SHIFT_SYM_START) + KC_MINUS));
-            }
-            else
-            {
-                unregister_code16(S((base_keycode - BK_SHIFT_SYM_START) + KC_MINUS));
-            }
-            process = false;
-        }
-    }
-
-    return process;
-}
-
 bool process_record_keymap(int16_t keycode, keyrecord_t* record)
 {
     bool process = true;
 
     process &= process_programmable_key(keycode, record);
     // process &= override_dotcolon(keycode, record);
-    process &= process_shifted_mod_tap(keycode, record);
+    process &= bgk_process_shifted_mod_tap(keycode, record);
 
     return process;
 }
