@@ -5,6 +5,7 @@
 #endif
 
 #include "users/bgkendall/bgk_keycommands.h"
+#include "users/bgkendall/bgk_shifted_mod_tap.h"
 
 
 /*****************************************************************************
@@ -180,6 +181,12 @@ bool rgb_matrix_indicators_kb(void)
 #endif // RGB_MATRIX_ENABLE
 
 
+bool process_record_keymap(int16_t keycode, keyrecord_t* record)
+{
+    return bgk_process_shifted_mod_tap(keycode, record);
+}
+
+
 void keyboard_post_init_kb(void)
 {
 #ifdef CONSOLE_ENABLE
@@ -200,10 +207,10 @@ void keyboard_post_init_kb(void)
 # ifdef WS2812_POWER_PIN
     setPinOutput(WS2812_POWER_PIN);
     writePinHigh(WS2812_POWER_PIN);
-# endif
+#endif
 
 #ifdef RGBLIGHT_ENABLE
     // Turn off lighting:
     rgblight_disable();
-# endif
+#endif
 }
