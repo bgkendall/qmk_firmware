@@ -15,4 +15,6 @@ NKRO_ENABLE = yes
 
 SRC += bgk_reviung41.c
 
+BGK_SHIFTED_MOD_TAP_ENABLE = yes
+
 VIAL_INSECURE = yes
