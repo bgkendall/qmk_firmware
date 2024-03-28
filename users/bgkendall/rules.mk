@@ -1,5 +1,5 @@
 ifeq ($(strip $(ENCODER_ENABLE)), yes)
-    ifneq ($(strip $(VIAL_ENCODERS_ENABLE)), yes)
+    ifneq ($(strip $(VIAL_ENABLE)), yes)
         SRC += bgk_encoder.c
     endif
 endif

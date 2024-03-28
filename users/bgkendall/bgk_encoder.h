@@ -17,7 +17,7 @@
 #pragma once
 
 #ifdef ENCODER_ENABLE
-#ifndef VIAL_ENCODERS_ENABLE
+#ifndef VIAL_ENABLE
 
 #include "quantum.h"
 
@@ -29,5 +29,5 @@ void bgkencoder_init(bool (*custom_keycode_handler)(uint16_t, bool));
 
 void bgkencoder_update(uint8_t encoder_index, bool clockwise);
 
-#endif // VIAL_ENCODERS_ENABLE
+#endif // VIAL_ENABLE
 #endif // ENCODER_ENABLE
