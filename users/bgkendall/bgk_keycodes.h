@@ -1,9 +1,7 @@
 //
 //  bgk_keycodes.h
-//  qmk-keyboard
 //
-//  Created by Barnaby on 2020-11-11.
-//  © 2020 Barnaby Kendall. All rights reserved.
+//  © 2020 Barnaby Kendall
 //
 
 #pragma once
