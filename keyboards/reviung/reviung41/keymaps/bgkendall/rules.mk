@@ -2,7 +2,6 @@ CONVERT_TO=promicro_rp2040
 
 WS2812_DRIVER = vendor
 
-
 VIA_ENABLE = yes
 VIAL_ENABLE = yes
 LTO_ENABLE = yes
