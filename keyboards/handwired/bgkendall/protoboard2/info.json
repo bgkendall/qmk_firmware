@@ -1,19 +1,20 @@
 {
     "keyboard_name": "Protoboard2",
+    "processor": "RP2040",
     "bootloader": "rp2040",
-    "debounce": 5,
-    "diode_direction": "COL2ROW",
+    "board": "GENERIC_RP_RP2040",
     "features": {
         "audio": false,
-        "backlight": false,
+        "backlight": true,
         "bluetooth": false,
         "bootmagic": false,
         "bootmagic_lite": true,
+        "combo": false,
         "command": false,
         "console": false,
         "encoder": false,
+        "encoder_map": false,
         "extrakey": true,
-        "lto": true,
         "magic": false,
         "midi": false,
         "mousekey": true,
@@ -22,14 +23,23 @@
         "rgblight": false,
         "unicode": false
     },
+    "backlight": {
+        "pin": "GP0",
+        "driver": "software",
+        "levels": 5,
+        "breathing": false
+    },
+    "build": {
+        "lto": true
+    },
+    "usb": {
+        "pid": "0x0002",
+        "device_version": "1.0.0"
+    },
+    "diode_direction": "COL2ROW",
     "matrix_pins": {
         "cols": [ "GP5",  "GP6",  "GP7", "GP8" ],
         "rows": [ "GP14", "GP15", "GP26"       ]
-    },
-    "processor": "RP2040",
-    "usb": {
-        "device_ver": "0x0001",
-        "pid": "0x0002",
     },
     "layouts": {
         "LAYOUT": {
