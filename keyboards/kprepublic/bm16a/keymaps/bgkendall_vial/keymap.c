@@ -23,8 +23,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     KC_P0,    KC_PDOT,  KC_SPC,   MO(1)
   ),
   [1] = LAYOUT_ortho_4x4(
-    RESET,    KC_PAST,  KC_PSLS,  _______,
-    BL_TOGG,  BL_DEC,   BL_INC,   BL_STEP,
+    QK_BOOT,  KC_PAST,  KC_PSLS,  _______,
+    BL_TOGG,  BL_DOWN,  BL_UP,    BL_STEP,
     RGB_TOG,  RGB_MOD,  RGB_HUI,  RGB_HUD,
     RGB_SAI,  RGB_SAD,  _______,  _______
   ),
@@ -80,7 +80,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
 
         switch (keycode)
         {
-            case USER00:
+            case QK_KB_0:
                 if (record->event.pressed)
                 {
                     // Increment dot mode:
@@ -90,6 +90,7 @@ bool process_record_kb(uint16_t keycode, keyrecord_t* record)
                 process = false;
                 break;
             case KC_KP_DOT:
+            case QK_TAP_DANCE+1:
                 switch (dot_mode)
                 {
                     case 0:
