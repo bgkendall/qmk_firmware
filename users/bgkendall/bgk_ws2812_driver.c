@@ -272,7 +272,7 @@ static inline void bgk_sync_ws2812_transfer(void) {
 }
 
 // BGK: Renamed function to bgk_ws2812_set_leds from ws2812_setleds:
-void bgk_ws2812_set_leds(LED_TYPE* ledarray, uint16_t leds) {
+void bgk_ws2812_set_leds(rgb_led_t* ledarray, uint16_t leds) {
     static bool is_initialized = false;
     if (unlikely(!is_initialized)) {
         is_initialized = bgk_ws2812_init();
