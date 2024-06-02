@@ -3,10 +3,11 @@
 
 #include "bgk_ws2812_driver.h"
 #include "color.h"
+#include "gpio.h"
 #include "rgb_matrix.h"
 
 
-LED_TYPE bgk_ws2812_matrix[RGB_MATRIX_LED_COUNT];
+rgb_led_t bgk_ws2812_matrix[RGB_MATRIX_LED_COUNT];
 
 static void bgk_ws2812_matrix_init(void)
 {
