@@ -3,5 +3,6 @@
 
 #pragma once
 
-#define RGB_MATRIX_LED_COUNT        1
-#define RGBLIGHT_LAYER_KEY          {3,6}
+#define RGB_MATRIX_LED_COUNT    1
+#define RGBLIGHT_LAYER_KEY      {3,6}
+#define WS2812_POWER_PIN        GP28
