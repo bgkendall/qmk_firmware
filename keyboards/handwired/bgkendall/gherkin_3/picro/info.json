@@ -14,14 +14,14 @@
         "layout": [ { "flags": 8, "x": 112, "y": 16 } ]
     },
     "ws2812": {
-        "pin": "GP12"
+        "pin": "GP27"
     },
     "usb": {
         "pid": "0x6062",
         "device_version": "33.4.0"
     },
     "matrix_pins": {
-        "rows": [ "GP21", "GP23", "GP20", "GP22", "GP26", "GP29", "NO_PIN" ],
+        "rows": [ "GP21", "GP23", "GP20", "GP22", "GP26", "GP0", "GP29" ],
         "cols": [ "GP3",  "GP4",  "GP5",  "GP6",  "GP7",  "GP8" ]
     }
     "layouts": {
