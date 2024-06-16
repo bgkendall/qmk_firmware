@@ -1,8 +1,0 @@
-{
-  "manufacturer": "bgkendall",
-  "maintainer": "bgkendall",
-  "url": "https://github.com/bgkendall/qmk_firmware",
-  "usb": {
-    "vid": "0x424B"
-  }
-}
