@@ -114,5 +114,7 @@ compile_commands.json
 .cache/
 
 # VIA(L) json files that don't belong in QMK repo
-#via*.json
-#/keyboards/**/keymaps/vial/*
+via*.json
+/keyboards/**/keymaps/vial/*
+
+/keyboards/bgkendall
